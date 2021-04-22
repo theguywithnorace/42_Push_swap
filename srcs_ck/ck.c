@@ -6,11 +6,25 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:27:13 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/21 21:12:21 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/22 11:56:03 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int Error_arguments(void)
+{
+    return (0);
+}
+
+int Error_instruction(void)
+{
+    return (0);
+}
+int Error_execution(void)
+{
+    return (0);
+}
 
 void check_result(t_all *all)
 {
@@ -34,7 +48,8 @@ int main(int ac, char **av)
         return (Error_arguments()); //need to free the lists
     if(!read_instruction(all))
         return (Error_instruction());
-    execute_instruction(all);
+    if (!execute_instruction(all))
+        return (Error_execution());
     check_order(all);
     return (0);
 }

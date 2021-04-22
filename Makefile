@@ -2,7 +2,8 @@ SRC_CK_DIR			= srcs_ck/
 
 SRC_PS_DIR			= srcs_ps/
 
-SRC_CK				= ck.c
+SRC_CK				= ck.c execute_instructions.c initialize.c instructions_1.c\
+						instructions_2.c parser_arguments.c parser_instructions.c
 
 SRCS_CK				= ${addprefix ${SRC_CK_DIR}, ${SRC_CK}}
 
@@ -34,7 +35,7 @@ ${OBJ_PS_DIR}%.o	: ${SRC_PS_DIR}%.s
 all:		
 	cd libft && make && cd ..
 	gcc -o checker ${OBJS_CK}  -I includes ${LIB}
-	gcc -o push_swap ${OBJS_PS}  -I includes ${LIB}
+#	gcc -o push_swap ${OBJS_PS}  -I includes ${LIB}
 
 clean:
 	${RM} ${OBJS_CK}

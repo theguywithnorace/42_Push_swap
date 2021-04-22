@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 21:46:34 by timothee          #+#    #+#             */
-/*   Updated: 2021/04/21 15:36:21 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/21 15:41:31 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 typedef struct	s_list
 {
-	int			content;
+	void			*content;
 	struct s_list	*next;
 }				t_list;
 

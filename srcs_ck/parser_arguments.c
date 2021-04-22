@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arg_getter.c                                       :+:      :+:    :+:   */
+/*   parser_arguments.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:58:23 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/21 16:22:33 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/22 12:04:59 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,6 @@ int check_n_get_arguments(int ac, char **av, t_all *all)
     {
         if (!is_int(av[i]))
             return (0);
-        all->sk = ft_lstnew(av[i]);
+        all->sk_a = ft_lstnew(av[i]);
     }
 }
