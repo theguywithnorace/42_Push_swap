@@ -34,7 +34,7 @@ ${OBJ_PS_DIR}%.o	: ${SRC_PS_DIR}%.s
 
 all:		
 	cd libft && make && cd ..
-	gcc -o checker ${OBJS_CK}  -I includes ${LIB}
+	gcc -o checker ${OBJS_CK}  -I includes -Llibft -lft
 #	gcc -o push_swap ${OBJS_PS}  -I includes ${LIB}
 
 clean:

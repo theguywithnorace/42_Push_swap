@@ -22,7 +22,8 @@ OBJS		= ${SRCS:.c=.o}
 			gcc -c -I libft.h ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
-			ar rcs ${LIB} ${OBJS}  
+			ar rc ${LIB} ${OBJS}  
+			ranlib ${LIB}  
 
 all:		${NAME}
 
