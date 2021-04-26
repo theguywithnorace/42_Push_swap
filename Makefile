@@ -21,9 +21,9 @@ LIB					= libft.a
 
 RM					= rm -f
 
-OBJS_CK				= ${patsubst ${SRC_CK_DIR}%.s, ${OBJ_CK_DIR}%.o, ${SRCS_CK}}
+OBJS_CK				= ${patsubst ${SRC_CK_DIR}%.c, ${OBJ_CK_DIR}%.o, ${SRCS_CK}}
 
-OBJS_PS				= ${patsubst ${SRC_PS_DIR}%.s, ${OBJ_PS_DIR}%.o, ${SRCS_PS}}
+OBJS_PS				= ${patsubst ${SRC_PS_DIR}%.c, ${OBJ_PS_DIR}%.o, ${SRCS_PS}}
 
 
 ${OBJ_CK_DIR}%.o	: ${SRCS_CK_DIR}%.s
@@ -34,8 +34,11 @@ ${OBJ_PS_DIR}%.o	: ${SRC_PS_DIR}%.s
 
 all:		
 	cd libft && make && cd ..
-	gcc -o checker ${OBJS_CK}  -I includes -Llibft -lft
+	gcc -o checker ${SRCS_CK}  -I includes -Llibft -lft
 #	gcc -o push_swap ${OBJS_PS}  -I includes ${LIB}
+
+oho:
+	echo ${SRCS_CK}
 
 clean:
 	${RM} ${OBJS_CK}
