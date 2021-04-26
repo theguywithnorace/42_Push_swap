@@ -43,10 +43,13 @@ oho:
 clean:
 	${RM} ${OBJS_CK}
 	${RM} ${OBJS_PS}
+	cd libft && make clean && cd ..
+	${RM} .DS_Store
 	${RM} push_swap
 	${RM} checker
 
 fclean:		clean
+	cd libft && make fclean && cd ..
 	${RM} ${LIB}
 
 re:		fclean ${NAME}
