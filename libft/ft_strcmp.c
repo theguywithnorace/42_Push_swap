@@ -6,11 +6,11 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 08:51:36 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/26 08:55:17 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/26 11:12:29 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int strcmp(const char *s1, const char *s2)
+int ft_strcmp(const char *s1, const char *s2)
 {
     int i;
 

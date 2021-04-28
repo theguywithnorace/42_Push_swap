@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:58:23 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/22 12:04:59 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/28 10:23:32 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int is_int(char *str)
 {
     int i;
     long out;
-    int sign;
+    long sign;
 
     i = -1;
     while (++i < ft_strlen(str))
@@ -33,6 +33,7 @@ int is_int(char *str)
     }
     if (str[0] == '+')
         i = 0;
+    out = 0;
     while (str[++i])
         out = out * 10 + (str[i] - '0') * sign;
     if (out > 2147483648 || out < -2147483647)
@@ -44,11 +45,14 @@ int check_n_get_arguments(int ac, char **av, t_all *all)
 {
     int i;
 
-    i = -1;
+    i = 0;
     while (++i < ac)
     {
         if (!is_int(av[i]))
+        {
             return (0);
+        }
         all->sk_a = ft_lstnew(av[i]);
     }
+    return (1);
 }

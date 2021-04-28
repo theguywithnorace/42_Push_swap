@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 21:46:34 by timothee          #+#    #+#             */
-/*   Updated: 2021/04/21 15:41:31 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/28 09:52:07 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,27 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 100
+# endif
+
+# include <stdlib.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <limits.h>
+
+size_t			ft_strlen_gnl(const char *s);
+char			*ft_substr(char const *s, unsigned int start, size_t len);
+size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
+char			*ft_strdup_gnl(char *s1);
+char			*ft_strjoin_gnl(char *s1, char *s2);
+int				get_next_line(int fd, char **line);
+char			*ft_strchr(const char *s, int c);
+char			*ft_strchr_gnl(const char *s, int c);
+
+
 int				ft_atoi(const char *str);
+int				ft_strcmp(const char *s1, const char *s2);
 void			ft_bzero(void *s, size_t n);
 void			*ft_calloc(size_t count, size_t size);
 int				ft_isalnum(int c);

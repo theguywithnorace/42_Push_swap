@@ -43,7 +43,7 @@ oho:
 clean:
 	${RM} ${OBJS_CK}
 	${RM} ${OBJS_PS}
-	cd libft && make clean && cd ..
+#	cd libft && make clean && cd ..
 	${RM} .DS_Store
 	${RM} push_swap
 	${RM} checker
