@@ -55,6 +55,7 @@ void pa(t_all *all)
         elt->next = all->sk_a;
         all->sk_a = elt;
     }
+    all->len_a++;
 }
 
 void pb(t_all *all)
@@ -68,4 +69,5 @@ void pb(t_all *all)
         elt->next = all->sk_b;
         all->sk_b = elt;
     }
+    all->len_a--;
 }

@@ -6,13 +6,13 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 11:26:50 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/29 21:45:37 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/29 22:51:58 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int check_order(t_all *all)
+int check_final_order(t_all *all)
 {
     int i;
     t_list *elt;
@@ -20,17 +20,19 @@ int check_order(t_all *all)
     printf("here check_order\n");
     if (all->sk_b)
         return (-1);
-    if (!all->sk_a)
-    {
-        printf("check_order_pb\n");
-        return (-1);
-    }
+    // IS THAT REALLY USEFUL ?? :
+    //
+    // if (!all->sk_a)
+    // {
+    //     printf("check_order_pb\n");
+    //     return (-1);
+    // }
 
     elt = all->sk_a;
     if (elt)
         i = ft_atoi(elt->content);
     printf("middle+ of check_order\n");
-    while (elt->next)
+    while (elt && elt->next)
     {
         printf("-%s ", elt->content);
         if (ft_atoi(elt->next->content) <= i)

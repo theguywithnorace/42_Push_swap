@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:14:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/29 21:39:13 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/29 23:13:50 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,18 @@ typedef struct	s_int_list
 
 typedef struct s_all
 {
+    int len_a;
+    int p_low;
+    int v_low;
     t_list *sk_a;
     t_list *sk_b;
     t_int_list *instruction;
     int check;
 }				t_all;
+
+//Push_swap
+int check_order_sk_a(t_all *all);
+
 
 // Checker
 void			check_result(t_all *all);
@@ -58,7 +65,7 @@ int				is_int(char *str);
 int				check_n_get_arguments(int ac, char **av, t_all *all);
 int				check_instruction(char *line);
 int				read_instruction(t_all *all);
-int				check_order(t_all *all);
+int				check_final_order(t_all *all);
 int				execute_instruction(t_all *all);
 void			sa(t_all *all);
 void			sb(t_all *all);

@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:27:13 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/29 21:44:51 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/29 23:20:58 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,10 @@ void print_elt(t_all *all)
 
 int main(int ac, char **av)
 {
-    int i;
     t_all *all;
 
     all = 0;
+    printf("\n\n%d\n\n", 3/2);
     if (!(all = malloc(sizeof(t_all))) || !intitialize_all(all))
         return (Error_basic());
     if (ac < 2)
@@ -82,7 +82,7 @@ int main(int ac, char **av)
     if (!execute_instruction(all))
         return (Error_execution());
     // print_elt(all);
-    all->check = check_order(all);
+    all->check = check_final_order(all);
     check_result(all);
     return (0);
 }
