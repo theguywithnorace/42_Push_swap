@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 11:26:50 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/29 17:19:08 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/29 17:46:52 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int check_order(t_all *all)
 {
     int i;
-    t_int_list *elt;
+    t_list *elt;
 
     printf("here check_order\n");
     if (all->sk_b)
@@ -25,17 +25,24 @@ int check_order(t_all *all)
         printf("check_order_pb\n");
         return (-1);
     }
-    elt = all->instruction;
-    i = elt->content;
+
+    elt = all->sk_a;
+    if (elt)
+        i = ft_atoi(elt->content);
+    printf("middle+ of check_order\n");
     while (elt->next)
     {
-        printf("-%d ", elt->content);
-        if (elt->next->content < i)
+        printf("-%s ", elt->content);
+        if (ft_atoi(elt->next->content) < i)
             return (-1);
-        i = elt->next->content;
+        i = ft_atoi(elt->next->content);
         elt = elt->next;
     }
+    printf("-%s ", elt->content);
+
     printf("\n");
+    printf("end of check_order\n");
+
     return (1);
 }
 
@@ -44,7 +51,7 @@ int execute_instruction(t_all *all)
     t_int_list *elt;
 
     elt = all->instruction;
-    while (elt->next)
+    while (elt)
     {
         switch (elt->content)
         {

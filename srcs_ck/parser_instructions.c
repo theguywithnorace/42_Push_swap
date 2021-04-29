@@ -71,6 +71,6 @@ int read_instruction(t_all *all)
         elt->next = ft_lstnew_int(r);
         elt = elt->next;
     }
-    printf("out\n");
+    printf("end of read instructions\n");
     return (1);
 }
