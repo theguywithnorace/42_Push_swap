@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:58:23 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/29 17:39:50 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/29 21:26:04 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,16 @@ int is_int(char *str)
     long sign;
 
     i = -1;
+    printf("0\n");
+
     while (++i < ft_strlen(str))
-        if (!((i == 0 && str[i] == '-') || (str[i] > '0' && str[i] < '9')))
+        if (!((i == 0 && str[i] == '-') || (str[i] >= '0' && str[i] <= '9')))
             return (0);
+    printf("1\n");
     if (ft_strlen(str) > 10)
         return (0);
+    printf("2\n");
+    
     sign = 1;
     i = -1;
     if (str[0] == '-')
@@ -51,6 +56,7 @@ int check_n_get_arguments(int ac, char **av, t_all *all)
     {
         if (!is_int(av[i]))
             return (0);
+        printf("int begin\n");
         if (!all->sk_a)
         {
             all->sk_a = ft_lstnew(av[i]);
