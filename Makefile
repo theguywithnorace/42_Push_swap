@@ -1,48 +1,37 @@
-SRC_CK_DIR			= srcs_ck/
+SRC_DIR			= srcs/
 
-SRC_PS_DIR			= srcs_ps/
+SRC				=	execute_instructions.c initialize.c instructions_1.c\
+						instructions_2.c parser_arguments.c parser_instructions.c\
+						ps_move.c ps_check.c error.c
 
-SRC_CK				= ck.c execute_instructions.c initialize.c instructions_1.c\
-						instructions_2.c parser_arguments.c parser_instructions.c
+SRCS				= ${addprefix ${SRC_DIR}, ${SRC}}
 
-SRCS_CK				= ${addprefix ${SRC_CK_DIR}, ${SRC_CK}}
+OBJ_DIR			=	obj/
 
-SRC_PS				= ps.c
+HDR_DIR			= includes/
 
-SRCS_PS				= ${addprefix ${SRC_PS_DIR}, ${SRC_PS}}
+LIBPS			= libs/libps.a
 
-OBJ_CK_DIR			= obj_ck/
+RM				= rm -f
 
-OBJ_PS_DIR			= obj_ps/
+OBJS			= ${patsubst ${SRC_DIR}%.c, ${OBJ_DIR}%.o, ${SRCS}}
 
-HDR_DIR				= includes/
-
-LIB					= libft.a
-
-RM					= rm -f
-
-OBJS_CK				= ${patsubst ${SRC_CK_DIR}%.c, ${OBJ_CK_DIR}%.o, ${SRCS_CK}}
-
-OBJS_PS				= ${patsubst ${SRC_PS_DIR}%.c, ${OBJ_PS_DIR}%.o, ${SRCS_PS}}
+${OBJ_DIR}%.o	: ${SRC_DIR}%.c
+	gcc -c -I ${HDR_DIR} -c -o $@ $<
 
 
-${OBJ_CK_DIR}%.o	: ${SRCS_CK_DIR}%.s
-	gcc -I includes -c $< -o $@
-
-${OBJ_PS_DIR}%.o	: ${SRC_PS_DIR}%.s
-	gcc -I includes -c $< -o $@
-
-all:		
+all:	${OBJS}
+	mkdir -p libs obj	
 	cd libft && make && cd ..
-	gcc -o checker ${SRCS_CK}  -I includes -Llibft -lft
-#	gcc -o push_swap ${OBJS_PS}  -I includes ${LIB}
+	ar rcs ${LIBPS} ${OBJS}
+	gcc -o checker checker.c  -I includes -Llibs -lft -lps
+	gcc -o push_swap push_swap.c  -I includes -Llibs -lft -lps
 
 oho:
-	echo ${SRCS_CK}
+	echo ${OBJS}
 
 clean:
-	${RM} ${OBJS_CK}
-	${RM} ${OBJS_PS}
+	${RM} ${OBJS}
 #	cd libft && make clean && cd ..
 	${RM} .DS_Store
 	${RM} push_swap

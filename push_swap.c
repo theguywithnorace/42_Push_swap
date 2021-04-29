@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps.c                                               :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:37:57 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/29 23:26:13 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/30 00:11:47 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,17 @@ int main(int ac, char **av)
 {
     t_all *all;
 
+    printf("Puwsh swap fuck\n");
     all = 0;
     if (!(all = malloc(sizeof(t_all))) || !intitialize_all(all))
         return (Error_basic());
+    all->p_s = 1;
     if (ac < 2)
         return (0);
     if (!check_n_get_arguments(ac, av, all))
         return (Error_arguments()); //need to free the lists
     print_elt(all);
-    
+    printf("end of init\n");
     while (!check_order_sk_a(all))
     {
         find_lowest_value_a(all);

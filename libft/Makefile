@@ -10,7 +10,7 @@ SRCS		=	ft_itoa.c ft_putendl_fd.c ft_putstr_fd.c ft_strtrim.c ft_putchar_fd.c ft
 				ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c\
 				ft_lstclear.c ft_lstiter.c ft_lstmap.c get_next_line.c get_next_line_utils.c ft_strcmp.c
 
-LIB			= libft.a
+LIB			= ../libs/libft.a
 
 CFLAGS		= -Wall -Wextra -Werror
 
