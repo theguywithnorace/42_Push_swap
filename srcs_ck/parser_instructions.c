@@ -25,28 +25,58 @@ t_int_list *ft_lstnew_int(int content)
 
 int check_instruction(char *line)
 {
+    printf("CHECK\n");
     if (ft_strcmp("sa", line) == 0)
+    {
+        printf("oh!!\n");
         return (SA);
+    }
     else if (ft_strcmp("sb", line) == 0)
+    {
+        printf("oh!!\n");
         return (SB);
+    }
     else if (ft_strcmp("ss", line) == 0)
+    {
+        printf("oh!!\n");
         return (SS);
+    }
     else if (ft_strcmp("pa", line) == 0)
+    {
+        printf("oh!!\n");
         return (PA);
+    }
     else if (ft_strcmp("pb", line) == 0)
+    {
+        printf("oh!!\n");
         return (PB);
+    }
     else if (ft_strcmp("ra", line) == 0)
+    {
+        printf("ra\n");
         return (RA);
+    }
     else if (ft_strcmp("rb", line) == 0)
+    {
+        printf("oh!!\n");
+
         return (RB);
+    }
     else if (ft_strcmp("rr", line) == 0)
+    {
+        printf("ohh!!\n");
         return (RR);
+    }
     else if (ft_strcmp("rra", line) == 0)
+    {
+        printf("rra\n");
         return (RRA);
+    }
     else if (ft_strcmp("rrb", line) == 0)
         return (RRB);
     else if (ft_strcmp("rrr", line) == 0)
         return (RRR);
+    printf("oh!!\n");
     return (0);
 }
 

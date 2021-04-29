@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 11:26:50 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/29 17:46:52 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/29 21:45:37 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int check_order(t_all *all)
     while (elt->next)
     {
         printf("-%s ", elt->content);
-        if (ft_atoi(elt->next->content) < i)
+        if (ft_atoi(elt->next->content) <= i)
             return (-1);
         i = ft_atoi(elt->next->content);
         elt = elt->next;
@@ -92,6 +92,8 @@ int execute_instruction(t_all *all)
             return (0);
             break;
         }
+        print_elt(all);
+
         elt = elt->next;
     }
     return (1);

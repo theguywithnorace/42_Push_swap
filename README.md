@@ -1,4 +1,6 @@
 # 42_Push_swap
 
 
--> ajouter la verif de si il y a deux fois le meme chiffre
+-> need to free everything
+
+->supprimer la fonction print_elt

@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:14:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/29 17:03:07 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/29 21:39:13 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,6 @@ void			rra(t_all *all);
 void			rrb(t_all *all);
 void			rrr(t_all *all);
 
+void print_elt(t_all *all);
 
 #endif

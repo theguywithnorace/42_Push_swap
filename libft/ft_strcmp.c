@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 08:51:36 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/26 11:12:29 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/29 22:08:52 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int ft_strcmp(const char *s1, const char *s2)
     int i;
 
     i = -1;
-    while (s1[++i])
+    while (s1[++i] || s2[i])
     {
         if (s1[i] > s2[i])
             return (1);
