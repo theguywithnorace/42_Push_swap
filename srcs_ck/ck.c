@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:27:13 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/28 10:21:41 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/29 17:32:40 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,33 @@ int Error_execution(void)
     printf("Error execution\n");
     return (0);
 }
+int Error_basic(void)
+{
+    printf("basic Error\n");
+    return (0);
+}
 
 void check_result(t_all *all)
 {
-    if (all->check == 0)
+    if (all->check == 1)
         write(1, "OK\n", 3);
     if (all->check == -1)
         write(1, "KO\n", 3);
     return;
+}
+
+void print_elt(t_all *all)
+{
+    t_list *elt;
+
+    elt = all->sk_a;
+    printf("elements :\n");
+    while (elt)
+    {
+        printf("->%s-\n", elt->content);
+        elt = elt->next;
+    }
+    printf("END\n\n");
 }
 
 int main(int ac, char **av)
@@ -44,17 +63,19 @@ int main(int ac, char **av)
     t_all *all;
 
     all = 0;
-    if (!(all = malloc(sizeof(t_all))))
+    if (!(all = malloc(sizeof(t_all))) || !intitialize_all(all))
+        return (Error_basic());
+    if (ac < 2)
         return (0);
-    if (ac == 0 || !intitialize_all(all))
-        return (0);
-
     if (!check_n_get_arguments(ac, av, all))
         return (Error_arguments()); //need to free the lists
+    print_elt(all);
     if (!read_instruction(all))
         return (Error_instruction());
     if (!execute_instruction(all))
         return (Error_execution());
+    print_elt(all);
+    all->check = check_order(all);
     check_result(all);
     return (0);
 }

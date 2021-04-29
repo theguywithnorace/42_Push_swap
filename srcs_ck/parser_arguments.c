@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:58:23 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/28 10:23:32 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/29 17:39:50 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,22 @@ int is_int(char *str)
 int check_n_get_arguments(int ac, char **av, t_all *all)
 {
     int i;
+    t_list *elt;
 
     i = 0;
     while (++i < ac)
     {
         if (!is_int(av[i]))
-        {
             return (0);
+        if (!all->sk_a)
+        {
+            all->sk_a = ft_lstnew(av[i]);
+            elt = all->sk_a;
+            continue ;
         }
-        all->sk_a = ft_lstnew(av[i]);
+        elt->next = ft_lstnew(av[i]);
+        elt = elt->next;
     }
+    printf("int ok\n");
     return (1);
 }

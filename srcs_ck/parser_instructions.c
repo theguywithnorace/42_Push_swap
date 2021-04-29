@@ -12,45 +12,42 @@
 
 #include "../includes/push_swap.h"
 
-t_int_list	*ft_lstnew_int(int content)
+t_int_list *ft_lstnew_int(int content)
 {
-	t_int_list *out;
+    t_int_list *out;
 
-	if (!(out = malloc(sizeof(t_list))))
-		return (0);
-	out->content = content;
-	out->next = 0;
-	return (out);
+    if (!(out = malloc(sizeof(t_list))))
+        return (0);
+    out->content = content;
+    out->next = 0;
+    return (out);
 }
 
-int check_instruction(t_int_list *instruction, char *line)
+int check_instruction(char *line)
 {
-    printf("line gnl : -%s-\n", line);
     if (ft_strcmp("sa", line) == 0)
-        instruction = ft_lstnew_int(SA);
+        return (SA);
     else if (ft_strcmp("sb", line) == 0)
-        instruction = ft_lstnew_int(SB);
+        return (SB);
     else if (ft_strcmp("ss", line) == 0)
-        instruction = ft_lstnew_int(SS);
+        return (SS);
     else if (ft_strcmp("pa", line) == 0)
-        instruction = ft_lstnew_int(PA);
+        return (PA);
     else if (ft_strcmp("pb", line) == 0)
-        instruction = ft_lstnew_int(PB);
+        return (PB);
     else if (ft_strcmp("ra", line) == 0)
-        instruction = ft_lstnew_int(RA);
+        return (RA);
     else if (ft_strcmp("rb", line) == 0)
-        instruction = ft_lstnew_int(RB);
+        return (RB);
     else if (ft_strcmp("rr", line) == 0)
-        instruction = ft_lstnew_int(RR);
+        return (RR);
     else if (ft_strcmp("rra", line) == 0)
-        instruction = ft_lstnew_int(RRA);
+        return (RRA);
     else if (ft_strcmp("rrb", line) == 0)
-        instruction = ft_lstnew_int(RRB);
+        return (RRB);
     else if (ft_strcmp("rrr", line) == 0)
-        instruction = ft_lstnew_int(RRR);
-    else
-        return (0);
-    return (1);
+        return (RRR);
+    return (0);
 }
 
 int read_instruction(t_all *all)
@@ -61,12 +58,19 @@ int read_instruction(t_all *all)
 
     line = 0;
     r = 0;
-    elt = all->instruction;
-    while ((r = get_next_line(0, &line)) > 0)
+    while ((r = get_next_line(0, &line)) > 0 && ft_strcmp(line, ""))
     {
-        if (!check_instruction(elt, line))
+        if (!(r = check_instruction(line)))
             return (0);
+        if (!all->instruction)
+        {
+            all->instruction = ft_lstnew_int(r);
+            elt = all->instruction;
+            continue;
+        }
+        elt->next = ft_lstnew_int(r);
         elt = elt->next;
     }
+    printf("out\n");
     return (1);
 }

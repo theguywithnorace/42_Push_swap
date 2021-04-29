@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:14:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/28 10:17:53 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/29 17:03:07 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void			check_result(t_all *all);
 int				intitialize_all(t_all *all);
 int				is_int(char *str);
 int				check_n_get_arguments(int ac, char **av, t_all *all);
-int				check_instruction(t_int_list *instruction, char *line);
+int				check_instruction(char *line);
 int				read_instruction(t_all *all);
 int				check_order(t_all *all);
 int				execute_instruction(t_all *all);

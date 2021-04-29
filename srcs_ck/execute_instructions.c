@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 11:26:50 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/22 12:02:17 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/29 17:19:08 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,25 @@ int check_order(t_all *all)
     int i;
     t_int_list *elt;
 
+    printf("here check_order\n");
     if (all->sk_b)
-        return (0);
+        return (-1);
     if (!all->sk_a)
-        return (1);
+    {
+        printf("check_order_pb\n");
+        return (-1);
+    }
     elt = all->instruction;
     i = elt->content;
     while (elt->next)
     {
+        printf("-%d ", elt->content);
         if (elt->next->content < i)
-        {
-            write(1, "KO\n", 3);
-        }
-        return (0);
+            return (-1);
         i = elt->next->content;
         elt = elt->next;
     }
-    write(1, "OK\n", 3);
+    printf("\n");
     return (1);
 }
 
