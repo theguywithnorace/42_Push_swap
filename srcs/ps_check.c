@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_ps.c                                         :+:      :+:    :+:   */
+/*   ps_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:47:51 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/29 23:45:58 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/30 00:30:31 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void find_lowest_value_a(t_all *all)
     all->p_low = 0;
     all->v_low = ft_atoi(all->sk_a->content);
     elt = all->sk_a->next; //next existe forcement, sinon la liste serait deja triée
+    // printf("in find_lowest value\n");
     while (elt)
     {
         if (ft_atoi(elt->content) < all->v_low)
@@ -29,8 +30,9 @@ void find_lowest_value_a(t_all *all)
             all->p_low = i;
         }
         i++;
+        elt = elt->next;
     }
-    return ;
+    return;
 }
 
 int check_order_sk_a(t_all *all)
@@ -43,19 +45,12 @@ int check_order_sk_a(t_all *all)
     elt = all->sk_a;
     if (elt)
         i = ft_atoi(elt->content);
-    printf("middle+ of check_order_ps\n");
     while (elt && elt->next)
     {
-        printf("-%s ", elt->content);
         if (ft_atoi(elt->next->content) <= i)
             return (0);
         i = ft_atoi(elt->next->content);
         elt = elt->next;
     }
-    printf("-%s ", elt->content);
-
-    printf("\n");
-    printf("end of check_order_ps\n");
-
     return (1);
 }

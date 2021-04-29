@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 00:11:18 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/30 00:11:31 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/30 00:35:31 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,18 +48,20 @@ void print_elt(t_all *all)
     t_list *elt;
 
     elt = all->sk_a;
-    printf("elements sk_a :\n");
+    write(1, "sk_a :\n", 7);
     while (elt)
     {
-        printf("->%s-\n", elt->content);
+        write(1, elt->content, ft_strlen(elt->content));
+        write(1, "\n", 1);
         elt = elt->next;
     }
     elt = all->sk_b;
-    printf("elements sk_b :\n");
+    write(1, "sk_b :\n", 7);
     while (elt)
     {
-        printf("->%s-\n", elt->content);
+        write(1, elt->content, ft_strlen(elt->content));
+        write(1, "\n", 1);
         elt = elt->next;
     }
-    printf("END\n\n");
+    write(1, "END\n\n", 5);
 }

@@ -74,7 +74,7 @@ void rra(t_all *all)
         all->sk_a = eltz;
     }
     if (all->p_s)
-        write(1, "rra\n", 3);
+        write(1, "rra\n", 4);
 }
 
 void rrb(t_all *all)
@@ -93,7 +93,7 @@ void rrb(t_all *all)
         all->sk_b = eltz;
     }
     if (all->p_s)
-        write(1, "rrb\n", 3);
+        write(1, "rrb\n", 4);
 }
 
 void rrr(t_all *all)
@@ -101,5 +101,5 @@ void rrr(t_all *all)
     rra(all);
     rrb(all);
     if (all->p_s)
-        write(1, "rrr\n", 3);
+        write(1, "rrr\n", 4);
 }

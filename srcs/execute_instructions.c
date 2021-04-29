@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 11:26:50 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/29 22:51:58 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/30 00:29:52 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,19 @@ int check_final_order(t_all *all)
     elt = all->sk_a;
     if (elt)
         i = ft_atoi(elt->content);
-    printf("middle+ of check_order\n");
+    // printf("middle+ of check_order\n");
     while (elt && elt->next)
     {
-        printf("-%s ", elt->content);
+        // printf("-%s ", elt->content);
         if (ft_atoi(elt->next->content) <= i)
             return (-1);
         i = ft_atoi(elt->next->content);
         elt = elt->next;
     }
-    printf("-%s ", elt->content);
+    // printf("-%s ", elt->content);
 
-    printf("\n");
-    printf("end of check_order\n");
+    // printf("\n");
+    // printf("end of check_order\n");
 
     return (1);
 }

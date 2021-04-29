@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:27:13 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/30 00:11:40 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/30 00:22:58 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(int ac, char **av)
         return (0);
     if (!check_n_get_arguments(ac, av, all))
         return (Error_arguments()); //need to free the lists
-    print_elt(all);
+    // print_elt(all);
     if (!read_instruction(all))
         return (Error_instruction());
     if (!execute_instruction(all))
