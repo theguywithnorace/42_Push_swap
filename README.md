@@ -4,3 +4,10 @@
 -> need to free everything
 
 ->supprimer la fonction print_elt
+
+
+Amener le chiffre le plus faible sur le dessus
+    -> soit par le bas, s'il est dans la 2e moité
+    -> soit par le haut s'il est dans la premiere moitié
+Qunad il est au dessus on le stocke dans la deuxieme pile
+A la fin quand la premiere pile est triée (donc avec tous  les chiffres les plus grands), on ramene la deuxieme pile au dessus
