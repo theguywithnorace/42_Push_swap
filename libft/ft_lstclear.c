@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: timothee <timothee@student.42.fr>          +#+  +:+       +#+        */
+/*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 11:48:28 by timothee          #+#    #+#             */
-/*   Updated: 2019/11/26 10:09:07 by tiin             ###   ########.fr       */
+/*   Updated: 2021/04/30 15:16:58 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	my_lstdelone(t_list *lst, void (*del)(void*))
 	if (!lst)
 		return ;
 	(*del)(lst->content);
-	free(lst);
+	// free(lst);
 	return ;
 }
 

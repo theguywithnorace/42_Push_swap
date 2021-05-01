@@ -14,18 +14,20 @@ LIBPS			= libs/libps.a
 
 RM				= rm -f
 
+CFLAGS		= -Wall -Wextra -Werror
+
 OBJS			= ${patsubst ${SRC_DIR}%.c, ${OBJ_DIR}%.o, ${SRCS}}
 
 ${OBJ_DIR}%.o	: ${SRC_DIR}%.c
-	gcc -c -I ${HDR_DIR} -c -o $@ $<
+	gcc -c -I ${HDR_DIR} ${CFLAGS} -c -o $@ $<
 
 
 all:	${OBJS}
 	mkdir -p libs obj	
 	cd libft && make && cd ..
 	ar rcs ${LIBPS} ${OBJS}
-	gcc -o checker checker.c  -I includes -Llibs -lft -lps
-	gcc -o push_swap push_swap.c  -I includes -Llibs -lft -lps
+	gcc -g -o  checker ck.c  -I includes -Llibs -lft -lps
+	gcc -g -o  push_swap ps.c  -I includes -Llibs -lft -lps
 
 oho:
 	echo ${OBJS}

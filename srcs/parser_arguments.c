@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:58:23 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/29 22:55:21 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/04/30 15:12:15 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int is_int(char *str)
 {
-    int i;
+    size_t i;
     long out;
     long sign;
 
@@ -53,12 +53,14 @@ int check_n_get_arguments(int ac, char **av, t_all *all)
             return (0);
         if (!all->sk_a)
         {
-            all->sk_a = ft_lstnew(av[i]);
+            if (!(all->sk_a = ft_lstnew(av[i])))
+                return (0);
             all->len_a++;
             elt = all->sk_a;
             continue;
         }
-        elt->next = ft_lstnew(av[i]);
+        if (!(elt->next = ft_lstnew(av[i])))
+            return (0);
         all->len_a++;
         elt = elt->next;
     }

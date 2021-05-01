@@ -6,31 +6,81 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 00:11:18 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/30 00:35:31 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 15:27:26 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int Error_arguments(void)
+void free_a(t_all *all)
+{
+    (void)all;
+    // t_list *elt;
+
+    // if (all->sk_a)
+    // {
+    //     elt = all->sk_a->next;
+    //     free(all->sk_a->content);
+    //     all->sk_a = all->sk_a->next;
+    // }
+    // free(all->sk_a);
+}
+
+void free_b(t_all *all)
+{
+    (void)all;
+
+    // if (all->sk_b)
+    //     ft_lstclear(&(all->sk_b), free);
+}
+
+void free_inst(t_all *all)
+{
+    t_int_list *elt;
+    t_int_list *elt2;
+
+    if (all->instruction)
+    {
+        elt = all->instruction;
+        while (elt)
+        {
+            if (elt->next)
+                elt2 = elt->next;
+            free(elt);
+            if (elt->next)
+                elt = elt2;
+        }
+    }
+}
+
+void freeer(t_all *all)
+{
+    free_a(all);
+    free_b(all);
+    free_inst(all);
+    free(all);
+}
+
+int Error_arguments(t_all *all)
 {
     printf("Error argument\n");
+    write(1, "Error\n", 6);
+    freeer(all);
     return (0);
 }
 
-int Error_instruction(void)
+int Error_instruction(t_all *all)
 {
     printf("Error instruction\n");
+    write(1, "Error\n", 6);
+    freeer(all);
     return (0);
 }
-int Error_execution(void)
+int Error_execution(t_all *all)
 {
     printf("Error execution\n");
-    return (0);
-}
-int Error_basic(void)
-{
-    printf("basic Error\n");
+    write(1, "Error\n", 6);
+    freeer(all);
     return (0);
 }
 

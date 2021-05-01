@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:14:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/30 00:12:49 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 15:19:50 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,17 +63,12 @@ void reverse_send_to_top(t_all *all);
 void send_to_top(t_all *all);
 
 //Error
-int Error_arguments(void);
-int Error_instruction(void);
-int Error_execution(void);
-int Error_basic(void);
+int Error_arguments(t_all *all);
+int Error_instruction(t_all *all);
+int Error_execution(t_all *all);
 void check_result(t_all *all);
 void print_elt(t_all *all);
-
-
-
-
-
+void freeer(t_all *all);
 
 
 

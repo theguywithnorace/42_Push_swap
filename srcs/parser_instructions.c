@@ -61,16 +61,23 @@ int read_instruction(t_all *all)
     while ((r = get_next_line(0, &line)) > 0 && ft_strcmp(line, ""))
     {
         if (!(r = check_instruction(line)))
+        {
+            free(line);
             return (0);
+        }
         if (!all->instruction)
         {
             all->instruction = ft_lstnew_int(r);
             elt = all->instruction;
+            free(line);
             continue;
         }
         elt->next = ft_lstnew_int(r);
         elt = elt->next;
+        free(line);
     }
+    free(line);
+    line = 0;
     printf("end of read instructions\n");
     return (1);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   ck.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:27:13 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/30 00:22:58 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 15:19:33 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,19 @@ int main(int ac, char **av)
     t_all *all;
 
     all = 0;
-    if (!(all = malloc(sizeof(t_all))) || !intitialize_all(all))
-        return (Error_basic());
+    if (!(all = malloc(sizeof(t_all))))
+        return (0);
+    intitialize_all(all);
     if (ac < 2)
         return (0);
     if (!check_n_get_arguments(ac, av, all))
-        return (Error_arguments()); //need to free the lists
-    // print_elt(all);
+        return (Error_arguments(all));
     if (!read_instruction(all))
-        return (Error_instruction());
+        return (Error_instruction(all));
     if (!execute_instruction(all))
-        return (Error_execution());
-    // print_elt(all);
+        return (Error_execution(all));
     all->check = check_final_order(all);
     check_result(all);
+    freeer(all);
     return (0);
 }
