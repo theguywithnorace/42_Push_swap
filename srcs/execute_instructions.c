@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 11:26:50 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 19:19:06 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 22:14:35 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,29 +37,29 @@ int check_final_order(t_all *all)
     }
     return (1);
 }
-void execute(t_list *elt, t_all *all)
+void execute(char *action, t_all *all)
 {
-    if (!ft_strcmp(elt->content, "sa"))
+    if (!ft_strcmp(action, "sa"))
         sa(all);
-    else if (!ft_strcmp(elt->content, "sb"))
+    else if (!ft_strcmp(action, "sb"))
         sb(all);
-    else if (!ft_strcmp(elt->content, "ss"))
+    else if (!ft_strcmp(action, "ss"))
         ss(all);
-    else if (!ft_strcmp(elt->content, "pa"))
+    else if (!ft_strcmp(action, "pa"))
         pa(all);
-    else if (!ft_strcmp(elt->content, "pb"))
+    else if (!ft_strcmp(action, "pb"))
         pb(all);
-    else if (!ft_strcmp(elt->content, "ra"))
+    else if (!ft_strcmp(action, "ra"))
         ra(all);
-    else if (!ft_strcmp(elt->content, "rb"))
+    else if (!ft_strcmp(action, "rb"))
         rb(all);
-    else if (!ft_strcmp(elt->content, "rr"))
+    else if (!ft_strcmp(action, "rr"))
         rr(all);
-    else if (!ft_strcmp(elt->content, "rra"))
+    else if (!ft_strcmp(action, "rra"))
         rra(all);
-    else if (!ft_strcmp(elt->content, "rrb"))
+    else if (!ft_strcmp(action, "rrb"))
         rrb(all);
-    else if (!ft_strcmp(elt->content, "rrr"))
+    else if (!ft_strcmp(action, "rrr"))
         rrr(all);
 }
 
@@ -71,7 +71,6 @@ int execute_instruction(t_all *all)
     print_init(all);
     while (elt)
     {
-        execute(elt, all);
         print_action(elt->content, all);
         elt = elt->next;
     }

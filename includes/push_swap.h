@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:14:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 22:12:51 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 22:15:02 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ void freeer(t_all *all);
 void print_action(char *action, t_all *all);
 void print_init(t_all *all);
 
+void execute(char *action, t_all *all);
 
 
 
