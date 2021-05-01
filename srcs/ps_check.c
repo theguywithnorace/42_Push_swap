@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:47:51 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 17:49:49 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 18:43:30 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void find_lowest_value_a(t_all *all)
         i++;
         elt = elt->next;
     }
-    printf("p_low : %d v_low : %d\n", all->p_low, all->v_low);
+    printf("p_low : %d v_low : %d len_a : %d\n", all->p_low, all->v_low, all->len_a);
     return;
 }
 

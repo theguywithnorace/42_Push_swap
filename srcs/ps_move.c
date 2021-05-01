@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 23:25:18 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 18:37:04 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 18:47:32 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void send_to_top(t_all *all)
     int i;
 
     i = 0;
+    if (all->len_a == 2)
+        i--;
     while (++i < all->p_low)
     {
         ra(all);
