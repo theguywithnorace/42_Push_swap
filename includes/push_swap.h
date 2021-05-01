@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:14:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 22:40:46 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 23:14:05 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,13 @@ typedef struct s_all
 //Push_swap
 void find_lowest_values_a(t_all *all);
 int check_order_sk_a(t_all *all);
-int check_order_sk_b(t_all *all);
+int check_order_fst_sk_b(t_all *all);
+int check_order_fst_sk_a(t_all *all);
+
 void reverse_send_to_top(t_all *all);
 void send_to_top(t_all *all);
+int in_order(t_all *all);
+
 
 //Error
 int Error_arguments(t_all *all);
@@ -72,7 +76,7 @@ int Error_instruction(t_all *all);
 int Error_execution(t_all *all);
 void check_result(t_all *all);
 void print_elt(t_all *all);
-void freeer(t_all *all);
+int freeer(t_all *all);
 void print_action(char *action, t_all *all);
 void print_init(t_all *all);
 

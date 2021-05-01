@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:58:23 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 22:40:53 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 22:43:10 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,5 @@ int check_n_get_arguments(int ac, char **av, t_all *all)
         elt = elt->next;
     }
     all->len_t = ft_lstsize(all->sk_a);
-    printf("len: %d\n", all->len_t);
     return (1);
 }

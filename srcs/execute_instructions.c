@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 11:26:50 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 22:14:35 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 23:17:33 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,14 @@ int check_final_order(t_all *all)
     t_list *elt;
 
     if (all->sk_b)
-    {
-        printf("fuck\n");
         return (-1);
-    }
     elt = all->sk_a;
     if (elt)
         i = ft_atoi(elt->content);
     while (elt && elt->next)
     {
         if (ft_atoi(elt->next->content) <= i)
-        {
-            printf(" %d < %d\n\n",ft_atoi(elt->next->content), i );
             return (-1);
-        }
         i = ft_atoi(elt->next->content);
         elt = elt->next;
     }

@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 00:11:18 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 19:04:09 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 22:59:45 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,11 @@ void free_inst(t_all *all)
     }
 }
 
-void freeer(t_all *all)
+int freeer(t_all *all)
 {
     free_a(all);
     free_b(all);
     free_inst(all);
     free(all);
+    return (0);
 }
