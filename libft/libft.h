@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 21:46:34 by timothee          #+#    #+#             */
-/*   Updated: 2021/04/28 09:52:07 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 16:27:56 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ char			*ft_strjoin_gnl(char *s1, char *s2);
 int				get_next_line(int fd, char **line);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strchr_gnl(const char *s, int c);
+int				ft_max(int a, int b);
+int				ft_min(int a, int b);
 
 
 int				ft_atoi(const char *str);

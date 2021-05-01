@@ -78,6 +78,5 @@ int read_instruction(t_all *all)
     }
     free(line);
     line = 0;
-    printf("end of read instructions\n");
     return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 11:26:50 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/30 00:29:52 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 16:43:07 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,13 @@ int check_final_order(t_all *all)
     elt = all->sk_a;
     if (elt)
         i = ft_atoi(elt->content);
-    // printf("middle+ of check_order\n");
     while (elt && elt->next)
     {
-        // printf("-%s ", elt->content);
         if (ft_atoi(elt->next->content) <= i)
             return (-1);
         i = ft_atoi(elt->next->content);
         elt = elt->next;
     }
-    // printf("-%s ", elt->content);
-
-    // printf("\n");
-    // printf("end of check_order\n");
-
     return (1);
 }
 
@@ -53,6 +46,8 @@ int execute_instruction(t_all *all)
     t_int_list *elt;
 
     elt = all->instruction;
+    write(1, "Initial situation : \n", 21);
+    print_elt(all);
     while (elt)
     {
         switch (elt->content)

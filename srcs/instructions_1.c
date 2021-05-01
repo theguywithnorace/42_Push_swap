@@ -25,6 +25,8 @@ void sa(t_all *all)
     }
     if (all->p_s)
         write(1, "sa\n", 3);
+    else    
+        write(1, "-> Executing sa\n\n", 17);
 }
 
 void sb(t_all *all)
@@ -40,7 +42,8 @@ void sb(t_all *all)
     }
     if (all->p_s)
         write(1, "sb\n", 3);
-}
+    else    
+        write(1, "-> Executing sb\n\n", 17);}
 
 void ss(t_all *all)
 {
@@ -48,7 +51,8 @@ void ss(t_all *all)
     sb(all);
     if (all->p_s)
         write(1, "ss\n", 3);
-}
+    else    
+        write(1, "-> Executing sb\n\n", 17);}
 
 void pa(t_all *all)
 {
@@ -64,7 +68,8 @@ void pa(t_all *all)
     all->len_a++;
     if (all->p_s)
         write(1, "pa\n", 3);
-}
+    else    
+        write(1, "-> Executing pa\n\n", 17);}
 
 void pb(t_all *all)
 {
@@ -80,4 +85,5 @@ void pb(t_all *all)
     all->len_a--;
     if (all->p_s)
         write(1, "pb\n", 3);
-}
+    else    
+        write(1, "-> Executing pb\n\n", 17);}

@@ -29,7 +29,8 @@ void ra(t_all *all)
     }
     if (all->p_s)
         write(1, "ra\n", 3);
-}
+    else    
+        write(1, "-> Executing ra\n\n", 17);}
 
 void rb(t_all *all)
 {
@@ -48,7 +49,8 @@ void rb(t_all *all)
     }
     if (all->p_s)
         write(1, "rb\n", 3);
-}
+    else    
+        write(1, "-> Executing rb\n\n", 17);}
 
 void rr(t_all *all)
 {
@@ -56,7 +58,8 @@ void rr(t_all *all)
     rb(all);
     if (all->p_s)
         write(1, "rr\n", 3);
-}
+    else    
+        write(1, "-> Executing rr\n\n", 17);}
 
 void rra(t_all *all)
 {
@@ -75,7 +78,8 @@ void rra(t_all *all)
     }
     if (all->p_s)
         write(1, "rra\n", 4);
-}
+    else    
+        write(1, "-> Executing rra\n\n", 18);}
 
 void rrb(t_all *all)
 {
@@ -94,7 +98,8 @@ void rrb(t_all *all)
     }
     if (all->p_s)
         write(1, "rrb\n", 4);
-}
+    else    
+        write(1, "-> Executing rrb\n\n", 18);}
 
 void rrr(t_all *all)
 {
@@ -102,4 +107,5 @@ void rrr(t_all *all)
     rrb(all);
     if (all->p_s)
         write(1, "rrr\n", 4);
-}
+    else    
+        write(1, "-> Executing rrr\n\n", 18);}
