@@ -6,11 +6,19 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 17:38:37 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 17:39:46 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 18:35:48 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void print_init(t_all *all)
+{
+    if (all->bonus)
+        write(1, "\nInitial situation : \n\n", 23);
+    if (all->bonus)
+        print_elt(all);
+}
 
 void print_action(char *action, t_all *all)
 {
@@ -19,9 +27,13 @@ void print_action(char *action, t_all *all)
         write(1, "-> Executing ", 13);
         write(1, action, ft_strlen(action));
         write(1, " ->\n\n", 5);
+        print_elt(all);
     }
     else if (all->p_s)
+    {
         write(1, action, ft_strlen(action));
+        write(1, "\n", 1);
+    }
 }
 
 void print_elt(t_all *all)
@@ -35,7 +47,7 @@ void print_elt(t_all *all)
     eb = all->sk_b;
     a = ft_lstsize(ea);
     b = ft_lstsize(eb);
-    while (ft_max(a,b) > 0)
+    while (ft_max(a, b) > 0)
     {
         if (a >= b)
         {

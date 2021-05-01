@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 23:25:18 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/30 00:37:40 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 18:37:04 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,22 @@ void send_to_top(t_all *all)
 
     i = 0;
     while (++i < all->p_low)
+    {
         ra(all);
+        print_action("ra", all);
+    }
     if (all->sk_a->next && all->sk_a->next->next)
     {
         if (all->sk_a->content < all->sk_a->next->next->content)
+        {
             sa(all);
+            print_action("sa", all);
+        }
         else
+        {
             ra(all);
+            print_action("ra", all);
+        }
     }
     all->p_low = 0;
     all->v_low = 0;
@@ -38,6 +47,8 @@ void reverse_send_to_top(t_all *all)
     while (i < all->len_a)
     {
         rra(all);
+        print_action("rra", all);
+
         i++;
     }
 }

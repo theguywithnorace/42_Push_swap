@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 11:26:50 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 17:41:15 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 18:35:20 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,7 @@ int execute_instruction(t_all *all)
     t_list *elt;
 
     elt = all->instruction;
-    if (all->bonus)
-        write(1, "\nInitial situation : \n\n", 23);
-    if (all->bonus)
-        print_elt(all);
+    print_init(all);
     while (elt)
     {
         if (!ft_strcmp(elt->content, "sa"))
@@ -65,10 +62,8 @@ int execute_instruction(t_all *all)
             rrb(all);
         else if (!ft_strcmp(elt->content, "rrr"))
             rrr(all);
-        printf("WESH : %s\n", elt->content);
         print_action(elt->content, all);
-        if (all->bonus)
-            print_elt(all);
+
 
         elt = elt->next;
     }

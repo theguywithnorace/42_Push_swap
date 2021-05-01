@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:27:13 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 17:44:50 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 17:58:49 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int main(int ac, char **av)
         return (Error_arguments(all));
     if (!read_instruction(all))
         return (Error_instruction(all));
-    printf("WESHWESH : %s\n", all->instruction->content);
 
     if (!execute_instruction(all))
         return (Error_execution(all));
