@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:37:57 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 22:12:51 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 22:33:19 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,12 @@ void execute_algo(t_all *all)
         else if ((all->p_low > ((all->len_a) / 2)))
             reverse_send_to_top(all);
         if (!check_order_sk_a(all))
-        {
-            pb(all);
             print_action("pb", all);
-        }
+        if (!check_order_sk_b(all))
+            print_action("sb", all);
     }
     while (all->sk_b)
-    {
-        pa(all);
         print_action("pa", all);
-    }
     freeer(all);
 }
 

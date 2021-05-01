@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:47:51 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 22:12:35 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 22:31:51 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,18 @@ void find_lowest_values_a(t_all *all)
         elt = elt->next;
     }
     return;
+}
+
+int check_order_sk_b(t_all *all)
+{
+    t_list *elt;
+
+    if (!all->sk_b || !(all->sk_b->next))
+        return (1);
+    elt = all->sk_b;
+    if (ft_atoi(elt->content) < ft_atoi(elt->next->content))
+        return (0);
+    return (1);
 }
 
 int check_order_sk_a(t_all *all)

@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 23:25:18 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 22:15:45 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 22:39:32 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,12 @@ void send_to_top(t_all *all)
     if (all->len_a == 2)
         i--;
     while (++i < all->p_low)
+    {
         print_action("ra", all);
+        if (all->len_t > 5)
+            if (ft_atoi(all->sk_a->content) == all->v_low2)
+                print_action("ra", all);
+    }
     if (all->sk_a->next && all->sk_a->next->next)
     {
         if (all->sk_a->content < all->sk_a->next->next->content)
