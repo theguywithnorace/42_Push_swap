@@ -12,17 +12,6 @@
 
 #include "../includes/push_swap.h"
 
-t_int_list *ft_lstnew_int(int content)
-{
-    t_int_list *out;
-
-    if (!(out = malloc(sizeof(t_list))))
-        return (0);
-    out->content = content;
-    out->next = 0;
-    return (out);
-}
-
 int check_instruction(char *line)
 {
     if (ft_strcmp("sa", line) == 0)
@@ -53,7 +42,7 @@ int check_instruction(char *line)
 int read_instruction(t_all *all)
 {
     char *line;
-    t_int_list *elt;
+    t_list *elt;
     int r;
 
     line = 0;
@@ -67,12 +56,12 @@ int read_instruction(t_all *all)
         }
         if (!all->instruction)
         {
-            all->instruction = ft_lstnew_int(r);
+            all->instruction = ft_lstnew(ft_strdup(line));
             elt = all->instruction;
             free(line);
             continue;
         }
-        elt->next = ft_lstnew_int(r);
+        elt->next = ft_lstnew(ft_strdup(line));
         elt = elt->next;
         free(line);
     }

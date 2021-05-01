@@ -2,7 +2,7 @@ SRC_DIR			= srcs/
 
 SRC				=	execute_instructions.c initialize.c instructions_1.c\
 						instructions_2.c parser_arguments.c parser_instructions.c\
-						ps_move.c ps_check.c error.c
+						ps_move.c ps_check.c error.c print.c
 
 SRCS				= ${addprefix ${SRC_DIR}, ${SRC}}
 
@@ -28,9 +28,6 @@ all:	${OBJS}
 	ar rcs ${LIBPS} ${OBJS}
 	gcc -g -o  checker ck.c  -I includes -Llibs -lft -lps
 	gcc -g -o  push_swap ps.c  -I includes -Llibs -lft -lps
-
-oho:
-	echo ${OBJS}
 
 clean:
 	${RM} ${OBJS}

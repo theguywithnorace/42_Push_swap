@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:47:51 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/30 00:30:31 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 17:49:49 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void find_lowest_value_a(t_all *all)
     all->p_low = 0;
     all->v_low = ft_atoi(all->sk_a->content);
     elt = all->sk_a->next; //next existe forcement, sinon la liste serait deja triée
-    // printf("in find_lowest value\n");
     while (elt)
     {
         if (ft_atoi(elt->content) < all->v_low)
@@ -32,6 +31,7 @@ void find_lowest_value_a(t_all *all)
         i++;
         elt = elt->next;
     }
+    printf("p_low : %d v_low : %d\n", all->p_low, all->v_low);
     return;
 }
 

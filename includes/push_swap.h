@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:14:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 15:39:47 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 17:31:10 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@
 # define RRB 10
 # define RRR 11
 
-typedef struct	s_int_list
-{
-	int			content;
-	struct s_int_list	*next;
-}				t_int_list;
+// typedef struct	s_int_list
+// {
+// 	int			content;
+// 	struct s_int_list	*next;
+// }				t_int_list;
 
 // typedef struct	s_list
 // {
@@ -49,9 +49,10 @@ typedef struct s_all
     int p_low;
     int v_low;
     int p_s;
+    int bonus;
     t_list *sk_a;
     t_list *sk_b;
-    t_int_list *instruction;
+    t_list *instruction;
     int check;
 }				t_all;
 
@@ -69,6 +70,8 @@ int Error_execution(t_all *all);
 void check_result(t_all *all);
 void print_elt(t_all *all);
 void freeer(t_all *all);
+void print_action(char *action, t_all *all);
+
 
 
 

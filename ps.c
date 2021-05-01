@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:37:57 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 15:20:17 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 17:06:50 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ int main(int ac, char **av)
         return (0);
     intitialize_all(all);
     all->p_s = 1;
-    if (ac < 2)
+    if (!ft_strcmp(av[1], "-v"))
+        all->bonus = 1;
+    if (ac < 2 || (ac < 3 && all->bonus))
         return (0);
     if (!check_n_get_arguments(ac, av, all))
-        return (Error_arguments(all)); //need to free the lists
+        return (Error_arguments(all));
     while (!check_order_sk_a(all))
     {
         find_lowest_value_a(all);
@@ -35,7 +37,7 @@ int main(int ac, char **av)
         if (!check_order_sk_a(all))
             pb(all);
     }
-    while (all->sk_b) //sends back slack b elements to a
+    while (all->sk_b)
         pa(all);
     freeer(all);
 }
