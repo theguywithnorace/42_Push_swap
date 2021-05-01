@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:58:23 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/30 15:12:15 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 15:35:29 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int check_n_get_arguments(int ac, char **av, t_all *all)
     {
         if (!is_int(av[i]))
             return (0);
+        printf("HHHEEE>>>>>>>>>>>>>>>\n\n");
         if (!all->sk_a)
         {
             if (!(all->sk_a = ft_lstnew(av[i])))
