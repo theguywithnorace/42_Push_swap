@@ -6,25 +6,28 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:47:51 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 18:51:24 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 22:12:35 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void find_lowest_value_a(t_all *all)
+void find_lowest_values_a(t_all *all)
 {
     t_list *elt;
     int i;
 
     i = 1;
+    elt = all->sk_a;
     all->p_low = 0;
-    all->v_low = ft_atoi(all->sk_a->content);
-    elt = all->sk_a->next;
+    all->v_low = ft_atoi(elt->content);
+    elt = elt->next;
     while (elt)
     {
         if (ft_atoi(elt->content) < all->v_low)
         {
+            all->v_low2 = all->v_low;
+            all->p_low2 = all->p_low;
             all->v_low = ft_atoi(elt->content);
             all->p_low = i;
         }

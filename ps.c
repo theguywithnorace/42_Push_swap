@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:37:57 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 18:52:22 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 22:12:51 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void execute_algo(t_all *all)
 {
     while (!check_order_sk_a(all))
     {
-        find_lowest_value_a(all);
+        find_lowest_values_a(all);
         if ((all->p_low != 0) && (all->p_low <= ((all->len_a) / 2)))
             send_to_top(all);
         else if ((all->p_low > ((all->len_a) / 2)))
