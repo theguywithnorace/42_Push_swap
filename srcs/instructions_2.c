@@ -85,9 +85,3 @@ void rrb(t_all *all)
         all->sk_b = eltz;
     }
 }
-
-void rrr(t_all *all)
-{
-    rra(all);
-    rrb(all);
-}

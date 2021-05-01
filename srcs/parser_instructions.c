@@ -46,10 +46,9 @@ int read_instruction(t_all *all)
     int r;
 
     line = 0;
-    r = 0;
     while ((r = get_next_line(0, &line)) > 0 && ft_strcmp(line, ""))
     {
-        if (!(r = check_instruction(line)))
+        if (!(check_instruction(line)))
         {
             free(line);
             return (0);
@@ -66,6 +65,5 @@ int read_instruction(t_all *all)
         free(line);
     }
     free(line);
-    line = 0;
     return (1);
 }

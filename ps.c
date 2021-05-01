@@ -6,28 +6,14 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:37:57 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 18:50:49 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 18:52:22 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int main(int ac, char **av)
+void execute_algo(t_all *all)
 {
-    t_all *all;
-
-    all = 0;
-    if (!(all = malloc(sizeof(t_all))))
-        return (0);
-    intitialize_all(all);
-    all->p_s = 1;
-    if (!ft_strcmp(av[1], "-v"))
-        all->bonus = 1;
-    if (ac < 2 || (ac < 3 && all->bonus))
-        return (0);
-    if (!check_n_get_arguments(ac, av, all))
-        return (Error_arguments(all));
-    print_init(all);
     while (!check_order_sk_a(all))
     {
         find_lowest_value_a(all);
@@ -47,4 +33,23 @@ int main(int ac, char **av)
         print_action("pa", all);
     }
     freeer(all);
+}
+
+int main(int ac, char **av)
+{
+    t_all *all;
+
+    all = 0;
+    if (!(all = malloc(sizeof(t_all))))
+        return (0);
+    intitialize_all(all);
+    all->p_s = 1;
+    if (!ft_strcmp(av[1], "-v"))
+        all->bonus = 1;
+    if (ac < 2 || (ac < 3 && all->bonus))
+        return (0);
+    if (!check_n_get_arguments(ac, av, all))
+        return (Error_arguments(all));
+    print_init(all);
+    execute_algo(all);
 }

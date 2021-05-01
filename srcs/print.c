@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 17:38:37 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 18:35:48 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/01 19:03:26 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,24 @@ void print_action(char *action, t_all *all)
     }
 }
 
+int write_a(t_list **ea, int a)
+{
+    write(1, " ", 1);
+    write(1, (*ea)->content, ft_strlen((*ea)->content));
+    (*ea) = (*ea)->next;
+    a--;
+    return (a);
+}
+
+int write_b(t_list **eb, int b)
+{
+    write(1, " ", 1);
+    write(1, (*eb)->content, ft_strlen((*eb)->content));
+    (*eb) = (*eb)->next;
+    b--;
+    return (b);
+}
+
 void print_elt(t_all *all)
 {
     t_list *ea;
@@ -50,24 +68,13 @@ void print_elt(t_all *all)
     while (ft_max(a, b) > 0)
     {
         if (a >= b)
-        {
-            write(1, " ", 1);
-            write(1, ea->content, ft_strlen(ea->content));
-            ea = ea->next;
-            a--;
-        }
+            a = write_a(&ea, a);
         else
             write(1, "  ", 1);
         write(1, "\t", 1);
         if (b > a)
-        {
-            write(1, " ", 1);
-            write(1, eb->content, ft_strlen(eb->content));
-            eb = eb->next;
-            b--;
-        }
+            b = write_b(&eb, b);
         write(1, "\n", 1);
     }
-
     write(1, "---\t---\n A \t B\n\n\n", 17);
 }

@@ -58,7 +58,6 @@ void pa(t_all *all)
     all->len_a++;
 }
 
-
 void pb(t_all *all)
 {
     t_list *elt;
