@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:47:51 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/02 21:29:49 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/02 21:51:38 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,12 +86,11 @@ void find_value_to_move(t_all *all)
         steps_h = all->p_hig;
     else
         steps_h = all->len_a - all->p_hig + 1;
-    // if ((steps_h > steps_l) || all->v_hig == all->max)
-    if ((steps_h > steps_l))
+    if ((steps_h > steps_l) || all->v_hig == all->max)
     {
         all->is_tomov_low = 1;
         all->p_tomov = all->p_low;
-        printf("fuck\n");
+        
     }
     else
     {
@@ -164,7 +163,7 @@ void find_lowest_values_a(t_all *all)
         i++;
         elt = elt->next;
     }
-    // printf("p_low %d v_low %d p_low2 %d v_low2 %d\n\n", all->p_low, all->v_low, all->p_low2, all->v_low2);
+    // ////printf("p_low %d v_low %d p_low2 %d v_low2 %d\n\n", all->p_low, all->v_low, all->p_low2, all->v_low2);
     return;
 }
 

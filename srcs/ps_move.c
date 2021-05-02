@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 23:25:18 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/02 21:32:28 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/02 21:46:51 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void make_final_ordering(t_all *all)
 {
     int reverse;
 
-    printf("make_final_ordering\n");
+    ////printf("make_final_ordering\n");
     reverse = 1;
     if (all->p_min <= ((all->len_a) / 2))
         reverse = 0;
@@ -33,7 +33,7 @@ void send_mid_hig_to_top(t_all *all)
 {
     int reverse;
 
-    printf("send_mid_to_top\n");
+    // printf("send_mid_to_top\n");
     reverse = 1;
     if (all->p_hig <= ((all->len_a) / 2))
         reverse = 0;

@@ -22,6 +22,7 @@ then
 	do
 		NUM=$(($1 - 1))
 		ARG=`ruby -e "puts (0..$NUM).to_a.shuffle.join(' ')"`
+		echo $ARG
 		TMP=`./push_swap $ARG | wc -l | bc`
 		(( COUNTER += 1 ))
 		PERCENT=$((COUNTER * 100 / $2))

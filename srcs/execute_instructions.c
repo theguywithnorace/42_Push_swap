@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 11:26:50 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/02 20:56:22 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/02 21:36:23 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,6 @@ int check_final_order(t_all *all)
 }
 void execute(char *action, t_all *all)
 {
-    // write(1, "HEY30\n", 6);
-     ft_strcmp(action, "sa");
-    // write(1, "HEY30\n", 6);
-     write(1, action, ft_strlen(action));
-
     if (!ft_strcmp(action, "sa"))
     {
         // write(1, "HEY30\n", 6);
