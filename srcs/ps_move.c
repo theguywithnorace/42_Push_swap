@@ -6,11 +6,45 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 23:25:18 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/02 20:37:36 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/02 21:32:28 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void make_final_ordering(t_all *all)
+{
+    int reverse;
+
+    printf("make_final_ordering\n");
+    reverse = 1;
+    if (all->p_min <= ((all->len_a) / 2))
+        reverse = 0;
+    while (ft_atoi(all->sk_a->content) != all->min)
+    {
+        if (reverse)
+            print_action("rra", all);
+        else
+            print_action("ra", all);
+    }
+}
+
+void send_mid_hig_to_top(t_all *all)
+{
+    int reverse;
+
+    printf("send_mid_to_top\n");
+    reverse = 1;
+    if (all->p_hig <= ((all->len_a) / 2))
+        reverse = 0;
+    while (ft_atoi(all->sk_a->content) != all->v_hig)
+    {
+        if (reverse)
+            print_action("rra", all);
+        else
+            print_action("ra", all);
+    }
+}
 
 void send_closest_value_to_top(t_all *all)
 {
@@ -19,15 +53,8 @@ void send_closest_value_to_top(t_all *all)
     i = 0;
     if (all->len_a == 2)
         i--;
-    // write(1, "HEY10\n", 6);
-
-    while (++i <= all->p_low)
-    {
-        // write(1, "HEY00\n", 6);
+    while (++i <= all->p_tomov)
         print_action("ra", all);
-    }
-    // write(1, "HEY11\n", 6);
-
     // if (all->sk_a->next->next && (all->sk_a->content < all->sk_a->next->next->content))
     //     print_action("sa", all);
     // else

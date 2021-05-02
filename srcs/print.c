@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 17:38:37 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/02 20:37:43 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/02 20:56:22 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@ void print_init(t_all *all)
 
 void print_action(char *action, t_all *all)
 {
-    // write(1, "HEY20\n", 6);
+    // // write(1, "HEY20\n", 6);
     execute(action, all);
-    // write(1, "HEY20\n", 6);
+    // // write(1, "HEY20\n", 6);
 
     if (all->bonus)
     {
         write(1, "-> Executing ", 13);
         write(1, action, ft_strlen(action));
         write(1, " ->\n\n", 5);
-        // write(1, "HEY20\n", 6);
+        // // write(1, "HEY20\n", 6);
 
         print_elt(all);
     }

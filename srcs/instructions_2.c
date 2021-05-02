@@ -56,7 +56,7 @@ void rra(t_all *all)
 {
     t_list *elta;
     t_list *eltz;
-        write(1, "HEY50\n", 6);
+        // write(1, "HEY50\n", 6);
 
     if (all->sk_a && all->sk_a->next)
     {

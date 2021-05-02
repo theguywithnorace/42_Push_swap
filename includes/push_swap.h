@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:14:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/02 12:12:35 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/02 21:27:39 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ typedef struct s_all
     int is_tomov_low;
     int midd;
     int min;
+    int p_min;
     int max;
     int p_s;
     int bonus;
@@ -70,6 +71,8 @@ int check_order_sk_a(t_all *all);
 int check_order_fst_sk_b(t_all *all);
 int check_order_fst_sk_a(t_all *all);
 
+void send_mid_hig_to_top(t_all *all);
+void make_final_ordering(t_all *all);
 void reverse_send_to_top(t_all *all);
 void send_to_top(t_all *all);
 int in_order(t_all *all);
