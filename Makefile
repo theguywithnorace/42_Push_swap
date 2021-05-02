@@ -19,6 +19,7 @@ CFLAGS		= -Wall -Wextra -Werror
 OBJS			= ${patsubst ${SRC_DIR}%.c, ${OBJ_DIR}%.o, ${SRCS}}
 
 ${OBJ_DIR}%.o	: ${SRC_DIR}%.c
+	mkdir -p obj libs
 	gcc -c -I ${HDR_DIR} ${CFLAGS} -c -o $@ $<
 
 
