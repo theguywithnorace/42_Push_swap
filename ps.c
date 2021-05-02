@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:37:57 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/02 21:46:38 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/02 22:11:38 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void execute_short_algo(t_all *all)
 void execute_algo_2(t_all *all)
 {
     find_middle_value(all);
-    printf("midd value : %d\n", all->midd);
+    // printf("midd value : %d\n", all->midd);
 
     while (!sk_a_ordered_by_packet(all))
     {

@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:47:51 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/02 21:51:38 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/02 22:13:53 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ int in_order(t_all *all)
 {
     if (all->p_low == 0 && all->p_hig == 2)
         return (0);
-    if (all->p_hig < all->p_low && all->p_low != 2)
+    if (all->p_low == 1 && all->p_hig == 0)
+        return (0);
+    if (all->p_low == 2 && all->p_hig == 1)
         return (0);
     return (1);
 }
@@ -28,7 +30,7 @@ int sk_a_ordered_by_packet(t_all *all)
 
     elt = all->sk_a;
     k = ft_atoi(elt->content);
-    if (elt->next == 0)
+    if (!elt->next || !elt->next->next)
         return (1);
     elt = elt->next;
     while (elt && (k <= all->max))
@@ -90,14 +92,13 @@ void find_value_to_move(t_all *all)
     {
         all->is_tomov_low = 1;
         all->p_tomov = all->p_low;
-        
     }
     else
     {
         all->is_tomov_low = 0;
         all->p_tomov = all->p_hig;
     }
-    printf("value to mov at position : %d to mov low ? %d\n", all->p_tomov, all->is_tomov_low);
+    // printf("value to mov at position : %d to mov low ? %d\n", all->p_tomov, all->is_tomov_low);
 }
 
 void find_close__mid_values(t_all *all)
@@ -130,7 +131,7 @@ void find_close__mid_values(t_all *all)
         i++;
         elt = elt->next;
     }
-    printf("close mid values : low : %d [%d] hig : %d [%d] min : %d [%d]\n", all->v_low, all->p_low, all->v_hig, all->p_hig, all->min, all->p_min);
+    // printf("close mid values : low : %d [%d] hig : %d [%d] min : %d [%d]\n", all->v_low, all->p_low, all->v_hig, all->p_hig, all->min, all->p_min);
 }
 
 void find_lowest_values_a(t_all *all)
@@ -146,8 +147,6 @@ void find_lowest_values_a(t_all *all)
     elt = elt->next;
     while (elt)
     {
-        // // // write(1, "HEY2\n", 4);
-
         if (ft_atoi(elt->content) < all->v_low)
         {
             all->v_hig = all->v_low;
@@ -163,7 +162,7 @@ void find_lowest_values_a(t_all *all)
         i++;
         elt = elt->next;
     }
-    // ////printf("p_low %d v_low %d p_low2 %d v_low2 %d\n\n", all->p_low, all->v_low, all->p_low2, all->v_low2);
+    printf("p_low %d p_low2 %d \n\n", all->p_low, all->p_hig);
     return;
 }
 

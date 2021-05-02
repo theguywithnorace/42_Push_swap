@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 23:25:18 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/02 21:46:51 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/02 21:56:06 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void send_mid_hig_to_top(t_all *all)
         reverse = 0;
     while (ft_atoi(all->sk_a->content) != all->v_hig)
     {
+    write(1, ft_itoa(all->max), ft_strlen(ft_itoa(all->max)));
+
         if (reverse)
             print_action("rra", all);
         else
