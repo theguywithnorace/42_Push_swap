@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:37:57 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/02 11:40:12 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/02 20:37:07 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,31 @@ void execute_short_algo(t_all *all)
 void execute_algo_2(t_all *all)
 {
     find_middle_value(all);
+    // write(1, "HEY4\n", 5);
+    printf("midd value : %d\n", all->midd);
+
     while (!sk_a_ordered_by_packet(all))
     {
+        // write(1, "HEY5\n", 5);
+
         find_close__mid_values(all);
+        // write(1, "HEY6\n", 5);
+
         find_value_to_move(all);
+        // write(1, "HEY7\n", 5);
+
         if ((all->p_tomov != 0) && (all->p_tomov <= ((all->len_a) / 2)))
             send_closest_value_to_top(all);
         else if ((all->p_tomov > ((all->len_a) / 2)))
             reverse_send_closest_value_to_top(all);
-        if (!check_order_sk_a(all) || all->is_tomov_low)
+            
+        // write(1, "HEY8\n", 5);
+
+        if (!sk_a_ordered_by_packet(all))
             print_action("pb", all);
-        if (!(all->is_tomov_low))
+        // write(1, "HEY9\n", 5);
+
+        if (all->is_tomov_low)
             print_action("rb", all);
     }
     while (all->sk_b)
@@ -84,14 +98,18 @@ int main(int ac, char **av)
     all->p_s = 1;
     if (!ft_strcmp(av[1], "-v"))
         all->bonus = 1;
+    // write(1, "HEY\n", 4);
     if (ac < 2 || (ac < 3 && all->bonus))
         return (0);
     if (!check_n_get_arguments(ac, av, all))
         return (Error_arguments(all));
     print_init(all);
-    // write(1, "HEY\n", 4);
+    // write(1, "HEY2\n", 4);
     if (all->len_t == 3)
         execute_short_algo(all);
     else
-        execute_algo(all);
+    {
+        // write(1, "HEY3\n", 5);
+        execute_algo_2(all);
+    }
 }

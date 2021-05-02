@@ -61,7 +61,8 @@ void pa(t_all *all)
 void pb(t_all *all)
 {
     t_list *elt;
-
+    
+        // write(1, "HEY30\n", 6);
     if (all->sk_a)
     {
         elt = all->sk_a;

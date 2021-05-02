@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:58:23 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/02 00:05:35 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/02 12:30:29 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,17 +64,26 @@ int check_n_get_arguments(int ac, char **av, t_all *all)
     while (++i < ac)
     {
         if (!is_int(av[i]))
+        {
+            write(1, av[i], 1);
             return (0);
+        }
         if (!all->sk_a)
         {
             if (!(value_already_found(all, av[i])) || !(all->sk_a = ft_lstnew(av[i])))
+            {
+                write(1, av[i], ft_strlen(av[i]));
                 return (0);
+            }
             all->len_a++;
             elt = all->sk_a;
             continue;
         }
         if (!(value_already_found(all, av[i])) || !(elt->next = ft_lstnew(av[i])))
+        {
+            write(1, av[i], ft_strlen(av[i]));
             return (0);
+        }
         all->len_a++;
         elt = elt->next;
     }

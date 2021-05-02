@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 23:25:18 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/02 11:39:41 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/02 20:37:36 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,19 @@ void send_closest_value_to_top(t_all *all)
     i = 0;
     if (all->len_a == 2)
         i--;
-    while (++i < all->p_low)
+    // write(1, "HEY10\n", 6);
+
+    while (++i <= all->p_low)
+    {
+        // write(1, "HEY00\n", 6);
         print_action("ra", all);
-    if (all->sk_a->next->next && (all->sk_a->content < all->sk_a->next->next->content))
-        print_action("sa", all);
-    else
-        print_action("ra", all);
+    }
+    // write(1, "HEY11\n", 6);
+
+    // if (all->sk_a->next->next && (all->sk_a->content < all->sk_a->next->next->content))
+    //     print_action("sa", all);
+    // else
+    //     print_action("ra", all);
     all->p_low = 0;
     all->v_low = 0;
     all->v_hig = 0;

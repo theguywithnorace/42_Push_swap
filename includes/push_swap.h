@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:14:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/02 11:43:24 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/02 12:12:35 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,18 @@ int check_order_fst_sk_a(t_all *all);
 void reverse_send_to_top(t_all *all);
 void send_to_top(t_all *all);
 int in_order(t_all *all);
+
+void find_value_to_move(t_all *all);
+void find_middle_value(t_all *all);
+void find_close__mid_values(t_all *all);
+void execute_algo_2(t_all *all);
+int sk_a_ordered_by_packet(t_all *all);
+void find_value_to_move(t_all *all);
+void send_closest_value_to_top(t_all *all);
+void reverse_send_closest_value_to_top(t_all *all);
+
+
+
 
 
 //Error
