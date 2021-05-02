@@ -1,5 +1,11 @@
 # 42_Push_swap
 
+
+
+
+ARG=`ruby -e "puts (-400..400).to_a.shuffle.join(' ')"` && ./push_swap  $ARG | ./checker $ARG
+
+
 -> deux fois meme chiffre
 -> 
 
