@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:14:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 23:14:05 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/02 11:43:24 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,14 @@ typedef struct s_all
     int len_a;
     int len_t;
     int p_low;
-    int p_low2;
     int v_low;
-    int v_low2;
+    int p_hig;
+    int v_hig;
+    int p_tomov;
+    int is_tomov_low;
+    int midd;
+    int min;
+    int max;
     int p_s;
     int bonus;
     t_list *sk_a;

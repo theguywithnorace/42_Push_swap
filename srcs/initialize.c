@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:54:04 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 19:08:21 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/02 00:02:07 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int intitialize_all(t_all *all)
     all->instruction = 0;
     all->sk_a = 0;
     all->sk_b = 0;
+    all->v_low_sent = 0;
     return (1);
 }
 

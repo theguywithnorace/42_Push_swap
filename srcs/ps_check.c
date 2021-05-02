@@ -6,45 +6,126 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:47:51 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 23:16:20 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/02 11:49:35 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int in_order(t_all *all)
+// int in_order(t_all *all)
+// {
+//     if (all->p_low == 0 && all->p_low2 == 2)
+//         return (0);
+//     if (all->p_low2 < all->p_low && all->p_low != 2)
+//         return (0);
+//     return (1);
+// }
+
+void find_middle_value(t_all *all)
 {
-    if (all->p_low == 0 && all->p_low2 == 2)
-        return (0);
-    if (all->p_low2 < all->p_low && all->p_low != 2)
-        return (0);
-    return (1);
+    t_list *elt;
+
+    elt = all->sk_a;
+    all->min = ft_atoi(elt->content);
+    all->max = ft_atoi(elt->content);
+    while (elt)
+    {
+        if (ft_atoi(elt->content) < all->min)
+            all->min = ft_atoi(elt->content);
+        else if (ft_atoi(elt->content) > all->max)
+            all->max = ft_atoi(elt->content);
+        elt = elt->next;
+    }
+    all->midd = (all->max - all->min) / 2;
 }
 
-void find_lowest_values_a(t_all *all)
+void find_value_to_move(t_all *all)
+{
+    int steps_l;
+    int steps_h;
+
+    if (all->p_low <= ((all->len_a) / 2))
+        steps_l = all->p_low;
+    else
+        steps_l = all->len_a - all->p_low;
+    if (all->p_hig <= ((all->len_a) / 2))
+        steps_h = all->p_hig + 1;
+    else
+        steps_h = all->len_a - all->p_hig + 1;
+    if (steps_h < steps_l)
+    {
+        all->is_tomov_low = 1;
+        all->p_tomov = all->p_hig;
+    }
+    else
+    {
+        all->is_tomov_low = 0;
+        all->p_tomov = all->p_low;
+    }
+}
+
+void find_close__mid_values(t_all *all)
 {
     t_list *elt;
     int i;
+    int e;
 
-    i = 1;
     elt = all->sk_a;
     all->p_low = 0;
-    all->v_low = ft_atoi(elt->content);
-    elt = elt->next;
+    all->v_low = all->min;
+    all->p_hig = 0;
+    all->v_hig = all->max;
     while (elt)
     {
-        if (ft_atoi(elt->content) < all->v_low)
+        e = ft_atoi(elt->content);
+        if ((e < all->midd) && (all->midd - all->v_low > all->midd - e))
         {
-            all->v_low2 = all->v_low;
-            all->p_low2 = all->p_low;
-            all->v_low = ft_atoi(elt->content);
+            all->v_low = e;
             all->p_low = i;
+        }
+        else if ((e > all->midd) && (all->v_hig - all->midd > e - all->midd))
+        {
+            all->v_hig = e;
+            all->p_hig = i;
         }
         i++;
         elt = elt->next;
     }
-    return;
 }
+
+// void find_lowest_values_a(t_all *all)
+// {
+//     t_list *elt;
+//     int i;
+
+//     i = 1;
+//     elt = all->sk_a;
+//     all->p_low = 0;
+//     all->v_low = ft_atoi(elt->content);
+//     all->v_low2 = all->v_low - 1;
+//     elt = elt->next;
+//     while (elt)
+//     {
+//         write(1, "HEY2\n", 4);
+
+//         if (ft_atoi(elt->content) < all->v_low)
+//         {
+//             all->v_low2 = all->v_low;
+//             all->p_low2 = all->p_low;
+//             all->v_low = ft_atoi(elt->content);
+//             all->p_low = i;
+//         }
+//         else if (ft_atoi(elt->content) < all->v_low2)
+//         {
+//             all->v_low2 = ft_atoi(elt->content);
+//             all->p_low2 = i;
+//         }
+//         i++;
+//         elt = elt->next;
+//     }
+//     // printf("p_low %d v_low %d p_low2 %d v_low2 %d\n\n", all->p_low, all->v_low, all->p_low2, all->v_low2);
+//     return;
+// }
 
 int check_order_fst_sk_b(t_all *all)
 {
