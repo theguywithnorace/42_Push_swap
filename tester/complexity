@@ -9,12 +9,6 @@ TOTAL="0"
 MAX=$3
 trap "echo -e '\rWo\033[?25h\033[3B'; exit" INT
 
-if [[ ! -x push_swap ]]
-then
-	echo "File push_swap is missing, or not executable."
-	exit
-fi
-
 if [[ $# -gt 2 ]]
 then
 	echo -e "\033[?25l\c"
@@ -22,7 +16,7 @@ then
 	do
 		NUM=$(($1 - 1))
 		ARG=`ruby -e "puts (0..$NUM).to_a.shuffle.join(' ')"`
-		TMP=`./push_swap $ARG | wc -l | bc`
+		TMP=`../push_swap $ARG | wc -l | bc`
 		(( COUNTER += 1 ))
 		PERCENT=$((COUNTER * 100 / $2))
 		if [[ ${TMP} -gt ${MAX} ]]
