@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:27:13 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/02 20:56:22 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/04 21:05:14 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,15 @@ int main(int ac, char **av)
     // write(1, "HEY5\n", 5);
 
     if (!check_n_get_arguments(ac, av, all))
-        return (Error_arguments(all));
+        return (error_arguments(all));
     // write(1, "HEY5\n", 5);
 
     if (!read_instruction(all))
-        return (Error_instruction(all));
+        return (error_instruction(all));
     // write(1, "HEY5\n", 5);
 
     if (!execute_instruction(all))
-        return (Error_execution(all));
+        return (error_execution(all));
     // write(1, "HEY5\n", 5);
 
     all->check = check_final_order(all);

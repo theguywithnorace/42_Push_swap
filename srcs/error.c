@@ -12,37 +12,32 @@
 
 #include "../includes/push_swap.h"
 
-int Error_arguments(t_all *all)
+int	error_arguments(t_all *all)
 {
-    write(1, "Error\n", 6);
-    ////printf("err arg\n");
-    freeer(all);
-    return (0);
+	write(1, "Error\n", 6);
+	freeer(all);
+	return (0);
 }
 
-int Error_instruction(t_all *all)
+int	error_instruction(t_all *all)
 {
-    ////printf("err instruction\n");
-    write(1, "Error\n", 6);
-    freeer(all);
-    return (0);
-}
-int Error_execution(t_all *all)
-{
-    ////printf("err exec\n");
-
-    write(1, "Error\n", 6);
-    freeer(all);
-    return (0);
+	write(1, "Error\n", 6);
+	freeer(all);
+	return (0);
 }
 
-void check_result(t_all *all)
+int	error_execution(t_all *all)
 {
-    if (all->check == 1)
-        write(1, "OK\n", 3);
-    if (all->check == -1)
-        write(1, "KO\n", 3);
-    return;
+	write(1, "Error\n", 6);
+	freeer(all);
+	return (0);
 }
 
-
+void	check_result(t_all *all)
+{
+	if (all->check == 1)
+		write(1, "OK\n", 3);
+	if (all->check == -1)
+		write(1, "KO\n", 3);
+	return;
+}

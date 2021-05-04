@@ -1,12 +1,12 @@
 i=0
 while true;do
-
-    output=$(ARG=`ruby -e "puts (-10..10).to_a.shuffle.join(' ')"` && ./push_swap  $ARG | ./checker $ARG)
-    echo $ARG    
+    ARG=`ruby -e "puts (-100..100).to_a.shuffle.join(' ')"`
+    output=$(./push_swap  $ARG | ./checker $ARG)
     if [ $output != "OK" ]; then
+        echo $ARG
         exit
         else
-        echo "OK" $i
+        echo $i " OK " 
         ((i=i+1))
         fi
         

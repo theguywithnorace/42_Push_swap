@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:14:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/04 20:41:45 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/04 21:05:14 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,9 @@ void reverse_send_closest_value_to_top(t_all *all);
 
 
 //Error
-int Error_arguments(t_all *all);
-int Error_instruction(t_all *all);
-int Error_execution(t_all *all);
+int error_arguments(t_all *all);
+int error_instruction(t_all *all);
+int error_execution(t_all *all);
 void check_result(t_all *all);
 void print_elt(t_all *all);
 int freeer(t_all *all);
