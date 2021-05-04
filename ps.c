@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:37:57 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/02 22:26:54 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/04 20:50:32 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void execute_algo_2(t_all *all)
             reverse_send_closest_value_to_top(all);
         if (!sk_a_ordered_by_packet(all))
             print_action("pb", all);
-        if (all->is_tomov_low && (ft_lstsize(all->sk_b) > 1))
+        if (!sk_a_ordered_by_packet(all) && all->is_tomov_low && (ft_lstsize(all->sk_b) > 1))
             print_action("rb", all);
     }
     find_close__mid_values(all);

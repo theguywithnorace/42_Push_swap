@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:54:04 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/02 12:35:56 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/04 20:41:37 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int intitialize_all(t_all *all)
 {
     all->check = -1;
+    all->min_sent = 0;
     all->len_a = 0;
     all->p_low = 0;
     all->p_s = 0;

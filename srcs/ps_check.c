@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:47:51 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/02 22:15:07 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/04 20:47:52 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,12 @@ void find_value_to_move(t_all *all)
         steps_h = all->p_hig;
     else
         steps_h = all->len_a - all->p_hig + 1;
-    if ((steps_h > steps_l) || all->v_hig == all->max)
+    if (((steps_h > steps_l) || all->v_hig == all->max) && !(all->min_sent))
     {
         all->is_tomov_low = 1;
         all->p_tomov = all->p_low;
+        if (all->p_low == all->p_min)
+            all->min_sent = 1;
     }
     else
     {
@@ -131,7 +133,7 @@ void find_close__mid_values(t_all *all)
         i++;
         elt = elt->next;
     }
-    // printf("close mid values : low : %d [%d] hig : %d [%d] min : %d [%d]\n", all->v_low, all->p_low, all->v_hig, all->p_hig, all->min, all->p_min);
+    printf("close mid values : low : %d [%d] hig : %d [%d] min : %d [%d]\n", all->v_low, all->p_low, all->v_hig, all->p_hig, all->min, all->p_min);
 }
 
 void find_lowest_values_a(t_all *all)
@@ -162,7 +164,7 @@ void find_lowest_values_a(t_all *all)
         i++;
         elt = elt->next;
     }
-    // printf("p_low %d p_low2 %d \n\n", all->p_low, all->p_hig);
+    printf("p_low %d p_low2 %d \n\n", all->p_low, all->p_hig);
     return;
 }
 

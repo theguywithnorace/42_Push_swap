@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:14:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/02 21:27:39 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/04 20:41:45 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ typedef struct s_all
     int is_tomov_low;
     int midd;
     int min;
+    int min_sent;
     int p_min;
     int max;
     int p_s;
