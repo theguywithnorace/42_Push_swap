@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 21:46:34 by timothee          #+#    #+#             */
-/*   Updated: 2021/05/01 16:27:56 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/04 22:30:36 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 # define LIBFT_H
 
+# include <stdlib.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <limits.h>
 # include <libc.h>
 
 typedef struct	s_list
@@ -26,11 +30,6 @@ typedef struct	s_list
 #  define BUFFER_SIZE 100
 # endif
 
-# include <stdlib.h>
-# include <stdio.h>
-# include <unistd.h>
-# include <limits.h>
-
 size_t			ft_strlen_gnl(const char *s);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
@@ -41,8 +40,6 @@ char			*ft_strchr(const char *s, int c);
 char			*ft_strchr_gnl(const char *s, int c);
 int				ft_max(int a, int b);
 int				ft_min(int a, int b);
-
-
 int				ft_atoi(const char *str);
 int				ft_strcmp(const char *s1, const char *s2);
 void			ft_bzero(void *s, size_t n);

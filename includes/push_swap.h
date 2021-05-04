@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:14:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/04 21:05:14 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/04 22:46:42 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,81 +31,53 @@
 # define RRB 10
 # define RRR 11
 
-// typedef struct	s_int_list
-// {
-// 	int			content;
-// 	struct s_int_list	*next;
-// }				t_int_list;
-
-// typedef struct	s_list
-// {
-// 	void			*content;
-// 	struct s_list	*next;
-// }				t_list;
-
-typedef struct s_all
+typedef struct	s_all
 {
-    int len_a;
-    int len_t;
-    int p_low;
-    int v_low;
-    int p_hig;
-    int v_hig;
-    int p_tomov;
-    int is_tomov_low;
-    int midd;
-    int min;
-    int min_sent;
-    int p_min;
-    int max;
-    int p_s;
-    int bonus;
-    t_list *sk_a;
-    t_list *sk_b;
-    t_list *instruction;
-    int check;
+	int		len_a;
+	int		len_t;
+	int		p_low;
+	int		v_low;
+	int		p_hig;
+	int		v_hig;
+	int		p_tomov;
+	int		is_tomov_low;
+	int		midd;
+	int		min;
+	int		min_sent;
+	int		p_min;
+	int		max;
+	int		p_s;
+	int		bonus;
+	t_list	*sk_a;
+	t_list	*sk_b;
+	t_list	*instruction;
+	int		check;
 }				t_all;
 
-//Push_swap
-void find_lowest_values_a(t_all *all);
-int check_order_sk_a(t_all *all);
-int check_order_fst_sk_b(t_all *all);
-int check_order_fst_sk_a(t_all *all);
-
-void send_mid_hig_to_top(t_all *all);
-void make_final_ordering(t_all *all);
-void reverse_send_to_top(t_all *all);
-void send_to_top(t_all *all);
-int in_order(t_all *all);
-
-void find_value_to_move(t_all *all);
-void find_middle_value(t_all *all);
-void find_close__mid_values(t_all *all);
-void execute_algo_2(t_all *all);
-int sk_a_ordered_by_packet(t_all *all);
-void find_value_to_move(t_all *all);
-void send_closest_value_to_top(t_all *all);
-void reverse_send_closest_value_to_top(t_all *all);
-
-
-
-
-
-//Error
-int error_arguments(t_all *all);
-int error_instruction(t_all *all);
-int error_execution(t_all *all);
-void check_result(t_all *all);
-void print_elt(t_all *all);
-int freeer(t_all *all);
-void print_action(char *action, t_all *all);
-void print_init(t_all *all);
-
-void execute(char *action, t_all *all);
-
-
-
-// Checker
+void			find_lowest_values_a(t_all *all);
+int				check_order_sk_a(t_all *all);
+void			send_mid_hig_to_top(t_all *all);
+void			make_final_ordering(t_all *all);
+void			reverse_send_to_top(t_all *all);
+void			send_to_top(t_all *all);
+int				in_order(t_all *all);
+void			find_value_to_move(t_all *all);
+void			find_middle_value(t_all *all);
+void			find_close_mid_values(t_all *all);
+void			execute_algo_2(t_all *all);
+int				sk_a_ordered_by_packet(t_all *all);
+void			find_value_to_move(t_all *all);
+void			send_closest_value_to_top(t_all *all);
+void			reverse_send_closest_value_to_top(t_all *all);
+int				error_arguments(t_all *all);
+int				error_instruction(t_all *all);
+int				error_execution(t_all *all);
+void			check_result(t_all *all);
+void			print_elt(t_all *all);
+int				freeer(t_all *all);
+void			print_action(char *action, t_all *all);
+void			print_init(t_all *all);
+void			execute(char *action, t_all *all);
 void			check_result(t_all *all);
 int				intitialize_all(t_all *all);
 int				is_int(char *str);
@@ -125,7 +97,6 @@ void			rr(t_all *all);
 void			rra(t_all *all);
 void			rrb(t_all *all);
 void			rrr(t_all *all);
-
-void print_elt(t_all *all);
+void			print_elt(t_all *all);
 
 #endif

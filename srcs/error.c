@@ -12,21 +12,21 @@
 
 #include "../includes/push_swap.h"
 
-int	error_arguments(t_all *all)
+int		error_arguments(t_all *all)
 {
 	write(1, "Error\n", 6);
 	freeer(all);
 	return (0);
 }
 
-int	error_instruction(t_all *all)
+int		error_instruction(t_all *all)
 {
 	write(1, "Error\n", 6);
 	freeer(all);
 	return (0);
 }
 
-int	error_execution(t_all *all)
+int		error_execution(t_all *all)
 {
 	write(1, "Error\n", 6);
 	freeer(all);
@@ -39,5 +39,5 @@ void	check_result(t_all *all)
 		write(1, "OK\n", 3);
 	if (all->check == -1)
 		write(1, "KO\n", 3);
-	return;
+	return ;
 }

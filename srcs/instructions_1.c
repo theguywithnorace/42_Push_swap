@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instruction.c                                     :+:      :+:    :+:   */
+/*   instruction.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,63 +12,62 @@
 
 #include "../includes/push_swap.h"
 
-void sa(t_all *all)
+void	sa(t_all *all)
 {
-    t_list *elt;
+	t_list *elt;
 
-    if (all->sk_a && all->sk_a->next)
-    {
-        elt = all->sk_a;
-        all->sk_a = all->sk_a->next;
-        elt->next = all->sk_a->next;
-        all->sk_a->next = elt;
-    }
+	if (all->sk_a && all->sk_a->next)
+	{
+		elt = all->sk_a;
+		all->sk_a = all->sk_a->next;
+		elt->next = all->sk_a->next;
+		all->sk_a->next = elt;
+	}
 }
 
-void sb(t_all *all)
+void	sb(t_all *all)
 {
-    t_list *elt;
+	t_list *elt;
 
-    if (all->sk_b && all->sk_b->next)
-    {
-        elt = all->sk_b;
-        all->sk_b = all->sk_b->next;
-        elt->next = all->sk_b->next;
-        all->sk_b->next = elt;
-    }
+	if (all->sk_b && all->sk_b->next)
+	{
+		elt = all->sk_b;
+		all->sk_b = all->sk_b->next;
+		elt->next = all->sk_b->next;
+		all->sk_b->next = elt;
+	}
 }
 
-void ss(t_all *all)
+void	ss(t_all *all)
 {
-    sa(all);
-    sb(all);
+	sa(all);
+	sb(all);
 }
 
-void pa(t_all *all)
+void	pa(t_all *all)
 {
-    t_list *elt;
+	t_list *elt;
 
-    if (all->sk_b)
-    {
-        elt = all->sk_b;
-        all->sk_b = all->sk_b->next;
-        elt->next = all->sk_a;
-        all->sk_a = elt;
-    }
-    all->len_a++;
+	if (all->sk_b)
+	{
+		elt = all->sk_b;
+		all->sk_b = all->sk_b->next;
+		elt->next = all->sk_a;
+		all->sk_a = elt;
+	}
+	all->len_a++;
 }
 
-void pb(t_all *all)
+void	pb(t_all *all)
 {
-    t_list *elt;
-    
-        // // write(1, "HEY30\n", 6);
-    if (all->sk_a)
-    {
-        elt = all->sk_a;
-        all->sk_a = all->sk_a->next;
-        elt->next = all->sk_b;
-        all->sk_b = elt;
-    }
-    all->len_a--;
+	t_list *elt;
+
+	if (all->sk_a)
+	{
+		elt = all->sk_a;
+		all->sk_a = all->sk_a->next;
+		elt->next = all->sk_b;
+		all->sk_b = elt;
+	}
+	all->len_a--;
 }
