@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:47:51 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/04 22:39:02 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/05 11:49:21 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ int		sk_a_ordered_by_packet(t_all *all)
 
 void	find_middle_value(t_all *all)
 {
-	t_list	*elt;
-	int		sum;
-	int		i;
+	t_list		*elt;
+	long long	sum;
+	int			i;
 
 	sum = 0;
 	i = 0;
@@ -61,7 +61,8 @@ void	find_middle_value(t_all *all)
 		i++;
 		elt = elt->next;
 	}
-	all->midd = sum / i;
+	sum = sum / i;
+	all->midd = (int)sum;
 }
 
 void	find_value_to_move(t_all *all)

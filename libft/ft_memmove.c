@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tiin <tiin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 10:52:25 by tiin              #+#    #+#             */
-/*   Updated: 2019/11/26 10:19:49 by tiin             ###   ########.fr       */
+/*   Updated: 2021/05/07 20:23:24 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libc.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tiin <tiin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 10:33:17 by tiin              #+#    #+#             */
-/*   Updated: 2019/11/26 10:19:24 by tiin             ###   ########.fr       */
+/*   Updated: 2021/05/07 20:23:24 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libc.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

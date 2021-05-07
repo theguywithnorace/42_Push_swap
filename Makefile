@@ -2,7 +2,8 @@ SRC_DIR			= srcs/
 
 SRC				=	execute_instructions.c initialize.c instructions_1.c\
 						instructions_2.c parser_arguments.c parser_instructions.c\
-						ps_move.c ps_check_1.c ps_check_2.c error.c print.c freeing.c
+						ps_move.c ps_check_1.c ps_check_2.c error.c print.c freeing.c\
+						bonus.c
 
 SRCS				= ${addprefix ${SRC_DIR}, ${SRC}}
 
@@ -27,8 +28,8 @@ all:	${OBJS}
 	mkdir -p libs obj	
 	cd libft && make && cd ..
 	ar rcs ${LIBPS} ${OBJS}
-	gcc -g -o  checker ck.c  -I includes -Llibs -lft -lps
-	gcc -g -o  push_swap ps.c  -I includes -Llibs -lft -lps
+	gcc -o  checker srcs/ck.c ${CFLAGS} -I includes -Llibs -lft -lps
+	gcc -o  push_swap srcs/ps.c ${CFLAGS} -I includes -Llibs -lft -lps
 
 clean:
 	${RM} ${OBJS}
@@ -40,6 +41,6 @@ fclean:		clean
 	cd libft && make fclean && cd ..
 	${RM} ${LIBPS}
 
-re:		fclean ${NAME}
+re:		fclean all
 
 .PHONY:	all clean fclean re 

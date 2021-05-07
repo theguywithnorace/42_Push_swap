@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 17:38:37 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/02 21:36:13 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/05 11:43:59 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,30 +26,56 @@ void	print_action(char *action, t_all *all)
 	if (all->bonus)
 	{
 		write(1, "-> Executing ", 13);
-		write(1, action, ft_strlen(action));
+		write(1, action, ft_strlen_ps(action));
 		write(1, " ->\n\n", 5);
 		print_elt(all);
 	}
 	else if (all->p_s)
 	{
-		write(1, action, ft_strlen(action));
+		write(1, action, ft_strlen_ps(action));
 		write(1, "\n", 1);
 	}
 }
 
-int		write_a(t_list **ea, int a)
+int		write_a(t_list **ea, int a, t_all *all)
 {
+	int i;
+
+	i = 0;
 	write(1, " ", 1);
-	write(1, (*ea)->content, ft_strlen((*ea)->content));
+	if (ea == 0)
+	{
+		while (++i <= (max_lgth(all->sk_a)))
+			write(1, " ", 1);
+		write(1, " ", 1);
+		return (a);
+	}
+	while (++i <= ((max_lgth(all->sk_a) - ft_strlen_ps((*ea)->content))))
+		write(1, " ", 1);
+	write(1, (*ea)->content, ft_strlen_ps((*ea)->content));
+	write(1, " ", 1);
 	(*ea) = (*ea)->next;
 	a--;
 	return (a);
 }
 
-int		write_b(t_list **eb, int b)
+int		write_b(t_list **eb, int b, t_all *all)
 {
+	int i;
+
+	i = 0;
 	write(1, " ", 1);
-	write(1, (*eb)->content, ft_strlen((*eb)->content));
+	if (eb == 0)
+	{
+		while (++i <= (max_lgth(all->sk_b)))
+			write(1, " ", 1);
+		write(1, " ", 1);
+		return (b);
+	}
+	while (++i <= ((max_lgth(all->sk_b) - ft_strlen_ps((*eb)->content))))
+		write(1, " ", 1);
+	write(1, (*eb)->content, ft_strlen_ps((*eb)->content));
+	write(1, " ", 1);
 	(*eb) = (*eb)->next;
 	b--;
 	return (b);
@@ -69,13 +95,13 @@ void	print_elt(t_all *all)
 	while (ft_max(a, b) > 0)
 	{
 		if (a >= b)
-			a = write_a(&ea, a);
+			a = write_a(&ea, a, all);
 		else
-			write(1, "  ", 1);
-		write(1, "\t", 1);
+			a = write_a(0, a, all);
+		write(1, "   ", 3);
 		if (b > a)
-			b = write_b(&eb, b);
+			b = write_b(&eb, b, all);
 		write(1, "\n", 1);
 	}
-	write(1, "---\t---\n A \t B\n\n\n", 17);
+	write_tacks(all);
 }

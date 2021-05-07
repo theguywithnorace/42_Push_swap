@@ -1,7 +1,7 @@
 # 42_Push_swap
 
-
-
+Check memory leaks
+if <5 mid = first value ?
 
 ARG=`ruby -e "puts (-400..400).to_a.shuffle.join(' ')"` && ./push_swap  $ARG | ./checker $ARG
 

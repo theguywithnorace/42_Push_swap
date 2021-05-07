@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tiin <tiin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 13:29:29 by tiin              #+#    #+#             */
-/*   Updated: 2019/11/09 00:33:26 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/07 20:23:24 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libc.h>
+#include "libft.h"
 
 static char	*funct(int n, char *s, int i)
 {

@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 00:11:18 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/02 21:41:07 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/05 13:09:45 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,14 @@ void	check_result(t_all *all)
 	if (all->check == -1)
 		write(1, "KO\n", 3);
 	return ;
+}
+
+int		ft_strlen_ps(const char *s)
+{
+	int i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 21:46:34 by timothee          #+#    #+#             */
-/*   Updated: 2021/05/04 22:30:36 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/07 20:23:33 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <limits.h>
-# include <libc.h>
 
 typedef struct	s_list
 {

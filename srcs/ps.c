@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:37:57 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/04 22:20:28 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/05 13:23:11 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,16 @@ int		main(int ac, char **av)
 	t_all *all;
 
 	all = 0;
+	if (ac < 2)
+		return (0);
 	if (!(all = malloc(sizeof(t_all))))
 		return (0);
 	intitialize_all(all);
 	all->p_s = 1;
 	if (!ft_strcmp(av[1], "-v"))
 		all->bonus = 1;
-	if (ac < 2 || (ac < 3 && all->bonus))
-		return (0);
+	if (ac < 3 && all->bonus)
+		return (freeer(all));
 	if (!check_n_get_arguments(ac, av, all))
 		return (error_arguments(all));
 	print_init(all);

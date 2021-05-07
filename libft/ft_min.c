@@ -6,11 +6,11 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 16:26:49 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/01 16:27:16 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/07 20:23:24 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libc.h>
+#include "libft.h"
 
 int	ft_min(int a, int b)
 {
