@@ -11,7 +11,7 @@ SRCS		=	ft_itoa.c ft_putendl_fd.c ft_putstr_fd.c ft_strtrim.c ft_putchar_fd.c ft
 				ft_lstclear.c ft_lstiter.c ft_lstmap.c get_next_line.c get_next_line_utils.c ft_strcmp.c\
 				ft_max.c ft_min.c
 
-LIB			= ../libs/libft.a
+LIB			= ../libft.a
 
 CFLAGS		= -Wall -Wextra -Werror
 
@@ -20,11 +20,10 @@ RM			= rm -f
 OBJS		= ${SRCS:.c=.o}
 
 .c.o:
-			gcc -c -I libft.h ${CFLAGS} -c $< -o ${<:.c=.o}
+			gcc -c -I ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
-			ar rc ${LIB} ${OBJS}  
-			ranlib ${LIB}  
+			ar rcs ${LIB} ${OBJS}  
 
 all:		${NAME}
 

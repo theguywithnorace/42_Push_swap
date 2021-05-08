@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 14:28:47 by tiin              #+#    #+#             */
-/*   Updated: 2021/04/30 15:25:28 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/07 22:11:30 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static int	ft_write_line(char **str, char **line, int fd)
 
 static int	ft_checker(char **str, char **buff, char **line, int fd)
 {
-	if (fd < 0 || !line || fd > OPEN_MAX || BUFFER_SIZE <= 0)
+	if (fd < 0 || !line || fd > 100 || BUFFER_SIZE <= 0)
 		return (-1);
 	if ((*buff = ft_c_calloc(BUFFER_SIZE)) == NULL)
 		return (-1);
@@ -70,7 +70,7 @@ int			get_next_line(int fd, char **line)
 	char		*buff;
 	char		*tmp;
 	int			rd;
-	static char *str[OPEN_MAX];
+	static char *str[100];
 
 	rd = -2;
 	buff = NULL;

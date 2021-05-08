@@ -11,7 +11,7 @@ OBJ_DIR			=	obj/
 
 HDR_DIR			= includes/
 
-LIBPS			= libs/libps.a
+LIBPS			= libps.a
 
 RM				= rm -f
 
@@ -21,15 +21,15 @@ OBJS			= ${patsubst ${SRC_DIR}%.c, ${OBJ_DIR}%.o, ${SRCS}}
 
 ${OBJ_DIR}%.o	: ${SRC_DIR}%.c
 	mkdir -p obj libs
-	gcc -c -I ${HDR_DIR} ${CFLAGS} -c -o $@ $<
+	gcc -c -I ${HDR_DIR} -L. -lft ${CFLAGS} -c -o $@ $<
 
 
 all:	${OBJS}
-	mkdir -p libs obj	
+	mkdir -p obj	
 	cd libft && make && cd ..
 	ar rcs ${LIBPS} ${OBJS}
-	gcc -o  checker srcs/ck.c ${CFLAGS} -I includes -Llibs -lft -lps
-	gcc -o  push_swap srcs/ps.c ${CFLAGS} -I includes -Llibs -lft -lps
+	gcc -o  checker srcs/ck.c ${CFLAGS} -I includes  -L. -lft -lps
+	gcc -o  push_swap srcs/ps.c ${CFLAGS} -I includes -L. -lft -lps
 
 clean:
 	${RM} ${OBJS}
