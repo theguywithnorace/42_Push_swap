@@ -27,9 +27,8 @@ ${OBJ_DIR}%.o	: ${SRC_DIR}%.c
 all:	${OBJS}
 	mkdir -p obj	
 	cd libft && make && cd ..
-	ar rcs ${LIBPS} ${OBJS}
-	gcc -o  checker srcs/ck.c ${CFLAGS} -I includes  -L. -lft -lps
-	gcc -o  push_swap srcs/ps.c ${CFLAGS} -I includes -L. -lft -lps
+	gcc -o  checker srcs/ck.c ${CFLAGS} ${OBJS} -I includes  -L. -lft
+	gcc -o  push_swap srcs/ps.c ${CFLAGS} ${OBJS} -I includes -L. -lft
 
 clean:
 	${RM} ${OBJS}
