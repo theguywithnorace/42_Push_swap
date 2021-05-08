@@ -20,10 +20,12 @@ RM			= rm -f
 OBJS		= ${SRCS:.c=.o}
 
 .c.o:
-			gcc -c -I ${CFLAGS} -c $< -o ${<:.c=.o}
+	gcc -c -I ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
-			ar rcs ${LIB} ${OBJS}  
+	ar rc ${LIB} ${OBJS}  
+	ranlib ${LIB}  
+
 
 all:		${NAME}
 

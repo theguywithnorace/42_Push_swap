@@ -11,8 +11,6 @@ OBJ_DIR			=	obj/
 
 HDR_DIR			= includes/
 
-LIBPS			= libps.a
-
 RM				= rm -f
 
 CFLAGS		= -Wall -Wextra -Werror
@@ -20,12 +18,11 @@ CFLAGS		= -Wall -Wextra -Werror
 OBJS			= ${patsubst ${SRC_DIR}%.c, ${OBJ_DIR}%.o, ${SRCS}}
 
 ${OBJ_DIR}%.o	: ${SRC_DIR}%.c
-	mkdir -p obj libs
-	gcc -c -I ${HDR_DIR} -L. -lft ${CFLAGS} -c -o $@ $<
+	mkdir -p obj
+	gcc -c -I ${HDR_DIR} ${CFLAGS} -c -o $@ $<
 
 
 all:	${OBJS}
-	mkdir -p obj	
 	cd libft && make && cd ..
 	gcc -o  checker srcs/ck.c ${CFLAGS} ${OBJS} -I includes  -L. -lft
 	gcc -o  push_swap srcs/ps.c ${CFLAGS} ${OBJS} -I includes -L. -lft
@@ -38,7 +35,6 @@ clean:
 
 fclean:		clean
 	cd libft && make fclean && cd ..
-	${RM} ${LIBPS}
 
 re:		fclean all
 
