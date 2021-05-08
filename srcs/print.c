@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 17:38:37 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/05 11:43:59 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/08 17:18:21 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	print_init(t_all *all)
 {
 	if (all->bonus)
-		write(1, "\nInitial situation : \n\n", 23);
+		write(1, "\nStacks:\n\n", 10);
 	if (all->bonus)
 		print_elt(all);
 }
