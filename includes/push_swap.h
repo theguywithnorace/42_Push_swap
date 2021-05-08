@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:14:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/07 22:20:49 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/08 17:51:29 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ typedef struct	s_all
 	int		check;
 }				t_all;
 
-
+void			end_algo(t_all *all);
 int				ft_strlen_ps(const char *s);
 void			find_lowest_values_a(t_all *all);
 int				check_order_sk_a(t_all *all);
