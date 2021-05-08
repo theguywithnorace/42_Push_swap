@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:47:51 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/05 11:49:21 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/08 17:30:10 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ void	find_middle_value(t_all *all)
 	}
 	sum = sum / i;
 	all->midd = (int)sum;
+    if (all->len_t <= 5)
+        all->midd = all->min;
 }
 
 void	find_value_to_move(t_all *all)

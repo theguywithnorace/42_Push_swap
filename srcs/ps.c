@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:37:57 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/08 17:16:35 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/08 17:23:10 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void execute_algo_2(t_all *all)
                 print_action("rb", all);
         }
     }
-    if (!check_order_sk_a(all))
+    if (!(check_order_sk_a(all) && all->sk_b == 0))
     {
         find_close_mid_values(all);
         send_mid_hig_to_top(all);
