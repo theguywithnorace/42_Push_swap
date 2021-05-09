@@ -29,12 +29,13 @@ all:	${OBJS}
 
 clean:
 	${RM} ${OBJS}
+	cd libft && make clean && cd ..
 	${RM} .DS_Store
-	${RM} push_swap
-	${RM} checker
 
 fclean:		clean
 	cd libft && make fclean && cd ..
+	${RM} push_swap
+	${RM} checker
 
 re:		fclean all
 
