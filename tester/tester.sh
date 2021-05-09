@@ -1,13 +1,1 @@
-i=0
-while true;do
-    ARG=`ruby -e "puts (0..2).to_a.shuffle.join(' ')"`
-    output=$(../push_swap  $ARG | ../checker $ARG)
-    if [ $output != "OK" ]; then
-        echo $ARG
-        exit
-        else
-        echo $i " OK " 
-        ((i=i+1))
-        fi
-        
-    done
+A=`awk -v min=-100 -v max=100 'BEGIN{srand(); print int(min+rand()*(max-min+1))}'`;B=`awk -v min=$A -v max=$(($A+100)) 'BEGIN{srand(); print int(min+rand()*(max-min+1))}'`;ARG=`ruby -e "puts ($A..$B).to_a.shuffle.join(' ')"`;    output=$(../push_swap  $ARG | ../checker $ARG); echo $output "min:" $A " max:" $B
