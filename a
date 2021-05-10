@@ -1,0 +1,173 @@
+
+Stacks:
+
+ 1    
+ 5    
+ 4    
+ 2    
+---   ---
+ A     B
+
+
+midd: 3
+val of pivot: 2
+is_pivot foud for val: 2
+new while send to b: 0
+IN DA PACKET: 0
+-> Executing pb ->
+
+ 5    
+ 4    
+ 2     1 
+---   ---
+ A     B
+
+
+IN DA PACKET: 0
+-> Executing ra ->
+
+ 4    
+ 2    
+ 5     1 
+---   ---
+ A     B
+
+
+IN DA PACKET: 0
+-> Executing ra ->
+
+ 2    
+ 5    
+ 4     1 
+---   ---
+ A     B
+
+
+IN DA PACKET: 0
+-> Executing pb ->
+
+ 5     2 
+ 4     1 
+---   ---
+ A     B
+
+
+-> Executing rb ->
+
+ 5     1 
+ 4     2 
+---   ---
+ A     B
+
+
+out of packet: 0
+-> Executing rrb ->
+
+ 5     2 
+ 4     1 
+---   ---
+ A     B
+
+
+-> Executing rra ->
+
+ 4     2 
+ 5     1 
+---   ---
+ A     B
+
+
+-> Executing pb ->
+
+       4 
+       2 
+ 5     1 
+---   ---
+ A     B
+
+
+-> Executing rra ->
+
+       4 
+       2 
+ 5     1 
+---   ---
+ A     B
+
+
+-> Executing pb ->
+
+       5 
+       4 
+       2 
+       1 
+---   ---
+ A     B
+
+
+-> Executing pb ->
+
+       5 
+       4 
+       2 
+       1 
+---   ---
+ A     B
+
+
+end of while: 0
+new while send to b: 0
+IN DA PACKET: 0
+-> Executing ra ->
+
+       5 
+       4 
+       2 
+       1 
+---   ---
+ A     B
+
+
+out of packet: 0
+-> Executing rrb ->
+
+       1 
+       5 
+       4 
+       2 
+---   ---
+ A     B
+
+
+sk_a ordered, than return, out of send_to_a: 0
+midd: 3
+val of pivot: 2
+is_pivot foud for val: 2
+IN DA PACKET: 0
+-> Executing pa ->
+
+       5 
+       4 
+ 1     2 
+---   ---
+ A     B
+
+
+IN DA PACKET: 0
+-> Executing pa ->
+
+ 5     4 
+ 1     2 
+---   ---
+ A     B
+
+
+out of packet: 0
+-> Executing rra ->
+
+ 1     4 
+ 5     2 
+---   ---
+ A     B
+
+

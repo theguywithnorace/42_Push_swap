@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 11:26:50 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/07 22:19:53 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/09 18:57:32 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		check_final_order(t_all *all)
 {
 	int		i;
-	t_list	*elt;
+	t_elt	*elt;
 
 	if (all->sk_b)
 		return (-1);

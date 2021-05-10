@@ -6,63 +6,26 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:37:57 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/08 17:52:57 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/10 21:13:17 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	execute_short_algo(t_all *all)
+
+
+void execute_algo(t_all *all)
 {
-	find_lowest_values_a(all);
-	if (!in_order(all))
-		print_action("sa", all);
-	find_lowest_values_a(all);
-	if (!check_order_sk_a(all))
+	while (!is_sk_a_ordered(all))
 	{
-		if (all->p_low == 1)
-			print_action("ra", all);
-		if (all->p_low == 2)
-			print_action("rra", all);
+		get_pivots(all->sk_a); //parcours en sommant jusqu'a [fin ou pivot] -> moyenne -> [elt >= moy] = pivot
+		send_to_b(all);
+		get_pivots(all->sk_b); //parcours en sommant jusqu'a [fin ou pivot] -> moyenne -> [elt >= moy] = pivot
+		send_to_a(all);
 	}
 }
 
-void	execute_algo_2(t_all *all)
-{
-	find_middle_value(all);
-	while (!sk_a_ordered_by_packet(all))
-	{
-		find_close_mid_values(all);
-		find_value_to_move(all);
-		if ((all->p_tomov != 0) && (all->p_tomov <= ((all->len_a) / 2)))
-			send_closest_value_to_top(all);
-		else if ((all->p_tomov > ((all->len_a) / 2)))
-			reverse_send_closest_value_to_top(all);
-		if (!sk_a_ordered_by_packet(all))
-		{
-			print_action("pb", all);
-			if (all->is_tomov_low && (ft_lstsize(all->sk_b) > 1))
-				print_action("rb", all);
-		}
-	}
-	end_algo(all);
-}
-
-void	end_algo(t_all *all)
-{
-	if (!(check_order_sk_a(all) && all->sk_b == 0))
-	{
-		find_close_mid_values(all);
-		send_mid_hig_to_top(all);
-		while (all->sk_b)
-			print_action("pa", all);
-		find_close_mid_values(all);
-		make_final_ordering(all);
-	}
-	freeer(all);
-}
-
-int		main(int ac, char **av)
+int main(int ac, char **av)
 {
 	t_all *all;
 
@@ -83,5 +46,5 @@ int		main(int ac, char **av)
 	if (all->len_t == 3)
 		execute_short_algo(all);
 	else
-		execute_algo_2(all);
+		execute_algo(all);
 }

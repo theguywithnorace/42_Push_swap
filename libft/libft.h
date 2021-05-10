@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 21:46:34 by timothee          #+#    #+#             */
-/*   Updated: 2021/05/07 20:23:33 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/10 21:56:35 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,23 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+typedef struct	s_elt
+{
+	char			*content;
+	int				is_pivot;
+	int				is_last;
+	struct s_elt		*next;
+}				t_elt;
+
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 100
 # endif
+
+t_elt	*ft_lstnew_e(void *content);
+int	ft_lstsize_e(t_elt *lst);
+t_elt	*ft_lstlast_e(t_elt *lst);
+
+
 
 size_t			ft_strlen_gnl(const char *s);
 char			*ft_substr(char const *s, unsigned int start, size_t len);

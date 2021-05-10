@@ -1,6 +1,10 @@
 # 42_Push_swap
 
 
+Pivot en dernier element -> comme ca on le transfert une fois qu'on a passé tous les autres elements
+
+
+
 ARG=`ruby -e "puts (0..4).to_a.shuffle.join(' ')"` && ./push_swap  $ARG | ./checker $ARG
 
 

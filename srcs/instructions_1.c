@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instruction.c                                      :+:      :+:    :+:   */
+/*   instructions_1.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 21:09:48 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/21 21:09:55 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/09 18:58:07 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sa(t_all *all)
 {
-	t_list *elt;
+	t_elt *elt;
 
 	if (all->sk_a && all->sk_a->next)
 	{
@@ -27,7 +27,7 @@ void	sa(t_all *all)
 
 void	sb(t_all *all)
 {
-	t_list *elt;
+	t_elt *elt;
 
 	if (all->sk_b && all->sk_b->next)
 	{
@@ -46,7 +46,7 @@ void	ss(t_all *all)
 
 void	pa(t_all *all)
 {
-	t_list *elt;
+	t_elt *elt;
 
 	if (all->sk_b)
 	{
@@ -60,7 +60,7 @@ void	pa(t_all *all)
 
 void	pb(t_all *all)
 {
-	t_list *elt;
+	t_elt *elt;
 
 	if (all->sk_a)
 	{

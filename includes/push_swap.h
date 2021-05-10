@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:14:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/08 17:51:29 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/10 22:38:14 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,18 @@
 # define RRB 10
 # define RRR 11
 
+# define BKED 3
+# define STOP 2
+# define OLD -1
+# define PIVOT 1
+
+
+
 typedef struct	s_all
 {
+	// int		i_nxtp;
+	int		v_nxtp;
+
 	int		len_a;
 	int		len_t;
 	int		p_low;
@@ -48,16 +58,47 @@ typedef struct	s_all
 	int		max;
 	int		p_s;
 	int		bonus;
-	t_list	*sk_a;
-	t_list	*sk_b;
+	t_elt	*sk_a;
+	t_elt	*sk_b;
 	t_list	*instruction;
 	int		check;
 }				t_all;
 
+//pivot algo
+void get_pivots(t_elt *elt);
+int find_midd(t_elt *elt);
+void	find_pivot(t_elt *e, int midd);
+
+//ps_actions
+void send_low_values_b(t_all *all);
+void send_pivot_b(t_all *all);
+void stock_hig_values_a(t_all *all);
+void set_pivot_top_b(t_all *all);
+void send_hig_values_b(t_all *all);
+int is_last_seen(t_elt *e);
+
+
+int eq(t_elt *elt, int v);
+int val(t_elt *e);
+void set_next_pivot(t_all *all, t_elt *e);
+void send_to_b(t_all *all);
+void send_to_a(t_all *all);
+int		is_still_less_than_pvt(t_all *all, t_elt *e);
+int in_packet(t_all *all, t_elt *e);
+
+//Error and debugger
+void bug(char *s, int n);
+void print_situation_a(t_all *all);
+
+
+//Short algo
+void execute_short_algo(t_all *all);
+
+
 void			end_algo(t_all *all);
 int				ft_strlen_ps(const char *s);
 void			find_lowest_values_a(t_all *all);
-int				check_order_sk_a(t_all *all);
+int				is_sk_a_ordered(t_all *all);
 void			send_mid_hig_to_top(t_all *all);
 void			make_final_ordering(t_all *all);
 void			reverse_send_to_top(t_all *all);
@@ -88,7 +129,7 @@ int				check_instruction(char *line);
 int				read_instruction(t_all *all);
 int				check_final_order(t_all *all);
 int				execute_instruction(t_all *all);
-int				max_lgth(t_list *e);
+int				max_lgth(t_elt *e);
 void			write_tacks(t_all *all);
 void			write_spaces(t_all *all);
 void			sa(t_all *all);

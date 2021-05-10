@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 17:38:37 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/08 17:18:21 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/09 19:05:51 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	print_action(char *action, t_all *all)
 	}
 }
 
-int		write_a(t_list **ea, int a, t_all *all)
+int		write_a(t_elt **ea, int a, t_all *all)
 {
 	int i;
 
@@ -59,7 +59,7 @@ int		write_a(t_list **ea, int a, t_all *all)
 	return (a);
 }
 
-int		write_b(t_list **eb, int b, t_all *all)
+int		write_b(t_elt **eb, int b, t_all *all)
 {
 	int i;
 
@@ -83,15 +83,15 @@ int		write_b(t_list **eb, int b, t_all *all)
 
 void	print_elt(t_all *all)
 {
-	t_list	*ea;
-	t_list	*eb;
+	t_elt	*ea;
+	t_elt	*eb;
 	int		a;
 	int		b;
 
 	ea = all->sk_a;
 	eb = all->sk_b;
-	a = ft_lstsize(ea);
-	b = ft_lstsize(eb);
+	a = ft_lstsize_e(ea);
+	b = ft_lstsize_e(eb);
 	while (ft_max(a, b) > 0)
 	{
 		if (a >= b)

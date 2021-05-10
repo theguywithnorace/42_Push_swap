@@ -6,15 +6,67 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:47:51 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/08 17:53:46 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/09 20:18:57 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+
+void execute_algo5(t_all *all)
+{
+	find_middle_value(all);
+	while (!sk_a_ordered_by_packet(all))
+	{
+		find_close_mid_values(all);
+		find_value_to_move(all);
+		if ((all->p_tomov != 0) && (all->p_tomov <= ((all->len_a) / 2)))
+			send_closest_value_to_top(all);
+		else if ((all->p_tomov > ((all->len_a) / 2)))
+			reverse_send_closest_value_to_top(all);
+		if (!sk_a_ordered_by_packet(all))
+		{
+			print_action("pb", all);
+			if (all->is_tomov_low && (ft_lstsize_e(all->sk_b) > 1))
+				print_action("rb", all);
+		}
+	}
+	end_algo(all);
+}
+
+void execute_short_algo(t_all *all)
+{
+	find_lowest_values_a(all);
+	if (!in_order(all))
+		print_action("sa", all);
+	find_lowest_values_a(all);
+	if (!is_sk_a_ordered(all))
+	{
+		if (all->p_low == 1)
+			print_action("ra", all);
+		if (all->p_low == 2)
+			print_action("rra", all);
+	}
+	freeer(all);
+}
+void end_algo(t_all *all)
+{
+	if (!(is_sk_a_ordered(all) && all->sk_b == 0))
+	{
+		find_close_mid_values(all);
+		send_mid_hig_to_top(all);
+		while (all->sk_b)
+			print_action("pa", all);
+		find_close_mid_values(all);
+		make_final_ordering(all);
+	}
+	freeer(all);
+}
+
+
 int		sk_a_ordered_by_packet(t_all *all)
 {
-	t_list	*elt;
+	t_elt	*elt;
 	int		k;
 
 	elt = all->sk_a;
@@ -42,7 +94,7 @@ int		sk_a_ordered_by_packet(t_all *all)
 
 void	find_middle_value(t_all *all)
 {
-	t_list		*elt;
+	t_elt		*elt;
 	long long	sum;
 	int			i;
 
@@ -105,7 +157,7 @@ int		init(t_all *all)
 
 void	find_close_mid_values(t_all *all)
 {
-	t_list	*elt;
+	t_elt	*elt;
 	int		i;
 	int		e;
 

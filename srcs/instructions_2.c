@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instruction.c                                      :+:      :+:    :+:   */
+/*   instructions_2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 21:09:48 by timotheein        #+#    #+#             */
-/*   Updated: 2021/04/21 21:09:55 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/09 18:58:25 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ra(t_all *all)
 {
-	t_list *elt;
-	t_list *elta;
+	t_elt *elt;
+	t_elt *elta;
 
 	if (all->sk_a && all->sk_a->next)
 	{
@@ -31,8 +31,8 @@ void	ra(t_all *all)
 
 void	rb(t_all *all)
 {
-	t_list *elt;
-	t_list *eltb;
+	t_elt *elt;
+	t_elt *eltb;
 
 	if (all->sk_b && all->sk_b->next)
 	{
@@ -54,8 +54,8 @@ void	rr(t_all *all)
 
 void	rra(t_all *all)
 {
-	t_list *elta;
-	t_list *eltz;
+	t_elt *elta;
+	t_elt *eltz;
 
 	if (all->sk_a && all->sk_a->next)
 	{
@@ -71,8 +71,8 @@ void	rra(t_all *all)
 
 void	rrb(t_all *all)
 {
-	t_list *eltb;
-	t_list *eltz;
+	t_elt *eltb;
+	t_elt *eltz;
 
 	if (all->sk_b && all->sk_b->next)
 	{

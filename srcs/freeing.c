@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 00:11:18 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/02 12:19:39 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/09 18:49:37 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	free_a(t_all *all)
 {
-	t_list *elt;
+	t_elt *elt;
 
 	while (all->sk_a)
 	{
@@ -26,7 +26,7 @@ void	free_a(t_all *all)
 
 void	free_b(t_all *all)
 {
-	t_list *elt;
+	t_elt *elt;
 
 	while (all->sk_b)
 	{

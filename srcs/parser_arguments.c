@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:58:23 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/05 13:14:08 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/09 19:04:35 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		value_already_found(t_all *all, char *s)
 {
-	t_list *elt;
+	t_elt *elt;
 
 	elt = all->sk_a;
 	while (elt)
@@ -73,7 +73,7 @@ int		is_int(char *str)
 int		check_n_get_arguments(int ac, char **av, t_all *all)
 {
 	int		i;
-	t_list	*elt;
+	t_elt	*elt;
 
 	i = all->bonus;
 	while (++i < ac)
@@ -83,18 +83,18 @@ int		check_n_get_arguments(int ac, char **av, t_all *all)
 		if (!all->sk_a)
 		{
 			if (!(value_already_found(all, av[i]))\
-			|| !(all->sk_a = ft_lstnew(av[i])))
+			|| !(all->sk_a = ft_lstnew_e(av[i])))
 				return (0);
 			all->len_a++;
 			elt = all->sk_a;
 			continue;
 		}
 		if (!(value_already_found(all, av[i]))\
-		|| !(elt->next = ft_lstnew(av[i])))
+		|| !(elt->next = ft_lstnew_e(av[i])))
 			return (0);
 		all->len_a++;
 		elt = elt->next;
 	}
-	all->len_t = ft_lstsize(all->sk_a);
+	all->len_t = ft_lstsize_e(all->sk_a);
 	return (1);
 }

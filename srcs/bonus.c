@@ -6,13 +6,13 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 11:06:20 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/05 18:21:16 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/09 18:56:35 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int		max_lgth(t_list *e)
+int		max_lgth(t_elt *e)
 {
 	int max;
 
