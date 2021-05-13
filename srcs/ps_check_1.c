@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:47:51 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/09 20:18:57 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/13 09:23:07 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void execute_short_algo(t_all *all)
 	if (!in_order(all))
 		print_action("sa", all);
 	find_lowest_values_a(all);
-	if (!is_sk_a_ordered(all))
+	if (!is_sk_ordered(all->sk_a))
 	{
 		if (all->p_low == 1)
 			print_action("ra", all);
@@ -51,7 +51,7 @@ void execute_short_algo(t_all *all)
 }
 void end_algo(t_all *all)
 {
-	if (!(is_sk_a_ordered(all) && all->sk_b == 0))
+	if (!(is_sk_ordered(all->sk_a) && all->sk_b == 0))
 	{
 		find_close_mid_values(all);
 		send_mid_hig_to_top(all);

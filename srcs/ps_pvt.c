@@ -6,13 +6,13 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 20:05:41 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/10 22:10:33 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/13 12:52:04 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void get_pivots(t_elt *elt)
+void get_pivots(t_elt *elt, int s)
 {
 	long long sum;
 	int midd;
@@ -20,14 +20,19 @@ void get_pivots(t_elt *elt)
 	sum = 0;
 	while (elt)
 	{
-		midd = find_midd(elt);
-		bug("midd", midd);
-		find_pivot(elt, midd);
-		while (elt && (elt->is_pivot != STOP))
+		while (elt && (elt->is_pivot == OLD))
 			elt = elt->next;
 		if (elt)
+		{
+			midd = find_midd(elt);
+			bug("midd", midd);
+			find_pivot(elt, midd, s);
+			bug("end find_pivot", val(elt));
+		}
+		while (elt && (elt->is_pivot != OLD))
 			elt = elt->next;
 	}
+	bug("END get_pivots", 1);
 }
 
 int find_midd(t_elt *elt)
@@ -38,8 +43,10 @@ int find_midd(t_elt *elt)
 
 	sum = 0;
 	i = 0;
-	while (elt && (elt->is_pivot != STOP))
+	while (elt && (elt->is_pivot != OLD))
 	{
+		if (elt->is_pivot == BKED)
+			elt->is_pivot = 0;
 		sum += (long long)ft_atoi(elt->content);
 		elt = elt->next;
 		i++;
@@ -48,18 +55,23 @@ int find_midd(t_elt *elt)
 	return (midd);
 }
 
-void find_pivot(t_elt *elt, int midd)
+void find_pivot(t_elt *elt, int midd, int s)
 {
 	int v;
 	t_elt *bk;
+	(void)s;
 
 	bk = elt;
 	if (elt)
 		v = val(elt);
-	while (elt && (elt->is_pivot != STOP))
+	while (elt && (elt->is_pivot != OLD))
 	{
-		if (midd - val(elt) > 0 && midd - val(elt) < midd - v)
+		// bug("pivot tester", midd - val(elt));
+		if (midd - val(elt) >= 0 && ft_abs(midd - val(elt)) < ft_abs(midd - v))
+		{
+			// bug("setting v", val(elt));
 			v = val(elt);
+		}
 		elt = elt->next;
 	}
 	bug("val of pivot", v);
@@ -78,12 +90,13 @@ void find_pivot(t_elt *elt, int midd)
 int in_packet(t_all *all, t_elt *e)
 {
 	(void)all;
-	if (!e || e->is_pivot == BKED || e->is_pivot == STOP)
+	if (!e || e->is_pivot == BKED || e->is_pivot == OLD)
 	{
-		bug("out of packet", 0);
+		bug("out of packet", e->is_pivot);
+		bug("for val", val(e));
 		return (0);
 	}
-	bug("IN DA PACKET", 0);
+	bug("still in the packet", 1);
 	return (1);
 }
 

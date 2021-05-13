@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 00:11:18 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/10 22:40:40 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/13 11:38:32 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,34 @@ void print_situation_a(t_all *all)
 	t_elt *e;
 
 	e = all->sk_a;
+	bug("all->v_nxtpvt", all->v_nxtp);
 	while (e)
 	{
 		ft_putstr_fd("elt no :", 1);
 		ft_putstr_fd(e->content, 1);
 		ft_putstr_fd(" -> is_pivot: ", 1);
 		ft_putnbr_fd(e->is_pivot, 1);
-		ft_putstr_fd(" // ", 1);
+		ft_putstr_fd("\n", 1);
 		e = e->next;
 	}
+}
+
+void print_situation_b(t_all *all)
+{
+	t_elt *e;
+
+	e = all->sk_b;
+	bug("\nPRINT SITUATION\nall->v_nxtpvt", all->v_nxtp);
+	while (e)
+	{
+		ft_putstr_fd("elt no :", 1);
+		ft_putstr_fd(e->content, 1);
+		ft_putstr_fd(" -> is_pivot: ", 1);
+		ft_putnbr_fd(e->is_pivot, 1);
+		ft_putstr_fd(" \n", 1);
+		e = e->next;
+	}
+	write(1, "\n", 1);
 }
 
 void bug(char *s, int n)

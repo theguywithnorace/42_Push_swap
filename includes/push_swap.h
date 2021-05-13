@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:14:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/10 22:38:14 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/13 13:03:43 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@
 # define RRR 11
 
 # define BKED 3
-# define STOP 2
 # define OLD -1
 # define PIVOT 1
 
@@ -64,18 +63,42 @@ typedef struct	s_all
 	int		check;
 }				t_all;
 
-//pivot algo
-void get_pivots(t_elt *elt);
-int find_midd(t_elt *elt);
-void	find_pivot(t_elt *e, int midd);
 
-//ps_actions
+//main
+void execute_algo(t_all *all);
+
+
+//pivot algo
+void get_pivots(t_elt *elt, int s);
+int find_midd(t_elt *elt);
+void	find_pivot(t_elt *e, int midd, int s);
+
+//ps_actions_to_b
 void send_low_values_b(t_all *all);
 void send_pivot_b(t_all *all);
 void stock_hig_values_a(t_all *all);
 void set_pivot_top_b(t_all *all);
 void send_hig_values_b(t_all *all);
 int is_last_seen(t_elt *e);
+int is_all_end_sup(t_elt *e, int max);
+void set_bked_sk(t_elt *e);
+void set_pivot_at_top(t_all *all);
+int less_elt_than(int n, t_elt *e);
+void quick_send_b(t_all *all);
+
+
+
+//ps_actions to a
+void send_low_values_a(t_all *all);
+void send_pivot_a(t_all *all);
+void stock_low_values_b(t_all *all);
+void set_pivot_top_a(t_all *all);
+void send_hig_values_a(t_all *all);
+int is_all_end_inf(t_elt *e, int max);
+void quick_send_a(t_all *all);
+
+
+
 
 
 int eq(t_elt *elt, int v);
@@ -89,6 +112,8 @@ int in_packet(t_all *all, t_elt *e);
 //Error and debugger
 void bug(char *s, int n);
 void print_situation_a(t_all *all);
+void print_situation_b(t_all *all);
+
 
 
 //Short algo
@@ -98,7 +123,7 @@ void execute_short_algo(t_all *all);
 void			end_algo(t_all *all);
 int				ft_strlen_ps(const char *s);
 void			find_lowest_values_a(t_all *all);
-int				is_sk_a_ordered(t_all *all);
+int				is_sk_ordered(t_elt *all);
 void			send_mid_hig_to_top(t_all *all);
 void			make_final_ordering(t_all *all);
 void			reverse_send_to_top(t_all *all);

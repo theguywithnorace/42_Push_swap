@@ -3,7 +3,7 @@ SRC_DIR			= srcs/
 SRC				=	execute_instructions.c initialize.c instructions_1.c\
 						instructions_2.c parser_arguments.c parser_instructions.c\
 						ps_move.c ps_check_1.c ps_check_2.c error.c print.c freeing.c\
-						bonus.c ps_send.c ps_pvt.c ps_actions.c
+						bonus.c ps_send.c ps_pvt.c ps_actions.c ps_actions_to_a.c
 
 SRCS				= ${addprefix ${SRC_DIR}, ${SRC}}
 

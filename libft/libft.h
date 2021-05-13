@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 21:46:34 by timothee          #+#    #+#             */
-/*   Updated: 2021/05/10 21:56:35 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/13 10:51:17 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_lstsize_e(t_elt *lst);
 t_elt	*ft_lstlast_e(t_elt *lst);
 
 
-
+int				ft_abs(int a);
 size_t			ft_strlen_gnl(const char *s);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
