@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:37:57 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/13 12:52:23 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/13 13:10:24 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void execute_algo(t_all *all)
 		get_pivots(all->sk_b, -1); //parcours en sommant jusqu'a [fin ou pivot] -> moyenne -> [elt >= moy] = pivot
 		send_to_a(all);
 	}
+	bug("\n\n>>>>>>>>> ALL FUCKIN  ORDERED\n\n", 1);
 }
 
 int main(int ac, char **av)

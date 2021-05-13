@@ -1302,62 +1302,35 @@ LAST of sk_b: 5
   A     B
 
 
-midd: 7
-val of pivot: 7
-is_pivot foud for val: 7
-end find_pivot: 7
-midd: 11
-val of pivot: 11
-is_pivot foud for val: 11
-end find_pivot: 11
-midd: 13
-val of pivot: 13
-is_pivot foud for val: 13
-end find_pivot: 13
-midd: 19
-val of pivot: 19
-is_pivot foud for val: 19
-end find_pivot: 19
+BEGIN get_pivots B: 1
+midd: 4
+val of pivot: 4
+is_pivot foud for val: 4
+end find_pivot: 4
 END get_pivots: 1
 
-RECCURSION: 1
 
-
-BEGIN of send to B: 1
+BEGIN of send to A: 1
 >>> new while send back to a: 0
-all->v_nxtpvt: 5
-elt no :7 -> is_pivot: 1
-elt no :8 -> is_pivot: -1
-elt no :11 -> is_pivot: 1
-elt no :12 -> is_pivot: -1
-elt no :13 -> is_pivot: 1
-elt no :14 -> is_pivot: -1
-elt no :15 -> is_pivot: -1
-elt no :17 -> is_pivot: -1
-elt no :19 -> is_pivot: 1
-less_elt_than: 1
-send less than 1 elt: 1
--> Executing pb ->
 
+PRINT SITUATION
+all->v_nxtpvt: 5
+elt no :5 -> is_pivot: -1 
+elt no :4 -> is_pivot: 1 
+elt no :3 -> is_pivot: -1 
+elt no :2 -> is_pivot: -1 
+elt no :1 -> is_pivot: -1 
+
+less_elt_than: 0
+send less than 1 elt: 1
+-> Executing pa ->
+
+  5    
+  7    
   8    
  11    
- 12     7 
- 13     5 
- 14     4 
- 15     3 
- 17     2 
- 19     1 
-----   ---
-  A     B
-
-
-less_elt_than: 0
-send less than 1 elt: 1
--> Executing pb ->
-
- 11     8 
- 12     7 
- 13     5 
+ 12    
+ 13    
  14     4 
  15     3 
  17     2 
@@ -1368,135 +1341,89 @@ send less than 1 elt: 1
 
 less_elt_than: 1
 send less than 1 elt: 1
--> Executing pb ->
+-> Executing pa ->
 
-        11 
-         8 
- 12      7 
- 13      5 
- 14      4 
- 15      3 
- 17      2 
- 19      1 
-----   ----
-  A      B
-
-
-less_elt_than: 0
-send less than 1 elt: 1
--> Executing pb ->
-
-        12 
-        11 
-         8 
-         7 
- 13      5 
- 14      4 
- 15      3 
- 17      2 
- 19      1 
-----   ----
-  A      B
-
-
-less_elt_than: 1
-send less than 1 elt: 1
--> Executing pb ->
-
-        13 
-        12 
-        11 
-         8 
-         7 
-         5 
- 14      4 
- 15      3 
- 17      2 
- 19      1 
-----   ----
-  A      B
+  4    
+  5    
+  7    
+  8    
+ 11    
+ 12    
+ 13    
+ 14    
+ 15     3 
+ 17     2 
+ 19     1 
+----   ---
+  A     B
 
 
 less_elt_than: 0
 send less than 1 elt: 1
--> Executing pb ->
+-> Executing pa ->
 
-        14 
-        13 
-        12 
-        11 
-         8 
-         7 
-         5 
-         4 
- 15      3 
- 17      2 
- 19      1 
-----   ----
-  A      B
-
-
-less_elt_than: 0
-send less than 1 elt: 1
--> Executing pb ->
-
-        15 
-        14 
-        13 
-        12 
-        11 
-         8 
-         7 
-         5 
-         4 
-         3 
- 17      2 
- 19      1 
-----   ----
-  A      B
+  3    
+  4    
+  5    
+  7    
+  8    
+ 11    
+ 12    
+ 13    
+ 14    
+ 15    
+ 17     2 
+ 19     1 
+----   ---
+  A     B
 
 
 less_elt_than: 0
 send less than 1 elt: 1
--> Executing pb ->
+-> Executing pa ->
 
-        17 
-        15 
-        14 
-        13 
-        12 
-        11 
-         8 
-         7 
-         5 
-         4 
-         3 
-         2 
- 19      1 
-----   ----
-  A      B
-
-
-less_elt_than: 1
-send less than 1 elt: 1
--> Executing pb ->
-
-       19 
-       17 
-       15 
-       14 
-       13 
-       12 
-       11 
-        8 
-        7 
-        5 
-        4 
-        3 
-        2 
-        1 
----   ----
- A      B
+  2    
+  3    
+  4    
+  5    
+  7    
+  8    
+ 11    
+ 12    
+ 13    
+ 14    
+ 15    
+ 17    
+ 19     1 
+----   ---
+  A     B
 
 
 less_elt_than: 0
+send less than 1 elt: 1
+-> Executing pa ->
+
+  1    
+  2    
+  3    
+  4    
+  5    
+  7    
+  8    
+ 11    
+ 12    
+ 13    
+ 14    
+ 15    
+ 17    
+ 19    
+----   ---
+  A     B
+
+
+END of send to A. pb0: 0
+
+
+>>>>>>>>> ALL FUCKIN  ORDERED
+
+: 1

@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:37:57 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/13 13:04:25 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/13 13:12:16 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ void send_to_b(t_all *all)
 				send_pivot_b(all);
 			else if (is_all_end_sup(all->sk_a, all->v_nxtp))
 			{
+
 				set_pivot_at_top(all);
+				if (is_sk_ordered(all->sk_a))
+					return;
 				get_pivots(all->sk_a, 1); //parcours en sommant jusqu'a [fin ou pivot] -> moyenne -> [elt >= moy] = pivot
 				bug("\nRECCURSION", 1);
 				send_to_b(all);
@@ -72,10 +75,10 @@ void send_to_a(t_all *all)
 	{
 		bug(">>> new while send back to a", 0);
 		print_situation_b(all);
-		while (less_elt_than(1, all->sk_b))
+		while (all->sk_b && less_elt_than(1, all->sk_b))
 			quick_send_a(all);
-		e = all->sk_b;
-		set_next_pivot(all, e);
+		if ((e = all->sk_b))
+			set_next_pivot(all, e);
 		while (all->sk_b && in_packet(all, all->sk_b))
 		{
 			if (val(e) > all->v_nxtp)
