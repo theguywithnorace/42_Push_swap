@@ -1,747 +1,612 @@
 
 Stacks:
 
-  1    
   5    
-  4    
-  2    
-  3    
-  8    
-  7    
- 12    
- 17    
- 14    
- 13    
  11    
+  3    
+ -6    
+ -3    
  15    
- 19    
+ -2    
+ 14    
+  8    
+ 12    
+ 10    
+  4    
 ----   ---
   A     B
 
 
 BEGIN get_pivots A: 1
-midd: 9
-val of pivot: 8
-is_pivot foud for val: 8
-end find_pivot: 1
+midd: 5
+val of pivot: 5
+is_pivot foud for val: 5
+end find_pivot: 5
 END get_pivots: 1
 all->v_nxtpvt: 0
-elt no :1 -> is_pivot: 0
-elt no :5 -> is_pivot: 0
-elt no :4 -> is_pivot: 0
-elt no :2 -> is_pivot: 0
-elt no :3 -> is_pivot: 0
-elt no :8 -> is_pivot: 1
-elt no :7 -> is_pivot: 0
-elt no :12 -> is_pivot: 0
-elt no :17 -> is_pivot: 0
-elt no :14 -> is_pivot: 0
-elt no :13 -> is_pivot: 0
+elt no :5 -> is_pivot: 1
 elt no :11 -> is_pivot: 0
+elt no :3 -> is_pivot: 0
+elt no :-6 -> is_pivot: 0
+elt no :-3 -> is_pivot: 0
 elt no :15 -> is_pivot: 0
-elt no :19 -> is_pivot: 0
+elt no :-2 -> is_pivot: 0
+elt no :14 -> is_pivot: 0
+elt no :8 -> is_pivot: 0
+elt no :12 -> is_pivot: 0
+elt no :10 -> is_pivot: 0
+elt no :4 -> is_pivot: 0
 
 
 BEGIN of send to B: 1
 >>> new while send back to a: 0
 all->v_nxtpvt: 0
-elt no :1 -> is_pivot: 0
-elt no :5 -> is_pivot: 0
-elt no :4 -> is_pivot: 0
-elt no :2 -> is_pivot: 0
-elt no :3 -> is_pivot: 0
-elt no :8 -> is_pivot: 1
-elt no :7 -> is_pivot: 0
-elt no :12 -> is_pivot: 0
-elt no :17 -> is_pivot: 0
-elt no :14 -> is_pivot: 0
-elt no :13 -> is_pivot: 0
+elt no :5 -> is_pivot: 1
 elt no :11 -> is_pivot: 0
+elt no :3 -> is_pivot: 0
+elt no :-6 -> is_pivot: 0
+elt no :-3 -> is_pivot: 0
 elt no :15 -> is_pivot: 0
-elt no :19 -> is_pivot: 0
-less_elt_than: 14
+elt no :-2 -> is_pivot: 0
+elt no :14 -> is_pivot: 0
+elt no :8 -> is_pivot: 0
+elt no :12 -> is_pivot: 0
+elt no :10 -> is_pivot: 0
+elt no :4 -> is_pivot: 0
+less_elt_than: 12
 still in the packet: 1
-all->v_nxtpvt: 8
-elt no :1 -> is_pivot: 0
-elt no :5 -> is_pivot: 0
-elt no :4 -> is_pivot: 0
-elt no :2 -> is_pivot: 0
-elt no :3 -> is_pivot: 0
-elt no :8 -> is_pivot: 1
-elt no :7 -> is_pivot: 0
-elt no :12 -> is_pivot: 0
-elt no :17 -> is_pivot: 0
-elt no :14 -> is_pivot: 0
-elt no :13 -> is_pivot: 0
+all->v_nxtpvt: 5
+elt no :5 -> is_pivot: 1
 elt no :11 -> is_pivot: 0
+elt no :3 -> is_pivot: 0
+elt no :-6 -> is_pivot: 0
+elt no :-3 -> is_pivot: 0
 elt no :15 -> is_pivot: 0
-elt no :19 -> is_pivot: 0
-send_low_values_b: 0
+elt no :-2 -> is_pivot: 0
+elt no :14 -> is_pivot: 0
+elt no :8 -> is_pivot: 0
+elt no :12 -> is_pivot: 0
+elt no :10 -> is_pivot: 0
+elt no :4 -> is_pivot: 0
+send_pivot_b: 0
 -> Executing pb ->
 
-  5    
-  4    
-  2    
-  3    
-  8    
-  7    
- 12    
- 17    
- 14    
- 13    
  11    
+  3    
+ -6    
+ -3    
  15    
- 19     1 
+ -2    
+ 14    
+  8    
+ 12    
+ 10    
+  4     5 
+----   ---
+  A     B
+
+
+-> Executing rb ->
+
+ 11    
+  3    
+ -6    
+ -3    
+ 15    
+ -2    
+ 14    
+  8    
+ 12    
+ 10    
+  4     5 
+----   ---
+  A     B
+
+
+send_pivot_b: -1
+still in the packet: 1
+all->v_nxtpvt: 5
+elt no :11 -> is_pivot: 0
+elt no :3 -> is_pivot: 0
+elt no :-6 -> is_pivot: 0
+elt no :-3 -> is_pivot: 0
+elt no :15 -> is_pivot: 0
+elt no :-2 -> is_pivot: 0
+elt no :14 -> is_pivot: 0
+elt no :8 -> is_pivot: 0
+elt no :12 -> is_pivot: 0
+elt no :10 -> is_pivot: 0
+elt no :4 -> is_pivot: 0
+stock_hig_values_a: 11
+-> Executing ra ->
+
+  3    
+ -6    
+ -3    
+ 15    
+ -2    
+ 14    
+  8    
+ 12    
+ 10    
+  4    
+ 11     5 
 ----   ---
   A     B
 
 
 still in the packet: 1
-all->v_nxtpvt: 8
-elt no :5 -> is_pivot: 0
-elt no :4 -> is_pivot: 0
-elt no :2 -> is_pivot: 0
+all->v_nxtpvt: 5
 elt no :3 -> is_pivot: 0
-elt no :8 -> is_pivot: 1
-elt no :7 -> is_pivot: 0
-elt no :12 -> is_pivot: 0
-elt no :17 -> is_pivot: 0
-elt no :14 -> is_pivot: 0
-elt no :13 -> is_pivot: 0
-elt no :11 -> is_pivot: 0
+elt no :-6 -> is_pivot: 0
+elt no :-3 -> is_pivot: 0
 elt no :15 -> is_pivot: 0
-elt no :19 -> is_pivot: 0
+elt no :-2 -> is_pivot: 0
+elt no :14 -> is_pivot: 0
+elt no :8 -> is_pivot: 0
+elt no :12 -> is_pivot: 0
+elt no :10 -> is_pivot: 0
+elt no :4 -> is_pivot: 0
+elt no :11 -> is_pivot: 3
 send_low_values_b: 0
 -> Executing pb ->
+
+ -6    
+ -3    
+ 15    
+ -2    
+ 14    
+  8    
+ 12    
+ 10    
+  4     3 
+ 11     5 
+----   ---
+  A     B
+
+
+still in the packet: 1
+all->v_nxtpvt: 5
+elt no :-6 -> is_pivot: 0
+elt no :-3 -> is_pivot: 0
+elt no :15 -> is_pivot: 0
+elt no :-2 -> is_pivot: 0
+elt no :14 -> is_pivot: 0
+elt no :8 -> is_pivot: 0
+elt no :12 -> is_pivot: 0
+elt no :10 -> is_pivot: 0
+elt no :4 -> is_pivot: 0
+elt no :11 -> is_pivot: 3
+send_low_values_b: 0
+-> Executing pb ->
+
+ -3    
+ 15    
+ -2    
+ 14    
+  8    
+ 12    
+ 10     -6 
+  4      3 
+ 11      5 
+----   ----
+  A      B
+
+
+still in the packet: 1
+all->v_nxtpvt: 5
+elt no :-3 -> is_pivot: 0
+elt no :15 -> is_pivot: 0
+elt no :-2 -> is_pivot: 0
+elt no :14 -> is_pivot: 0
+elt no :8 -> is_pivot: 0
+elt no :12 -> is_pivot: 0
+elt no :10 -> is_pivot: 0
+elt no :4 -> is_pivot: 0
+elt no :11 -> is_pivot: 3
+send_low_values_b: 0
+-> Executing pb ->
+
+ 15    
+ -2    
+ 14    
+  8    
+ 12     -3 
+ 10     -6 
+  4      3 
+ 11      5 
+----   ----
+  A      B
+
+
+still in the packet: 1
+all->v_nxtpvt: 5
+elt no :15 -> is_pivot: 0
+elt no :-2 -> is_pivot: 0
+elt no :14 -> is_pivot: 0
+elt no :8 -> is_pivot: 0
+elt no :12 -> is_pivot: 0
+elt no :10 -> is_pivot: 0
+elt no :4 -> is_pivot: 0
+elt no :11 -> is_pivot: 3
+stock_hig_values_a: 15
+-> Executing ra ->
+
+ -2    
+ 14    
+  8    
+ 12    
+ 10     -3 
+  4     -6 
+ 11      3 
+ 15      5 
+----   ----
+  A      B
+
+
+still in the packet: 1
+all->v_nxtpvt: 5
+elt no :-2 -> is_pivot: 0
+elt no :14 -> is_pivot: 0
+elt no :8 -> is_pivot: 0
+elt no :12 -> is_pivot: 0
+elt no :10 -> is_pivot: 0
+elt no :4 -> is_pivot: 0
+elt no :11 -> is_pivot: 3
+elt no :15 -> is_pivot: 3
+send_low_values_b: 0
+-> Executing pb ->
+
+ 14    
+  8    
+ 12     -2 
+ 10     -3 
+  4     -6 
+ 11      3 
+ 15      5 
+----   ----
+  A      B
+
+
+still in the packet: 1
+all->v_nxtpvt: 5
+elt no :14 -> is_pivot: 0
+elt no :8 -> is_pivot: 0
+elt no :12 -> is_pivot: 0
+elt no :10 -> is_pivot: 0
+elt no :4 -> is_pivot: 0
+elt no :11 -> is_pivot: 3
+elt no :15 -> is_pivot: 3
+stock_hig_values_a: 14
+-> Executing ra ->
+
+  8    
+ 12    
+ 10     -2 
+  4     -3 
+ 11     -6 
+ 15      3 
+ 14      5 
+----   ----
+  A      B
+
+
+still in the packet: 1
+all->v_nxtpvt: 5
+elt no :8 -> is_pivot: 0
+elt no :12 -> is_pivot: 0
+elt no :10 -> is_pivot: 0
+elt no :4 -> is_pivot: 0
+elt no :11 -> is_pivot: 3
+elt no :15 -> is_pivot: 3
+elt no :14 -> is_pivot: 3
+stock_hig_values_a: 8
+-> Executing ra ->
+
+ 12    
+ 10    
+  4     -2 
+ 11     -3 
+ 15     -6 
+ 14      3 
+  8      5 
+----   ----
+  A      B
+
+
+still in the packet: 1
+all->v_nxtpvt: 5
+elt no :12 -> is_pivot: 0
+elt no :10 -> is_pivot: 0
+elt no :4 -> is_pivot: 0
+elt no :11 -> is_pivot: 3
+elt no :15 -> is_pivot: 3
+elt no :14 -> is_pivot: 3
+elt no :8 -> is_pivot: 3
+stock_hig_values_a: 12
+-> Executing ra ->
+
+ 10    
+  4    
+ 11     -2 
+ 15     -3 
+ 14     -6 
+  8      3 
+ 12      5 
+----   ----
+  A      B
+
+
+still in the packet: 1
+all->v_nxtpvt: 5
+elt no :10 -> is_pivot: 0
+elt no :4 -> is_pivot: 0
+elt no :11 -> is_pivot: 3
+elt no :15 -> is_pivot: 3
+elt no :14 -> is_pivot: 3
+elt no :8 -> is_pivot: 3
+elt no :12 -> is_pivot: 3
+stock_hig_values_a: 10
+-> Executing ra ->
 
   4    
-  2    
-  3    
-  8    
-  7    
- 12    
- 17    
- 14    
- 13    
  11    
- 15     5 
- 19     1 
-----   ---
-  A     B
+ 15     -2 
+ 14     -3 
+  8     -6 
+ 12      3 
+ 10      5 
+----   ----
+  A      B
 
 
 still in the packet: 1
-all->v_nxtpvt: 8
+all->v_nxtpvt: 5
 elt no :4 -> is_pivot: 0
-elt no :2 -> is_pivot: 0
-elt no :3 -> is_pivot: 0
-elt no :8 -> is_pivot: 1
-elt no :7 -> is_pivot: 0
-elt no :12 -> is_pivot: 0
-elt no :17 -> is_pivot: 0
-elt no :14 -> is_pivot: 0
-elt no :13 -> is_pivot: 0
-elt no :11 -> is_pivot: 0
-elt no :15 -> is_pivot: 0
-elt no :19 -> is_pivot: 0
+elt no :11 -> is_pivot: 3
+elt no :15 -> is_pivot: 3
+elt no :14 -> is_pivot: 3
+elt no :8 -> is_pivot: 3
+elt no :12 -> is_pivot: 3
+elt no :10 -> is_pivot: 3
 send_low_values_b: 0
 -> Executing pb ->
 
-  2    
-  3    
-  8    
-  7    
- 12    
- 17    
- 14    
- 13    
- 11     4 
- 15     5 
- 19     1 
-----   ---
-  A     B
+ 11      4 
+ 15     -2 
+ 14     -3 
+  8     -6 
+ 12      3 
+ 10      5 
+----   ----
+  A      B
 
 
-still in the packet: 1
-all->v_nxtpvt: 8
-elt no :2 -> is_pivot: 0
-elt no :3 -> is_pivot: 0
-elt no :8 -> is_pivot: 1
-elt no :7 -> is_pivot: 0
-elt no :12 -> is_pivot: 0
-elt no :17 -> is_pivot: 0
-elt no :14 -> is_pivot: 0
-elt no :13 -> is_pivot: 0
-elt no :11 -> is_pivot: 0
-elt no :15 -> is_pivot: 0
-elt no :19 -> is_pivot: 0
-send_low_values_b: 0
--> Executing pb ->
-
-  3    
-  8    
-  7    
- 12    
- 17    
- 14    
- 13     2 
- 11     4 
- 15     5 
- 19     1 
-----   ---
-  A     B
-
-
-still in the packet: 1
-all->v_nxtpvt: 8
-elt no :3 -> is_pivot: 0
-elt no :8 -> is_pivot: 1
-elt no :7 -> is_pivot: 0
-elt no :12 -> is_pivot: 0
-elt no :17 -> is_pivot: 0
-elt no :14 -> is_pivot: 0
-elt no :13 -> is_pivot: 0
-elt no :11 -> is_pivot: 0
-elt no :15 -> is_pivot: 0
-elt no :19 -> is_pivot: 0
-send_low_values_b: 0
--> Executing pb ->
-
-  8    
-  7    
- 12    
- 17    
- 14     3 
- 13     2 
- 11     4 
- 15     5 
- 19     1 
-----   ---
-  A     B
-
-
-still in the packet: 1
-all->v_nxtpvt: 8
-elt no :8 -> is_pivot: 1
-elt no :7 -> is_pivot: 0
-elt no :12 -> is_pivot: 0
-elt no :17 -> is_pivot: 0
-elt no :14 -> is_pivot: 0
-elt no :13 -> is_pivot: 0
-elt no :11 -> is_pivot: 0
-elt no :15 -> is_pivot: 0
-elt no :19 -> is_pivot: 0
-send_pivot_b: 0
--> Executing pb ->
-
-  7    
- 12    
- 17     8 
- 14     3 
- 13     2 
- 11     4 
- 15     5 
- 19     1 
-----   ---
-  A     B
-
-
--> Executing rb ->
-
-  7    
- 12    
- 17     3 
- 14     2 
- 13     4 
- 11     5 
- 15     1 
- 19     8 
-----   ---
-  A     B
-
-
-send_pivot_b: 0
-
-PRINT SITUATION
-all->v_nxtpvt: 8
-elt no :3 -> is_pivot: 0 
-elt no :2 -> is_pivot: 0 
-elt no :4 -> is_pivot: 0 
-elt no :5 -> is_pivot: 0 
-elt no :1 -> is_pivot: 0 
-elt no :8 -> is_pivot: -1 
-
-still in the packet: 1
-all->v_nxtpvt: 8
-elt no :7 -> is_pivot: 0
-elt no :12 -> is_pivot: 0
-elt no :17 -> is_pivot: 0
-elt no :14 -> is_pivot: 0
-elt no :13 -> is_pivot: 0
-elt no :11 -> is_pivot: 0
-elt no :15 -> is_pivot: 0
-elt no :19 -> is_pivot: 0
-send_low_values_b: 0
--> Executing pb ->
-
- 12     7 
- 17     3 
- 14     2 
- 13     4 
- 11     5 
- 15     1 
- 19     8 
-----   ---
-  A     B
-
-
-still in the packet: 1
-all->v_nxtpvt: 8
-elt no :12 -> is_pivot: 0
-elt no :17 -> is_pivot: 0
-elt no :14 -> is_pivot: 0
-elt no :13 -> is_pivot: 0
-elt no :11 -> is_pivot: 0
-elt no :15 -> is_pivot: 0
-elt no :19 -> is_pivot: 0
-ALL END IS sup than pivot: 1
-LAST of sk_b: 8
+out of packet: 3
+for val: 11
+LAST of sk_b: 5
 -> Executing rrb ->
 
- 12     8 
- 17     7 
- 14     3 
- 13     2 
- 11     4 
- 15     5 
- 19     1 
-----   ---
-  A     B
-
-
-midd: 14
-val of pivot: 14
-is_pivot foud for val: 14
-end find_pivot: 12
-END get_pivots: 1
-
-RECCURSION: 1
-
-
-BEGIN of send to B: 1
->>> new while send back to a: 0
-all->v_nxtpvt: 8
-elt no :12 -> is_pivot: 0
-elt no :17 -> is_pivot: 0
-elt no :14 -> is_pivot: 1
-elt no :13 -> is_pivot: 0
-elt no :11 -> is_pivot: 0
-elt no :15 -> is_pivot: 0
-elt no :19 -> is_pivot: 0
-less_elt_than: 7
-still in the packet: 1
-all->v_nxtpvt: 14
-elt no :12 -> is_pivot: 0
-elt no :17 -> is_pivot: 0
-elt no :14 -> is_pivot: 1
-elt no :13 -> is_pivot: 0
-elt no :11 -> is_pivot: 0
-elt no :15 -> is_pivot: 0
-elt no :19 -> is_pivot: 0
-send_low_values_b: 0
--> Executing pb ->
-
-        12 
-         8 
- 17      7 
- 14      3 
- 13      2 
- 11      4 
- 15      5 
- 19      1 
-----   ----
-  A      B
-
-
-still in the packet: 1
-all->v_nxtpvt: 14
-elt no :17 -> is_pivot: 0
-elt no :14 -> is_pivot: 1
-elt no :13 -> is_pivot: 0
-elt no :11 -> is_pivot: 0
-elt no :15 -> is_pivot: 0
-elt no :19 -> is_pivot: 0
-stock_hig_values_a: 17
--> Executing ra ->
-
-        12 
-         8 
- 14      7 
- 13      3 
- 11      2 
+ 11      5 
  15      4 
- 19      5 
- 17      1 
+ 14     -2 
+  8     -3 
+ 12     -6 
+ 10      3 
 ----   ----
   A      B
 
 
-still in the packet: 1
-all->v_nxtpvt: 14
-elt no :14 -> is_pivot: 1
-elt no :13 -> is_pivot: 0
-elt no :11 -> is_pivot: 0
-elt no :15 -> is_pivot: 0
-elt no :19 -> is_pivot: 0
-elt no :17 -> is_pivot: 3
-send_pivot_b: 0
--> Executing pb ->
-
-        14 
-        12 
-         8 
-         7 
- 13      3 
- 11      2 
- 15      4 
- 19      5 
- 17      1 
-----   ----
-  A      B
-
-
--> Executing rb ->
-
-        12 
-         8 
-         7 
-         3 
- 13      2 
- 11      4 
- 15      5 
- 19      1 
- 17     14 
-----   ----
-  A      B
-
-
-send_pivot_b: 0
-
-PRINT SITUATION
-all->v_nxtpvt: 14
-elt no :12 -> is_pivot: 0 
-elt no :8 -> is_pivot: -1 
-elt no :7 -> is_pivot: 0 
-elt no :3 -> is_pivot: 0 
-elt no :2 -> is_pivot: 0 
-elt no :4 -> is_pivot: 0 
-elt no :5 -> is_pivot: 0 
-elt no :1 -> is_pivot: 0 
-elt no :14 -> is_pivot: -1 
-
-still in the packet: 1
-all->v_nxtpvt: 14
-elt no :13 -> is_pivot: 0
-elt no :11 -> is_pivot: 0
-elt no :15 -> is_pivot: 0
-elt no :19 -> is_pivot: 0
-elt no :17 -> is_pivot: 3
-send_low_values_b: 0
--> Executing pb ->
-
-        13 
-        12 
-         8 
-         7 
-         3 
-         2 
- 11      4 
- 15      5 
- 19      1 
- 17     14 
-----   ----
-  A      B
-
-
-still in the packet: 1
-all->v_nxtpvt: 14
-elt no :11 -> is_pivot: 0
-elt no :15 -> is_pivot: 0
-elt no :19 -> is_pivot: 0
-elt no :17 -> is_pivot: 3
-send_low_values_b: 0
+all->v_nxtpvt: 5
+all->v_nxtpvt: 5
+elt no :11 -> is_pivot: 3
+elt no :15 -> is_pivot: 3
+elt no :14 -> is_pivot: 3
+elt no :8 -> is_pivot: 3
+elt no :12 -> is_pivot: 3
+elt no :10 -> is_pivot: 3
+send_hig_values_b: 11
 -> Executing pb ->
 
         11 
-        13 
-        12 
-         8 
-         7 
-         3 
-         2 
-         4 
- 15      5 
- 19      1 
- 17     14 
-----   ----
-  A      B
-
-
-still in the packet: 1
-all->v_nxtpvt: 14
-elt no :15 -> is_pivot: 0
-elt no :19 -> is_pivot: 0
-elt no :17 -> is_pivot: 3
-ALL END IS sup than pivot: 1
-LAST of sk_b: 14
--> Executing rrb ->
-
-        14 
-        11 
-        13 
-        12 
-         8 
-         7 
-         3 
-         2 
- 15      4 
- 19      5 
- 17      1 
-----   ----
-  A      B
-
-
-midd: 17
-val of pivot: 17
-is_pivot foud for val: 17
-end find_pivot: 15
-END get_pivots: 1
-
-RECCURSION: 1
-
-
-BEGIN of send to B: 1
->>> new while send back to a: 0
-all->v_nxtpvt: 14
-elt no :15 -> is_pivot: 0
-elt no :19 -> is_pivot: 0
-elt no :17 -> is_pivot: 1
-less_elt_than: 3
-still in the packet: 1
-all->v_nxtpvt: 17
-elt no :15 -> is_pivot: 0
-elt no :19 -> is_pivot: 0
-elt no :17 -> is_pivot: 1
-send_low_values_b: 0
--> Executing pb ->
-
-        15 
-        14 
-        11 
-        13 
-        12 
-         8 
-         7 
-         3 
-         2 
-         4 
- 19      5 
- 17      1 
-----   ----
-  A      B
-
-
-still in the packet: 1
-all->v_nxtpvt: 17
-elt no :19 -> is_pivot: 0
-elt no :17 -> is_pivot: 1
-stock_hig_values_a: 19
--> Executing ra ->
-
-        15 
-        14 
-        11 
-        13 
-        12 
-         8 
-         7 
-         3 
-         2 
-         4 
- 17      5 
- 19      1 
-----   ----
-  A      B
-
-
-still in the packet: 1
-all->v_nxtpvt: 17
-elt no :17 -> is_pivot: 1
-elt no :19 -> is_pivot: 3
-send_pivot_b: 0
--> Executing pb ->
-
-        17 
-        15 
-        14 
-        11 
-        13 
-        12 
-         8 
-         7 
-         3 
-         2 
-         4 
          5 
- 19      1 
+ 15      4 
+ 14     -2 
+  8     -3 
+ 12     -6 
+ 10      3 
 ----   ----
   A      B
 
 
-ALL END IS sup than pivot: 1
-send_pivot_b: -1
+send_hig_values_b: 15
+-> Executing pb ->
 
-PRINT SITUATION
-all->v_nxtpvt: 17
-elt no :17 -> is_pivot: -1 
-elt no :15 -> is_pivot: 0 
-elt no :14 -> is_pivot: -1 
-elt no :11 -> is_pivot: 0 
-elt no :13 -> is_pivot: 0 
-elt no :12 -> is_pivot: 0 
-elt no :8 -> is_pivot: -1 
-elt no :7 -> is_pivot: 0 
-elt no :3 -> is_pivot: 0 
-elt no :2 -> is_pivot: 0 
-elt no :4 -> is_pivot: 0 
-elt no :5 -> is_pivot: 0 
-elt no :1 -> is_pivot: 0 
+        15 
+        11 
+         5 
+         4 
+ 14     -2 
+  8     -3 
+ 12     -6 
+ 10      3 
+----   ----
+  A      B
 
-out of packet: 3
-for val: 19
-LAST of sk_b: 1
-all->v_nxtpvt: 17
-ALL END IS sup than pivot: 1
-END BY RETURN of send to b. pb: 0
-out of packet: 3
-for val: 19
-LAST of sk_b: 1
-all->v_nxtpvt: 17
-ALL END IS sup than pivot: 1
-END BY RETURN of send to b. pb: 0
-out of packet: 3
-for val: 19
-LAST of sk_b: 1
-all->v_nxtpvt: 17
-ALL END IS sup than pivot: 1
-END BY RETURN of send to b. pb: 0
+
+send_hig_values_b: 14
+-> Executing pb ->
+
+        14 
+        15 
+        11 
+         5 
+         4 
+        -2 
+  8     -3 
+ 12     -6 
+ 10      3 
+----   ----
+  A      B
+
+
+send_hig_values_b: 8
+-> Executing pb ->
+
+         8 
+        14 
+        15 
+        11 
+         5 
+         4 
+        -2 
+        -3 
+ 12     -6 
+ 10      3 
+----   ----
+  A      B
+
+
+send_hig_values_b: 12
+-> Executing pb ->
+
+        12 
+         8 
+        14 
+        15 
+        11 
+         5 
+         4 
+        -2 
+        -3 
+        -6 
+ 10      3 
+----   ----
+  A      B
+
+
+send_hig_values_b: 10
+-> Executing pb ->
+
+       10 
+       12 
+        8 
+       14 
+       15 
+       11 
+        5 
+        4 
+       -2 
+       -3 
+       -6 
+        3 
+---   ----
+ A      B
+
+
+end of while of send_to_b: 0
+END of send to b. pb: 0
 BEGIN get_pivots B: 1
-midd: 15
-val of pivot: 15
-is_pivot foud for val: 15
-end find_pivot: 15
-midd: 12
-val of pivot: 12
-is_pivot foud for val: 12
-end find_pivot: 11
-midd: 3
-val of pivot: 3
-is_pivot foud for val: 3
-end find_pivot: 7
+midd: 11
+val of pivot: 11
+is_pivot foud for val: 11
+end find_pivot: 10
+midd: 0
+val of pivot: -2
+is_pivot foud for val: -2
+end find_pivot: 4
 END get_pivots: 1
 
 
-BEGIN of send to A: 1
->>> new while send back to a: 0
+BEGIN of send to A: 10
+>>> new while send back to a: 10
 
 PRINT SITUATION
-all->v_nxtpvt: 17
-elt no :17 -> is_pivot: -1 
-elt no :15 -> is_pivot: 1 
-elt no :14 -> is_pivot: -1 
-elt no :11 -> is_pivot: 0 
-elt no :13 -> is_pivot: 0 
-elt no :12 -> is_pivot: 1 
-elt no :8 -> is_pivot: -1 
-elt no :7 -> is_pivot: 0 
-elt no :3 -> is_pivot: 1 
-elt no :2 -> is_pivot: 0 
+all->v_nxtpvt: 5
+elt no :10 -> is_pivot: 0 
+elt no :12 -> is_pivot: 0 
+elt no :8 -> is_pivot: 0 
+elt no :14 -> is_pivot: 0 
+elt no :15 -> is_pivot: 0 
+elt no :11 -> is_pivot: 1 
+elt no :5 -> is_pivot: -1 
 elt no :4 -> is_pivot: 0 
-elt no :5 -> is_pivot: 0 
-elt no :1 -> is_pivot: 0 
+elt no :-2 -> is_pivot: 1 
+elt no :-3 -> is_pivot: 0 
+elt no :-6 -> is_pivot: 0 
+elt no :3 -> is_pivot: 0 
 
-less_elt_than: 0
-send less than 1 elt: 1
--> Executing pa ->
+less_elt_than: 6
 
-        15 
-        14 
-        11 
-        13 
-        12 
-         8 
-         7 
-         3 
-         2 
-         4 
- 17      5 
- 19      1 
-----   ----
-  A      B
+PRINT SITUATION
+all->v_nxtpvt: 11
+elt no :10 -> is_pivot: 0 
+elt no :12 -> is_pivot: 0 
+elt no :8 -> is_pivot: 0 
+elt no :14 -> is_pivot: 0 
+elt no :15 -> is_pivot: 0 
+elt no :11 -> is_pivot: 1 
+elt no :5 -> is_pivot: -1 
+elt no :4 -> is_pivot: 0 
+elt no :-2 -> is_pivot: 1 
+elt no :-3 -> is_pivot: 0 
+elt no :-6 -> is_pivot: 0 
+elt no :3 -> is_pivot: 0 
 
-
-less_elt_than: 1
-send less than 1 elt: 1
--> Executing pa ->
-
-        14 
-        11 
-        13 
-        12 
-         8 
-         7 
-         3 
-         2 
- 15      4 
- 17      5 
- 19      1 
-----   ----
-  A      B
-
-
-less_elt_than: 0
-send less than 1 elt: 1
--> Executing pa ->
-
-        11 
-        13 
-        12 
-         8 
-         7 
-         3 
- 14      2 
- 15      4 
- 17      5 
- 19      1 
-----   ----
-  A      B
-
-
-less_elt_than: 3
 still in the packet: 1
-stock_low_values_b: 14
+stock_low_values_b: 10
 -> Executing rb ->
 
-        13 
-        12 
+       12 
+        8 
+       14 
+       15 
+       11 
+        5 
+        4 
+       -2 
+       -3 
+       -6 
+        3 
+       10 
+---   ----
+ A      B
+
+
+still in the packet: 1
+send_hig_values_a: 0
+-> Executing pa ->
+
          8 
-         7 
+        14 
+        15 
+        11 
+         5 
+         4 
+        -2 
+        -3 
+        -6 
          3 
-         2 
- 14      4 
- 15      5 
- 17      1 
- 19     11 
+ 12     10 
+----   ----
+  A      B
+
+
+still in the packet: 1
+stock_low_values_b: 8
+-> Executing rb ->
+
+        14 
+        15 
+        11 
+         5 
+         4 
+        -2 
+        -3 
+        -6 
+         3 
+        10 
+ 12      8 
 ----   ----
   A      B
 
@@ -750,15 +615,33 @@ still in the packet: 1
 send_hig_values_a: 0
 -> Executing pa ->
 
-        12 
-         8 
-         7 
+        15 
+        11 
+         5 
+         4 
+        -2 
+        -3 
+        -6 
          3 
- 13      2 
- 14      4 
- 15      5 
- 17      1 
- 19     11 
+ 14     10 
+ 12      8 
+----   ----
+  A      B
+
+
+still in the packet: 1
+send_hig_values_a: 0
+-> Executing pa ->
+
+        11 
+         5 
+         4 
+        -2 
+        -3 
+        -6 
+ 15      3 
+ 14     10 
+ 12      8 
 ----   ----
   A      B
 
@@ -767,595 +650,986 @@ still in the packet: 1
 send_pivot_a: 0
 -> Executing pa ->
 
-         8 
-         7 
- 12      3 
- 13      2 
- 14      4 
- 15      5 
- 17      1 
- 19     11 
+         5 
+         4 
+        -2 
+        -3 
+ 11     -6 
+ 15      3 
+ 14     10 
+ 12      8 
 ----   ----
   A      B
 
 
 all end is inf than pivot: 1
 out of packet: -1
-for val: 8
-LAST of sk_b: 11
-is_last_seen: 8
-send_low_values_a: 8
+for val: 5
+LAST of sk_b: 8
+send_low_values_a: 5
 -> Executing rrb ->
 
-        11 
          8 
- 12      7 
- 13      3 
- 14      2 
- 15      4 
- 17      5 
- 19      1 
+         5 
+         4 
+        -2 
+ 11     -3 
+ 15     -6 
+ 14      3 
+ 12     10 
 ----   ----
   A      B
 
 
 -> Executing pa ->
 
- 11     8 
- 12     7 
- 13     3 
- 14     2 
- 15     4 
- 17     5 
- 19     1 
-----   ---
-  A     B
+         5 
+         4 
+  8     -2 
+ 11     -3 
+ 15     -6 
+ 14      3 
+ 12     10 
+----   ----
+  A      B
 
 
-is_last_seen: 8
+send_low_values_a: 5
+-> Executing rrb ->
+
+        10 
+         5 
+  8      4 
+ 11     -2 
+ 15     -3 
+ 14     -6 
+ 12      3 
+----   ----
+  A      B
+
+
+-> Executing pa ->
+
+ 10      5 
+  8      4 
+ 11     -2 
+ 15     -3 
+ 14     -6 
+ 12      3 
+----   ----
+  A      B
+
+
 end of while of send_to_b: 0
->>> new while send back to a: 0
+>>> new while send back to a: 5
 
 PRINT SITUATION
-all->v_nxtpvt: 12
-elt no :8 -> is_pivot: -1 
-elt no :7 -> is_pivot: 0 
-elt no :3 -> is_pivot: 1 
-elt no :2 -> is_pivot: 0 
+all->v_nxtpvt: 11
+elt no :5 -> is_pivot: -1 
 elt no :4 -> is_pivot: 0 
-elt no :5 -> is_pivot: 0 
-elt no :1 -> is_pivot: 0 
+elt no :-2 -> is_pivot: 1 
+elt no :-3 -> is_pivot: 0 
+elt no :-6 -> is_pivot: 0 
+elt no :3 -> is_pivot: 0 
 
 less_elt_than: 0
 send less than 1 elt: 1
 -> Executing pa ->
 
-  8    
- 11    
- 12     7 
- 13     3 
- 14     2 
- 15     4 
- 17     5 
- 19     1 
-----   ---
-  A     B
-
-
-less_elt_than: 6
-still in the packet: 1
-send_hig_values_a: 0
--> Executing pa ->
-
-  7    
-  8    
- 11    
- 12    
- 13     3 
- 14     2 
- 15     4 
- 17     5 
- 19     1 
-----   ---
-  A     B
-
-
-still in the packet: 1
-send_pivot_a: 0
--> Executing pa ->
-
-  3    
-  7    
-  8    
- 11    
- 12    
- 13    
- 14     2 
- 15     4 
- 17     5 
- 19     1 
-----   ---
-  A     B
-
-
--> Executing ra ->
-
-  7    
-  8    
- 11    
- 12    
- 13    
- 14    
- 15     2 
- 17     4 
- 19     5 
-  3     1 
-----   ---
-  A     B
-
-
-still in the packet: 1
-stock_low_values_b: 7
--> Executing rb ->
-
-  7    
-  8    
- 11    
- 12    
- 13    
- 14    
- 15     4 
- 17     5 
- 19     1 
-  3     2 
-----   ---
-  A     B
-
-
-still in the packet: 1
-send_hig_values_a: 0
--> Executing pa ->
-
-  4    
-  7    
-  8    
- 11    
- 12    
- 13    
- 14    
- 15    
- 17     5 
- 19     1 
-  3     2 
-----   ---
-  A     B
-
-
-still in the packet: 1
-send_hig_values_a: 0
--> Executing pa ->
-
   5    
-  4    
-  7    
-  8    
- 11    
- 12    
- 13    
- 14    
- 15    
- 17    
- 19     1 
-  3     2 
-----   ---
-  A     B
+ 10    
+  8      4 
+ 11     -2 
+ 15     -3 
+ 14     -6 
+ 12      3 
+----   ----
+  A      B
 
 
-still in the packet: 1
-all end is inf than pivot: 1
-LAST of sk_b: 2
--> Executing rra ->
-
-  3    
-  5    
-  4    
-  7    
-  8    
- 11    
- 12    
- 13    
- 14    
- 15    
- 17     1 
- 19     2 
-----   ---
-  A     B
-
-
-midd: 1
-val of pivot: 1
-is_pivot foud for val: 1
-end find_pivot: 1
-END get_pivots: 1
-
-RECCURSION: 1
-
-
-BEGIN of send to A: 1
->>> new while send back to a: 0
+less_elt_than: 5
 
 PRINT SITUATION
-all->v_nxtpvt: 3
-elt no :1 -> is_pivot: 1 
-elt no :2 -> is_pivot: 0 
+all->v_nxtpvt: -2
+elt no :4 -> is_pivot: 0 
+elt no :-2 -> is_pivot: 1 
+elt no :-3 -> is_pivot: 0 
+elt no :-6 -> is_pivot: 0 
+elt no :3 -> is_pivot: 0 
 
-less_elt_than: 2
+still in the packet: 1
+send_hig_values_a: 0
+-> Executing pa ->
+
+  4    
+  5    
+ 10    
+  8    
+ 11     -2 
+ 15     -3 
+ 14     -6 
+ 12      3 
+----   ----
+  A      B
+
+
 still in the packet: 1
 send_pivot_a: 0
 -> Executing pa ->
 
-  1    
-  3    
-  5    
+ -2    
   4    
-  7    
+  5    
+ 10    
   8    
  11    
- 12    
- 13    
- 14    
- 15    
- 17    
- 19     2 
-----   ---
-  A     B
+ 15     -3 
+ 14     -6 
+ 12      3 
+----   ----
+  A      B
 
 
 -> Executing ra ->
 
-  3    
-  5    
   4    
-  7    
+  5    
+ 10    
   8    
  11    
- 12    
- 13    
- 14    
  15    
- 17    
- 19    
-  1     2 
-----   ---
-  A     B
+ 14     -3 
+ 12     -6 
+ -2      3 
+----   ----
+  A      B
+
+
+still in the packet: 1
+stock_low_values_b: -3
+-> Executing rb ->
+
+  4    
+  5    
+ 10    
+  8    
+ 11    
+ 15    
+ 14     -6 
+ 12      3 
+ -2     -3 
+----   ----
+  A      B
+
+
+still in the packet: 1
+stock_low_values_b: -6
+-> Executing rb ->
+
+  4    
+  5    
+ 10    
+  8    
+ 11    
+ 15    
+ 14      3 
+ 12     -3 
+ -2     -6 
+----   ----
+  A      B
 
 
 still in the packet: 1
 send_hig_values_a: 0
 -> Executing pa ->
 
-  2    
   3    
-  5    
   4    
-  7    
+  5    
+ 10    
   8    
  11    
- 12    
- 13    
- 14    
  15    
- 17    
- 19    
-  1    
-----   ---
-  A     B
+ 14    
+ 12     -3 
+ -2     -6 
+----   ----
+  A      B
 
 
+out of packet: 3
+for val: -3
+LAST of sk_b: -6
 -> Executing rra ->
 
-  1    
-  2    
+ -2    
   3    
-  5    
   4    
-  7    
+  5    
+ 10    
   8    
  11    
- 12    
- 13    
- 14    
  15    
- 17    
- 19    
+ 14     -3 
+ 12     -6 
+----   ----
+  A      B
+
+
+send_low_values_a: -3
+-> Executing pa ->
+
+ -3    
+ -2    
+  3    
+  4    
+  5    
+ 10    
+  8    
+ 11    
+ 15    
+ 14    
+ 12     -6 
+----   ----
+  A      B
+
+
+send_low_values_a: -6
+-> Executing pa ->
+
+ -6    
+ -3    
+ -2    
+  3    
+  4    
+  5    
+ 10    
+  8    
+ 11    
+ 15    
+ 14    
+ 12    
 ----   ---
   A     B
 
 
-END of send to A. pb0: 0
-END of send to A. pb0: 0
+end of while of send_to_b: 0
+END of send to A. pb: 0
 BEGIN get_pivots A: 1
-midd: 2
-val of pivot: 2
-is_pivot foud for val: 2
-end find_pivot: 2
-midd: 5
-val of pivot: 5
-is_pivot foud for val: 5
-end find_pivot: 5
-midd: 11
-val of pivot: 11
-is_pivot foud for val: 11
-end find_pivot: 11
+midd: -4
+val of pivot: -6
+is_pivot foud for val: -6
+end find_pivot: -6
+midd: 3
+val of pivot: 3
+is_pivot foud for val: 3
+end find_pivot: 3
+midd: 9
+val of pivot: 10
+is_pivot foud for val: 10
+end find_pivot: 10
 midd: 13
-val of pivot: 13
-is_pivot foud for val: 13
-end find_pivot: 13
-midd: 19
-val of pivot: 19
-is_pivot foud for val: 19
-end find_pivot: 19
+val of pivot: 12
+is_pivot foud for val: 12
+end find_pivot: 15
 END get_pivots: 1
-all->v_nxtpvt: 1
-elt no :1 -> is_pivot: -1
-elt no :2 -> is_pivot: 1
-elt no :3 -> is_pivot: -1
-elt no :5 -> is_pivot: 1
+all->v_nxtpvt: -2
+elt no :-6 -> is_pivot: 1
+elt no :-3 -> is_pivot: 0
+elt no :-2 -> is_pivot: -1
+elt no :3 -> is_pivot: 1
 elt no :4 -> is_pivot: 0
-elt no :7 -> is_pivot: 0
-elt no :8 -> is_pivot: -1
-elt no :11 -> is_pivot: 1
-elt no :12 -> is_pivot: -1
-elt no :13 -> is_pivot: 1
-elt no :14 -> is_pivot: -1
-elt no :15 -> is_pivot: -1
-elt no :17 -> is_pivot: -1
-elt no :19 -> is_pivot: 1
+elt no :5 -> is_pivot: -1
+elt no :10 -> is_pivot: 1
+elt no :8 -> is_pivot: 0
+elt no :11 -> is_pivot: -1
+elt no :15 -> is_pivot: 0
+elt no :14 -> is_pivot: 0
+elt no :12 -> is_pivot: 1
 
 
 BEGIN of send to B: 1
 >>> new while send back to a: 0
-all->v_nxtpvt: 1
-elt no :1 -> is_pivot: -1
-elt no :2 -> is_pivot: 1
-elt no :3 -> is_pivot: -1
-elt no :5 -> is_pivot: 1
+all->v_nxtpvt: -2
+elt no :-6 -> is_pivot: 1
+elt no :-3 -> is_pivot: 0
+elt no :-2 -> is_pivot: -1
+elt no :3 -> is_pivot: 1
 elt no :4 -> is_pivot: 0
-elt no :7 -> is_pivot: 0
-elt no :8 -> is_pivot: -1
-elt no :11 -> is_pivot: 1
-elt no :12 -> is_pivot: -1
-elt no :13 -> is_pivot: 1
-elt no :14 -> is_pivot: -1
-elt no :15 -> is_pivot: -1
-elt no :17 -> is_pivot: -1
-elt no :19 -> is_pivot: 1
-less_elt_than: 0
-send less than 1 elt: 1
+elt no :5 -> is_pivot: -1
+elt no :10 -> is_pivot: 1
+elt no :8 -> is_pivot: 0
+elt no :11 -> is_pivot: -1
+elt no :15 -> is_pivot: 0
+elt no :14 -> is_pivot: 0
+elt no :12 -> is_pivot: 1
+less_elt_than: 2
+still in the packet: 1
+all->v_nxtpvt: -6
+elt no :-6 -> is_pivot: 1
+elt no :-3 -> is_pivot: 0
+elt no :-2 -> is_pivot: -1
+elt no :3 -> is_pivot: 1
+elt no :4 -> is_pivot: 0
+elt no :5 -> is_pivot: -1
+elt no :10 -> is_pivot: 1
+elt no :8 -> is_pivot: 0
+elt no :11 -> is_pivot: -1
+elt no :15 -> is_pivot: 0
+elt no :14 -> is_pivot: 0
+elt no :12 -> is_pivot: 1
+send_pivot_b: 0
 -> Executing pb ->
 
-  2    
+ -3    
+ -2    
   3    
-  5    
   4    
-  7    
+  5    
+ 10    
   8    
  11    
- 12    
- 13    
- 14    
  15    
- 17    
- 19     1 
-----   ---
-  A     B
+ 14    
+ 12     -6 
+----   ----
+  A      B
 
 
+ALL END IS sup than pivot: 1
+send_pivot_b: -1
+still in the packet: 1
+all->v_nxtpvt: -6
+elt no :-3 -> is_pivot: 0
+elt no :-2 -> is_pivot: -1
+elt no :3 -> is_pivot: 1
+elt no :4 -> is_pivot: 0
+elt no :5 -> is_pivot: -1
+elt no :10 -> is_pivot: 1
+elt no :8 -> is_pivot: 0
+elt no :11 -> is_pivot: -1
+elt no :15 -> is_pivot: 0
+elt no :14 -> is_pivot: 0
+elt no :12 -> is_pivot: 1
+ALL END IS sup than pivot: 1
+LAST of sk_b: -6
+midd: -3
+val of pivot: -3
+is_pivot foud for val: -3
+end find_pivot: -3
+midd: 3
+val of pivot: 3
+is_pivot foud for val: 3
+end find_pivot: 3
+midd: 9
+val of pivot: 10
+is_pivot foud for val: 10
+end find_pivot: 10
+midd: 13
+val of pivot: 12
+is_pivot foud for val: 12
+end find_pivot: 15
+END get_pivots: 1
+
+RECURSION: 1
+
+
+BEGIN of send to B: 1
+>>> new while send back to a: 0
+all->v_nxtpvt: -6
+elt no :-3 -> is_pivot: 1
+elt no :-2 -> is_pivot: -1
+elt no :3 -> is_pivot: 1
+elt no :4 -> is_pivot: 0
+elt no :5 -> is_pivot: -1
+elt no :10 -> is_pivot: 1
+elt no :8 -> is_pivot: 0
+elt no :11 -> is_pivot: -1
+elt no :15 -> is_pivot: 0
+elt no :14 -> is_pivot: 0
+elt no :12 -> is_pivot: 1
 less_elt_than: 1
 send less than 1 elt: 1
 -> Executing pb ->
 
+ -2    
   3    
-  5    
   4    
-  7    
+  5    
+ 10    
   8    
  11    
- 12    
- 13    
- 14    
  15    
- 17     2 
- 19     1 
-----   ---
-  A     B
+ 14     -3 
+ 12     -6 
+----   ----
+  A      B
 
 
 less_elt_than: 0
 send less than 1 elt: 1
 -> Executing pb ->
 
-  5    
+  3    
   4    
-  7    
+  5    
+ 10    
   8    
  11    
- 12    
- 13    
- 14    
- 15     3 
- 17     2 
- 19     1 
-----   ---
-  A     B
+ 15     -2 
+ 14     -3 
+ 12     -6 
+----   ----
+  A      B
 
 
-less_elt_than: 3
+less_elt_than: 2
 still in the packet: 1
-all->v_nxtpvt: 5
-elt no :5 -> is_pivot: 1
+all->v_nxtpvt: 3
+elt no :3 -> is_pivot: 1
 elt no :4 -> is_pivot: 0
-elt no :7 -> is_pivot: 0
-elt no :8 -> is_pivot: -1
-elt no :11 -> is_pivot: 1
-elt no :12 -> is_pivot: -1
-elt no :13 -> is_pivot: 1
-elt no :14 -> is_pivot: -1
-elt no :15 -> is_pivot: -1
-elt no :17 -> is_pivot: -1
-elt no :19 -> is_pivot: 1
+elt no :5 -> is_pivot: -1
+elt no :10 -> is_pivot: 1
+elt no :8 -> is_pivot: 0
+elt no :11 -> is_pivot: -1
+elt no :15 -> is_pivot: 0
+elt no :14 -> is_pivot: 0
+elt no :12 -> is_pivot: 1
 send_pivot_b: 0
 -> Executing pb ->
 
   4    
-  7    
+  5    
+ 10    
   8    
- 11    
- 12    
- 13    
- 14     5 
- 15     3 
- 17     2 
- 19     1 
-----   ---
-  A     B
+ 11      3 
+ 15     -2 
+ 14     -3 
+ 12     -6 
+----   ----
+  A      B
 
 
--> Executing rb ->
-
-  4    
-  7    
-  8    
- 11    
- 12    
- 13    
- 14     3 
- 15     2 
- 17     1 
- 19     5 
-----   ---
-  A     B
-
-
-send_pivot_b: -1
-
-PRINT SITUATION
-all->v_nxtpvt: 5
-elt no :3 -> is_pivot: -1 
-elt no :2 -> is_pivot: -1 
-elt no :1 -> is_pivot: -1 
-elt no :5 -> is_pivot: -1 
-
-still in the packet: 1
-all->v_nxtpvt: 5
-elt no :4 -> is_pivot: 0
-elt no :7 -> is_pivot: 0
-elt no :8 -> is_pivot: -1
-elt no :11 -> is_pivot: 1
-elt no :12 -> is_pivot: -1
-elt no :13 -> is_pivot: 1
-elt no :14 -> is_pivot: -1
-elt no :15 -> is_pivot: -1
-elt no :17 -> is_pivot: -1
-elt no :19 -> is_pivot: 1
-send_low_values_b: 0
--> Executing pb ->
-
-  7    
-  8    
- 11    
- 12    
- 13     4 
- 14     3 
- 15     2 
- 17     1 
- 19     5 
-----   ---
-  A     B
-
-
-still in the packet: 1
-all->v_nxtpvt: 5
-elt no :7 -> is_pivot: 0
-elt no :8 -> is_pivot: -1
-elt no :11 -> is_pivot: 1
-elt no :12 -> is_pivot: -1
-elt no :13 -> is_pivot: 1
-elt no :14 -> is_pivot: -1
-elt no :15 -> is_pivot: -1
-elt no :17 -> is_pivot: -1
-elt no :19 -> is_pivot: 1
 ALL END IS sup than pivot: 1
-LAST of sk_b: 5
--> Executing rrb ->
-
-  7    
-  8    
- 11    
- 12    
- 13     5 
- 14     4 
- 15     3 
- 17     2 
- 19     1 
-----   ---
-  A     B
-
-
-BEGIN get_pivots B: 1
+send_pivot_b: -1
+still in the packet: 1
+all->v_nxtpvt: 3
+elt no :4 -> is_pivot: 0
+elt no :5 -> is_pivot: -1
+elt no :10 -> is_pivot: 1
+elt no :8 -> is_pivot: 0
+elt no :11 -> is_pivot: -1
+elt no :15 -> is_pivot: 0
+elt no :14 -> is_pivot: 0
+elt no :12 -> is_pivot: 1
+ALL END IS sup than pivot: 1
+LAST of sk_b: -6
 midd: 4
 val of pivot: 4
 is_pivot foud for val: 4
 end find_pivot: 4
+midd: 9
+val of pivot: 10
+is_pivot foud for val: 10
+end find_pivot: 10
+midd: 13
+val of pivot: 12
+is_pivot foud for val: 12
+end find_pivot: 15
+END get_pivots: 1
+
+RECURSION: 1
+
+
+BEGIN of send to B: 1
+>>> new while send back to a: 0
+all->v_nxtpvt: 3
+elt no :4 -> is_pivot: 1
+elt no :5 -> is_pivot: -1
+elt no :10 -> is_pivot: 1
+elt no :8 -> is_pivot: 0
+elt no :11 -> is_pivot: -1
+elt no :15 -> is_pivot: 0
+elt no :14 -> is_pivot: 0
+elt no :12 -> is_pivot: 1
+less_elt_than: 1
+send less than 1 elt: 1
+-> Executing pb ->
+
+  5    
+ 10    
+  8      4 
+ 11      3 
+ 15     -2 
+ 14     -3 
+ 12     -6 
+----   ----
+  A      B
+
+
+less_elt_than: 0
+send less than 1 elt: 1
+-> Executing pb ->
+
+ 10      5 
+  8      4 
+ 11      3 
+ 15     -2 
+ 14     -3 
+ 12     -6 
+----   ----
+  A      B
+
+
+less_elt_than: 2
+still in the packet: 1
+all->v_nxtpvt: 10
+elt no :10 -> is_pivot: 1
+elt no :8 -> is_pivot: 0
+elt no :11 -> is_pivot: -1
+elt no :15 -> is_pivot: 0
+elt no :14 -> is_pivot: 0
+elt no :12 -> is_pivot: 1
+send_pivot_b: 0
+-> Executing pb ->
+
+        10 
+         5 
+  8      4 
+ 11      3 
+ 15     -2 
+ 14     -3 
+ 12     -6 
+----   ----
+  A      B
+
+
+-> Executing rb ->
+
+         5 
+         4 
+  8      3 
+ 11     -2 
+ 15     -3 
+ 14     -6 
+ 12     10 
+----   ----
+  A      B
+
+
+send_pivot_b: -1
+still in the packet: 1
+all->v_nxtpvt: 10
+elt no :8 -> is_pivot: 0
+elt no :11 -> is_pivot: -1
+elt no :15 -> is_pivot: 0
+elt no :14 -> is_pivot: 0
+elt no :12 -> is_pivot: 1
+send_low_values_b: 0
+-> Executing pb ->
+
+         8 
+         5 
+         4 
+         3 
+ 11     -2 
+ 15     -3 
+ 14     -6 
+ 12     10 
+----   ----
+  A      B
+
+
+out of packet: -1
+for val: 11
+LAST of sk_b: 10
+-> Executing rrb ->
+
+        10 
+         8 
+         5 
+         4 
+ 11      3 
+ 15     -2 
+ 14     -3 
+ 12     -6 
+----   ----
+  A      B
+
+
+all->v_nxtpvt: 10
+all->v_nxtpvt: 10
+elt no :11 -> is_pivot: -1
+elt no :15 -> is_pivot: 0
+elt no :14 -> is_pivot: 0
+elt no :12 -> is_pivot: 1
+-> Executing pb ->
+
+        11 
+        10 
+         8 
+         5 
+         4 
+         3 
+ 15     -2 
+ 14     -3 
+ 12     -6 
+----   ----
+  A      B
+
+
+end of while of send_to_b: 0
+>>> new while send back to a: 0
+all->v_nxtpvt: 10
+elt no :15 -> is_pivot: 0
+elt no :14 -> is_pivot: 0
+elt no :12 -> is_pivot: 1
+less_elt_than: 3
+still in the packet: 1
+all->v_nxtpvt: 12
+elt no :15 -> is_pivot: 0
+elt no :14 -> is_pivot: 0
+elt no :12 -> is_pivot: 1
+stock_hig_values_a: 15
+-> Executing ra ->
+
+        11 
+        10 
+         8 
+         5 
+         4 
+         3 
+ 14     -2 
+ 12     -3 
+ 15     -6 
+----   ----
+  A      B
+
+
+still in the packet: 1
+all->v_nxtpvt: 12
+elt no :14 -> is_pivot: 0
+elt no :12 -> is_pivot: 1
+elt no :15 -> is_pivot: 3
+stock_hig_values_a: 14
+-> Executing ra ->
+
+        11 
+        10 
+         8 
+         5 
+         4 
+         3 
+ 12     -2 
+ 15     -3 
+ 14     -6 
+----   ----
+  A      B
+
+
+still in the packet: 1
+all->v_nxtpvt: 12
+elt no :12 -> is_pivot: 1
+elt no :15 -> is_pivot: 3
+elt no :14 -> is_pivot: 3
+send_pivot_b: 0
+-> Executing pb ->
+
+        12 
+        11 
+        10 
+         8 
+         5 
+         4 
+         3 
+        -2 
+ 15     -3 
+ 14     -6 
+----   ----
+  A      B
+
+
+ALL END IS sup than pivot: 1
+send_pivot_b: -1
+out of packet: 3
+for val: 15
+LAST of sk_b: -6
+all->v_nxtpvt: 12
+all->v_nxtpvt: 12
+elt no :15 -> is_pivot: 3
+elt no :14 -> is_pivot: 3
+send_hig_values_b: 15
+-> Executing pb ->
+
+        15 
+        12 
+        11 
+        10 
+         8 
+         5 
+         4 
+         3 
+        -2 
+        -3 
+ 14     -6 
+----   ----
+  A      B
+
+
+send_hig_values_b: 14
+-> Executing pb ->
+
+       14 
+       15 
+       12 
+       11 
+       10 
+        8 
+        5 
+        4 
+        3 
+       -2 
+       -3 
+       -6 
+---   ----
+ A      B
+
+
+end of while of send_to_b: 0
+END of send to b. pb: 0
+
+END  OF RECURSION
+: 1
+
+END  OF RECURSION
+: 1
+BEGIN get_pivots B: 1
+midd: 14
+val of pivot: 14
+is_pivot foud for val: 14
+end find_pivot: 14
+midd: 8
+val of pivot: 8
+is_pivot foud for val: 8
+end find_pivot: 8
 END get_pivots: 1
 
 
-BEGIN of send to A: 1
->>> new while send back to a: 0
+BEGIN of send to A: 14
+>>> new while send back to a: 14
 
 PRINT SITUATION
-all->v_nxtpvt: 5
+all->v_nxtpvt: 12
+elt no :14 -> is_pivot: 1 
+elt no :15 -> is_pivot: 0 
+elt no :12 -> is_pivot: -1 
+elt no :11 -> is_pivot: -1 
+elt no :10 -> is_pivot: -1 
+elt no :8 -> is_pivot: 1 
 elt no :5 -> is_pivot: -1 
-elt no :4 -> is_pivot: 1 
+elt no :4 -> is_pivot: -1 
 elt no :3 -> is_pivot: -1 
-elt no :2 -> is_pivot: -1 
-elt no :1 -> is_pivot: -1 
+elt no :-2 -> is_pivot: -1 
+elt no :-3 -> is_pivot: -1 
+elt no :-6 -> is_pivot: -1 
+
+less_elt_than: 2
+
+PRINT SITUATION
+all->v_nxtpvt: 14
+elt no :14 -> is_pivot: 1 
+elt no :15 -> is_pivot: 0 
+elt no :12 -> is_pivot: -1 
+elt no :11 -> is_pivot: -1 
+elt no :10 -> is_pivot: -1 
+elt no :8 -> is_pivot: 1 
+elt no :5 -> is_pivot: -1 
+elt no :4 -> is_pivot: -1 
+elt no :3 -> is_pivot: -1 
+elt no :-2 -> is_pivot: -1 
+elt no :-3 -> is_pivot: -1 
+elt no :-6 -> is_pivot: -1 
+
+still in the packet: 1
+send_pivot_a: 0
+-> Executing pa ->
+
+        15 
+        12 
+        11 
+        10 
+         8 
+         5 
+         4 
+         3 
+        -2 
+        -3 
+ 14     -6 
+----   ----
+  A      B
+
+
+-> Executing ra ->
+
+        15 
+        12 
+        11 
+        10 
+         8 
+         5 
+         4 
+         3 
+        -2 
+        -3 
+ 14     -6 
+----   ----
+  A      B
+
+
+still in the packet: 1
+send_hig_values_a: 0
+-> Executing pa ->
+
+        12 
+        11 
+        10 
+         8 
+         5 
+         4 
+         3 
+        -2 
+ 15     -3 
+ 14     -6 
+----   ----
+  A      B
+
+
+out of packet: -1
+for val: 12
+LAST of sk_b: -6
+-> Executing rra ->
+
+        12 
+        11 
+        10 
+         8 
+         5 
+         4 
+         3 
+        -2 
+ 14     -3 
+ 15     -6 
+----   ----
+  A      B
+
+
+end of while of send_to_b: 0
+>>> new while send back to a: 12
+
+PRINT SITUATION
+all->v_nxtpvt: 14
+elt no :12 -> is_pivot: -1 
+elt no :11 -> is_pivot: -1 
+elt no :10 -> is_pivot: -1 
+elt no :8 -> is_pivot: 1 
+elt no :5 -> is_pivot: -1 
+elt no :4 -> is_pivot: -1 
+elt no :3 -> is_pivot: -1 
+elt no :-2 -> is_pivot: -1 
+elt no :-3 -> is_pivot: -1 
+elt no :-6 -> is_pivot: -1 
 
 less_elt_than: 0
 send less than 1 elt: 1
 -> Executing pa ->
 
-  5    
-  7    
-  8    
- 11    
- 12    
- 13    
- 14     4 
- 15     3 
- 17     2 
- 19     1 
-----   ---
-  A     B
+        11 
+        10 
+         8 
+         5 
+         4 
+         3 
+ 12     -2 
+ 14     -3 
+ 15     -6 
+----   ----
+  A      B
+
+
+less_elt_than: 0
+send less than 1 elt: 1
+-> Executing pa ->
+
+        10 
+         8 
+         5 
+         4 
+ 11      3 
+ 12     -2 
+ 14     -3 
+ 15     -6 
+----   ----
+  A      B
+
+
+less_elt_than: 0
+send less than 1 elt: 1
+-> Executing pa ->
+
+         8 
+         5 
+ 10      4 
+ 11      3 
+ 12     -2 
+ 14     -3 
+ 15     -6 
+----   ----
+  A      B
 
 
 less_elt_than: 1
 send less than 1 elt: 1
 -> Executing pa ->
 
+  8      5 
+ 10      4 
+ 11      3 
+ 12     -2 
+ 14     -3 
+ 15     -6 
+----   ----
+  A      B
+
+
+less_elt_than: 0
+send less than 1 elt: 1
+-> Executing pa ->
+
+  5    
+  8    
+ 10      4 
+ 11      3 
+ 12     -2 
+ 14     -3 
+ 15     -6 
+----   ----
+  A      B
+
+
+less_elt_than: 0
+send less than 1 elt: 1
+-> Executing pa ->
+
   4    
   5    
-  7    
   8    
- 11    
- 12    
- 13    
- 14    
- 15     3 
- 17     2 
- 19     1 
-----   ---
-  A     B
+ 10    
+ 11      3 
+ 12     -2 
+ 14     -3 
+ 15     -6 
+----   ----
+  A      B
 
 
 less_elt_than: 0
@@ -1365,58 +1639,69 @@ send less than 1 elt: 1
   3    
   4    
   5    
-  7    
   8    
+ 10    
  11    
- 12    
- 13    
- 14    
- 15    
- 17     2 
- 19     1 
-----   ---
-  A     B
+ 12     -2 
+ 14     -3 
+ 15     -6 
+----   ----
+  A      B
 
 
 less_elt_than: 0
 send less than 1 elt: 1
 -> Executing pa ->
 
-  2    
+ -2    
   3    
   4    
   5    
-  7    
   8    
+ 10    
  11    
  12    
- 13    
- 14    
- 15    
- 17    
- 19     1 
-----   ---
-  A     B
+ 14     -3 
+ 15     -6 
+----   ----
+  A      B
 
 
 less_elt_than: 0
 send less than 1 elt: 1
 -> Executing pa ->
 
-  1    
-  2    
+ -3    
+ -2    
   3    
   4    
   5    
-  7    
   8    
+ 10    
  11    
  12    
- 13    
+ 14    
+ 15     -6 
+----   ----
+  A      B
+
+
+less_elt_than: 0
+send less than 1 elt: 1
+-> Executing pa ->
+
+ -6    
+ -3    
+ -2    
+  3    
+  4    
+  5    
+  8    
+ 10    
+ 11    
+ 12    
  14    
  15    
- 17    
- 19    
 ----   ---
   A     B
 

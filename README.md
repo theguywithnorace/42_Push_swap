@@ -13,7 +13,7 @@ ARG=`ruby -e "puts (0..4).to_a.shuffle.join(' ')"` && ./push_swap  $ARG | ./chec
 
 
 
-Debugger :
+Debug(ger :
 find_value_to_move
 	// printf("value to mov at position : %d to mov low ? %d\n", all->p_tomov, all->is_tomov_low);
 

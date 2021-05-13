@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 20:05:41 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/13 13:02:20 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/13 16:19:46 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void send_pivot_b(t_all *all)
 		print_action("rb", all);
 	bug("send_pivot_b", all->sk_b->is_pivot);
 
-	print_situation_b(all);
+	// print_situation_b(all);
 }
 
 void stock_hig_values_a(t_all *all)
@@ -64,10 +64,10 @@ int is_last_seen(t_elt *e)
 {
 	t_elt *f;
 
-	if (e)
-		bug("is_last_seen", val(e));
-	else
-		bug("end of is_last_seen", 0);
+	// if (e)
+	// 	bug("is_last_seen", val(e));
+	// else
+	// 	bug("end of is_last_seen", 0);
 
 	if (!e)
 		return (0);

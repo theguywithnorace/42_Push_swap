@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:14:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/13 13:03:43 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/13 16:20:15 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,10 +109,10 @@ void send_to_a(t_all *all);
 int		is_still_less_than_pvt(t_all *all, t_elt *e);
 int in_packet(t_all *all, t_elt *e);
 
-//Error and debugger
-void bug(char *s, int n);
-void print_situation_a(t_all *all);
-void print_situation_b(t_all *all);
+//Error and debug(ger
+void  bug(char *s, int n);
+void  print_situation_a(t_all *all);
+void  print_situation_b(t_all *all);
 
 
 

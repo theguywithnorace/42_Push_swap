@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 20:05:41 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/13 13:02:30 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/13 16:31:44 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ void send_pivot_a(t_all *all)
 
 void stock_low_values_b(t_all *all)
 {
-	bug("stock_low_values_b", val(all->sk_a));
+	if (all->sk_b)
+		bug("stock_low_values_b", val(all->sk_b));
 	all->sk_b->is_pivot = BKED;
 	print_action("rb", all);
 }

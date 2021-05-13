@@ -6,16 +6,18 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 00:11:18 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/13 11:38:32 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/13 16:46:46 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void print_situation_a(t_all *all)
+void  print_situation_a(t_all *all)
 {
 	t_elt *e;
 
+	if (!all->sk_a)
+		return ;
 	e = all->sk_a;
 	bug("all->v_nxtpvt", all->v_nxtp);
 	while (e)
@@ -29,10 +31,12 @@ void print_situation_a(t_all *all)
 	}
 }
 
-void print_situation_b(t_all *all)
+void  print_situation_b(t_all *all)
 {
 	t_elt *e;
 
+	if (!all->sk_b)
+		return ;
 	e = all->sk_b;
 	bug("\nPRINT SITUATION\nall->v_nxtpvt", all->v_nxtp);
 	while (e)
@@ -47,7 +51,7 @@ void print_situation_b(t_all *all)
 	write(1, "\n", 1);
 }
 
-void bug(char *s, int n)
+void  bug(char *s, int n)
 {
 	ft_putstr_fd(s, 1);
 	ft_putstr_fd(": ", 1);
