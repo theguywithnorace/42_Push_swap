@@ -6,11 +6,21 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:37:57 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/14 11:33:17 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/14 23:23:47 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+int all_rest_old(t_elt *e)
+{
+	while (e)
+	{
+		if (e->is_pivot != -1)
+			return (0);
+		e = e->next;
+	}
+	return (1);
+}
 
 void send_to_b(t_all *all)
 {
@@ -19,12 +29,16 @@ void send_to_b(t_all *all)
 
 	bug("\n\nBEGIN of send to B", 1);
 	e = all->sk_a;
-	while (all->sk_a)
+	while (!(is_sk_ordered(all->sk_a) && !all->sk_b))
 	{
 		bug(">>> new while send back to a", 0);
 		// set_next_pivot(all, e);
-		while (less_elt_than(1, all->sk_a))
-			quick_send_b(all);
+		while (less_elt_than(3, all->sk_a, all))
+		{
+			if (all_rest_old(all->sk_a))
+				return ;
+			opti_a(all, all->sk_a);
+		}
 		if (all->sk_a)
 		{
 			e = all->sk_a;
@@ -82,12 +96,11 @@ void send_to_a(t_all *all)
 	while (all->sk_b)
 	{
 		bug(">>> new while send back to a", val(all->sk_b));
-		while (all->sk_b && less_elt_than(1, all->sk_b))
-			quick_send_a(all);
+		while (all->sk_b && less_elt_than(3, all->sk_b, all))
+			opti_b(all, all->sk_b);
 		e = all->sk_b;
 		if (e)
 			set_next_pivot(all, e);
-		// while (all->sk_b && in_packet(all->sk_b))
 		while (all->sk_b)
 		{
 			if (val(e) > all->v_nxtp)

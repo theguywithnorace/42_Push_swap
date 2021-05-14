@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 20:05:41 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/14 12:07:03 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/14 23:20:18 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,12 +103,14 @@ int is_all_end_sup(t_elt *e, int max)
 		e = e->next;
 	}
 	e = bk;
-	// while (e)
-	// {
-	// 	if (e->is_pivot == BKED)
-	// 		e->is_pivot = 0;
-	// 	e = e->next;
-	// }
+	if (is_sk_ordered(e))
+	{
+		while (e)
+		{
+			e->is_pivot = OLD;
+			e = e->next;
+		}
+	}
 	bug("ALL END IS sup than pivot", 1);
 	return (1);
 }
@@ -140,21 +142,25 @@ void set_pivot_at_top_b(t_all *all)
 	print_action("rrb", all);
 }
 
-int less_elt_than(int n, t_elt *e)
+int less_elt_than(int n, t_elt *e, t_all *all)
 {
 	int i;
+	t_elt *elt;
 
 	i = 0;
-	if (!e)
+	elt = e;
+	if (!elt)
 		return (0);
-	while (e && e->is_pivot != OLD)
+	while (elt && elt->is_pivot != OLD)
 	{
 		i++;
-		e = e->next;
+		elt = elt->next;
 	}
 	bug("less_elt_than", i);
 	if (i > n)
 		return (0);
+	all->p_tomov = i;
+
 	return (1);
 }
 
@@ -174,6 +180,15 @@ void back_up_if_bked_a(t_all *all)
 	if (!all->sk_a)
 		return;
 	e = all->sk_a;
+	if (e->is_pivot == BKED)
+	{
+		while (e && e->is_pivot == BKED)
+		{
+			e->is_pivot = 0;
+			e = e->next;
+		}
+		return;
+	}
 	while ((ft_lstlast_e(e))->is_pivot == BKED)
 	{
 		print_action("rra", all);
@@ -189,6 +204,15 @@ void back_up_if_bked_b(t_all *all)
 	if (!all->sk_b)
 		return;
 	e = all->sk_b;
+	if (e->is_pivot == BKED)
+	{
+		while (e && e->is_pivot == BKED)
+		{
+			e->is_pivot = 0;
+			e = e->next;
+		}
+		return;
+	}
 	while ((ft_lstlast_e(e))->is_pivot == BKED)
 	{
 		print_action("rrb", all);

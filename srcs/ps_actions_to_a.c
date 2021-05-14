@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 20:05:41 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/14 11:45:07 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/14 23:20:08 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,12 +74,14 @@ int is_all_end_inf(t_elt *e, int max)
 		e = e->next;
 	}
 	e = bk;
-	// while (e)
-	// {
-	// 	if (e->is_pivot == BKED)
-	// 		e->is_pivot = 0;
-	// 	e = e->next;
-	// }
+	if (is_sk_ordered(e))
+	{
+		while (e)
+		{
+			e->is_pivot = OLD;
+			e = e->next;
+		}
+	}
 	bug("all end is inf than pivot, pivot :", max);
 	return (1);
 }

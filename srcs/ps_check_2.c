@@ -6,13 +6,13 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:47:51 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/13 16:47:02 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/14 22:47:25 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int		in_order(t_all *all)
+int in_order(t_all *all)
 {
 	if (all->p_low == 0 && all->p_hig == 1)
 		return (0);
@@ -23,10 +23,10 @@ int		in_order(t_all *all)
 	return (1);
 }
 
-void	find_lowest_values_a(t_all *all)
+void find_lowest_values_a(t_all *all)
 {
-	t_elt	*elt;
-	int		i;
+	t_elt *elt;
+	int i;
 
 	i = 1;
 	elt = all->sk_a;
@@ -49,16 +49,19 @@ void	find_lowest_values_a(t_all *all)
 		i++;
 		elt = elt->next;
 	}
-	return ;
+	return;
 }
 
-int		is_sk_ordered(t_elt *e)
+int is_sk_ordered(t_elt *e)
 {
-	int		i;
-	t_elt	*elt;
+	int i;
+	t_elt *elt;
 
 	if (!e || !(e->next))
+	{
+		bug("SK EMPTY", 1);
 		return (1);
+	}
 	elt = e;
 	if (elt)
 		i = val(elt);
@@ -69,5 +72,6 @@ int		is_sk_ordered(t_elt *e)
 		i = val(elt->next);
 		elt = elt->next;
 	}
+	bug("SK ORDERED", 1);
 	return (1);
 }
