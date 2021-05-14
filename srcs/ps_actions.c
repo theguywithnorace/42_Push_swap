@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 20:05:41 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/14 11:45:02 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/14 12:07:03 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 
 void send_low_values_b(t_all *all)
 {
+	if (!all->sk_a)
+		return;
 	bug("send_low_values_b", 0);
 	print_action("pb", all);
 }
 
 void send_pivot_b(t_all *all)
 {
+	if (!all->sk_a)
+		return;
 	bug("send_pivot_b", 0);
 
 	print_action("pb", all);
@@ -37,6 +41,8 @@ void send_pivot_b(t_all *all)
 
 void stock_hig_values_a(t_all *all)
 {
+	if (!all->sk_a)
+		return;
 	bug("stock_hig_values_a", val(all->sk_a));
 	all->sk_a->is_pivot = BKED;
 	print_action("ra", all);
@@ -53,6 +59,8 @@ void stock_hig_values_a(t_all *all)
 
 void send_hig_values_b(t_all *all)
 {
+	if (!all->sk_a)
+		return;
 	bug("send_hig_values_b", val(all->sk_a));
 
 	if (all->sk_a->is_pivot != BKED) // la premiere  valeur du sk a deja été vue
@@ -116,14 +124,18 @@ void set_bked_sk(t_elt *e)
 
 void set_pivot_at_top_a(t_all *all)
 {
-	if (all->sk_a && val(all->sk_a) == all->v_nxtp)
+	if (!all->sk_a)
+		return;
+	if (val(all->sk_a) == all->v_nxtp)
 		return;
 	print_action("rra", all);
 }
 
 void set_pivot_at_top_b(t_all *all)
 {
-	if (all->sk_b && val(all->sk_b) == all->v_nxtp)
+	if (!all->sk_b)
+		return;
+	if (val(all->sk_b) == all->v_nxtp)
 		return;
 	print_action("rrb", all);
 }
@@ -133,6 +145,8 @@ int less_elt_than(int n, t_elt *e)
 	int i;
 
 	i = 0;
+	if (!e)
+		return (0);
 	while (e && e->is_pivot != OLD)
 	{
 		i++;
@@ -146,6 +160,8 @@ int less_elt_than(int n, t_elt *e)
 
 void quick_send_b(t_all *all)
 {
+	if (!all->sk_a)
+		return;
 	all->sk_a->is_pivot = OLD;
 	bug("send less than 1 elt", 1);
 	print_action("pb", all);
@@ -155,6 +171,8 @@ void back_up_if_bked_a(t_all *all)
 {
 	t_elt *e;
 
+	if (!all->sk_a)
+		return;
 	e = all->sk_a;
 	while ((ft_lstlast_e(e))->is_pivot == BKED)
 	{
@@ -168,6 +186,8 @@ void back_up_if_bked_b(t_all *all)
 {
 	t_elt *e;
 
+	if (!all->sk_b)
+		return;
 	e = all->sk_b;
 	while ((ft_lstlast_e(e))->is_pivot == BKED)
 	{
