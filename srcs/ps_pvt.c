@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 20:05:41 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/13 16:19:46 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/14 11:24:45 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void get_pivots(t_elt *elt, int s)
 			midd = find_midd(elt);
 			bug("midd", midd);
 			find_pivot(elt, midd, s);
-			bug("end find_pivot", val(elt));
 		}
 		while (elt && (elt->is_pivot != OLD))
 			elt = elt->next;
@@ -45,7 +44,8 @@ int find_midd(t_elt *elt)
 	i = 0;
 	while (elt && (elt->is_pivot != OLD))
 	{
-		if (elt->is_pivot == BKED)
+		if (elt->is_pivot == BKED || elt->is_pivot == PIVOT)
+		// if (elt->is_pivot == BKED)
 			elt->is_pivot = 0;
 		sum += (long long)ft_atoi(elt->content);
 		elt = elt->next;
@@ -74,22 +74,20 @@ void find_pivot(t_elt *elt, int midd, int s)
 		}
 		elt = elt->next;
 	}
-	bug("val of pivot", v);
 	elt = bk;
-	while (elt)
+	while (elt && (elt->is_pivot != OLD))
 	{
 		if (val(elt) == v)
 		{
-			bug("is_pivot foud for val", v);
+			bug("pivot foud for val", v);
 			elt->is_pivot = PIVOT;
 		}
 		elt = elt->next;
 	}
 }
 
-int in_packet(t_all *all, t_elt *e)
+int in_packet(t_elt *e)
 {
-	(void)all;
 	if (!e || e->is_pivot == BKED || e->is_pivot == OLD)
 	{
 		bug("out of packet", e->is_pivot);

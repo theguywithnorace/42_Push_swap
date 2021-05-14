@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:14:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/13 16:20:15 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/13 23:58:03 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,14 +77,14 @@ void	find_pivot(t_elt *e, int midd, int s);
 void send_low_values_b(t_all *all);
 void send_pivot_b(t_all *all);
 void stock_hig_values_a(t_all *all);
-void set_pivot_top_b(t_all *all);
+void set_pivot_at_top_b(t_all *all);
 void send_hig_values_b(t_all *all);
 int is_last_seen(t_elt *e);
 int is_all_end_sup(t_elt *e, int max);
 void set_bked_sk(t_elt *e);
-void set_pivot_at_top(t_all *all);
 int less_elt_than(int n, t_elt *e);
 void quick_send_b(t_all *all);
+void	back_up_if_bked_a(t_all *all);
 
 
 
@@ -92,10 +92,11 @@ void quick_send_b(t_all *all);
 void send_low_values_a(t_all *all);
 void send_pivot_a(t_all *all);
 void stock_low_values_b(t_all *all);
-void set_pivot_top_a(t_all *all);
+void set_pivot_at_top_a(t_all *all);
 void send_hig_values_a(t_all *all);
 int is_all_end_inf(t_elt *e, int max);
 void quick_send_a(t_all *all);
+void	back_up_if_bked_b(t_all *all);
 
 
 
@@ -107,7 +108,7 @@ void set_next_pivot(t_all *all, t_elt *e);
 void send_to_b(t_all *all);
 void send_to_a(t_all *all);
 int		is_still_less_than_pvt(t_all *all, t_elt *e);
-int in_packet(t_all *all, t_elt *e);
+int in_packet(t_elt *e);
 
 //Error and debug(ger
 void  bug(char *s, int n);

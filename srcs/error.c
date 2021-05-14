@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 00:11:18 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/13 16:46:46 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/13 22:25:43 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void  print_situation_a(t_all *all)
 	if (!all->sk_a)
 		return ;
 	e = all->sk_a;
-	bug("all->v_nxtpvt", all->v_nxtp);
+	bug("\nPRINT SITUATION SK A\nall->v_nxtpvt", all->v_nxtp);
 	while (e)
 	{
 		ft_putstr_fd("elt no :", 1);
@@ -38,7 +38,7 @@ void  print_situation_b(t_all *all)
 	if (!all->sk_b)
 		return ;
 	e = all->sk_b;
-	bug("\nPRINT SITUATION\nall->v_nxtpvt", all->v_nxtp);
+	bug("\nPRINT SITUATION SK B\nall->v_nxtpvt", all->v_nxtp);
 	while (e)
 	{
 		ft_putstr_fd("elt no :", 1);
@@ -61,6 +61,7 @@ void  bug(char *s, int n)
 
 int		error_arguments(t_all *all)
 {
+	printf("ARgument");
 	write(1, "Error\n", 6);
 	freeer(all);
 	return (0);

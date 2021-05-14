@@ -6,13 +6,13 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 17:38:37 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/09 19:05:51 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/14 11:21:06 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	print_init(t_all *all)
+void print_init(t_all *all)
 {
 	if (all->bonus)
 		write(1, "\nStacks:\n\n", 10);
@@ -20,11 +20,15 @@ void	print_init(t_all *all)
 		print_elt(all);
 }
 
-void	print_action(char *action, t_all *all)
+void print_action(char *action, t_all *all)
 {
 	execute(action, all);
 	if (all->bonus)
 	{
+		//
+		bug("\nnxpvt", all->v_nxtp);
+		//
+		
 		write(1, "-> Executing ", 13);
 		write(1, action, ft_strlen_ps(action));
 		write(1, " ->\n\n", 5);
@@ -37,7 +41,7 @@ void	print_action(char *action, t_all *all)
 	}
 }
 
-int		write_a(t_elt **ea, int a, t_all *all)
+int write_a(t_elt **ea, int a, t_all *all)
 {
 	int i;
 
@@ -46,20 +50,35 @@ int		write_a(t_elt **ea, int a, t_all *all)
 	if (ea == 0)
 	{
 		while (++i <= (max_lgth(all->sk_a)))
+		{
 			write(1, " ", 1);
+
+			//
+			write(1, "  ", 2);
+			//
+		}
 		write(1, " ", 1);
 		return (a);
 	}
 	while (++i <= ((max_lgth(all->sk_a) - ft_strlen_ps((*ea)->content))))
 		write(1, " ", 1);
 	write(1, (*ea)->content, ft_strlen_ps((*ea)->content));
-	write(1, " ", 1);
+	// write(1, " ", 1);
+
+
+	//
+	write(1, "|", 1);
+	if ((*ea)->is_pivot >= 0)
+		write(1, " ", 1);
+	ft_putnbr_fd((*ea)->is_pivot, 1);
+	//
+
 	(*ea) = (*ea)->next;
 	a--;
 	return (a);
 }
 
-int		write_b(t_elt **eb, int b, t_all *all)
+int write_b(t_elt **eb, int b, t_all *all)
 {
 	int i;
 
@@ -76,17 +95,23 @@ int		write_b(t_elt **eb, int b, t_all *all)
 		write(1, " ", 1);
 	write(1, (*eb)->content, ft_strlen_ps((*eb)->content));
 	write(1, " ", 1);
+
+	//
+	write(1, "|", 1);
+	ft_putnbr_fd((*eb)->is_pivot, 1);
+	//
+
 	(*eb) = (*eb)->next;
 	b--;
 	return (b);
 }
 
-void	print_elt(t_all *all)
+void print_elt(t_all *all)
 {
-	t_elt	*ea;
-	t_elt	*eb;
-	int		a;
-	int		b;
+	t_elt *ea;
+	t_elt *eb;
+	int a;
+	int b;
 
 	ea = all->sk_a;
 	eb = all->sk_b;

@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:37:57 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/13 16:27:31 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/14 11:15:16 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,12 @@ void execute_algo(t_all *all)
 	while (!is_sk_ordered(all->sk_a))
 	{
 		bug("BEGIN get_pivots A", 1);
-		get_pivots(all->sk_a, 1); //parcours en sommant jusqu'a [fin ou pivot] -> moyenne -> [elt >= moy] = pivot
-		print_situation_a(all);
+		// print_situation_a(all);
 		send_to_b(all);
 
-		if (all->sk_a)
-			bug("all->sk_a", val(all->sk_a));
+
 		bug("BEGIN get_pivots B", 1);
-		get_pivots(all->sk_b, -1); //parcours en sommant jusqu'a [fin ou pivot] -> moyenne -> [elt >= moy] = pivot
+		// print_situation_b(all);
 		send_to_a(all);
 	}
 	bug("\n\n>>>>>>>>> ALL FUCKIN  ORDERED\n\n", 1);

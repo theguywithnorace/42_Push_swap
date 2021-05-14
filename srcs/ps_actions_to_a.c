@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 20:05:41 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/13 16:31:44 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/14 11:20:05 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,16 @@ void send_hig_values_a(t_all *all)
 
 void send_pivot_a(t_all *all)
 {
-	bug("send_pivot_a", 0);
 
 	print_action("pa", all);
-	if (all->sk_a->is_pivot == OLD)
-		set_next_pivot(all, all->sk_b);
-	else
-		all->sk_a->is_pivot = OLD;
+	if (all->sk_a)
+	{
+		if (all->sk_a->is_pivot == OLD)
+			set_next_pivot(all, all->sk_b);
+		else
+			all->sk_a->is_pivot = OLD;
+	}
+
 	if (!is_all_end_inf(all->sk_b, all->v_nxtp))
 		print_action("ra", all);
 }
@@ -59,13 +62,15 @@ void send_low_values_a(t_all *all)
 
 int is_all_end_inf(t_elt *e, int max)
 {
+	if (!e)
+		return (0);
 	while (e)
 	{
 		if (val(e) >= max)
 			return (0);
 		e = e->next;
 	}
-	bug("all end is inf than pivot", 1);
+	bug("all end is inf than pivot, pivot :", max);
 	return (1);
 }
 

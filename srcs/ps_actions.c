@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 20:05:41 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/13 16:19:46 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/14 11:26:27 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void send_pivot_b(t_all *all)
 		set_next_pivot(all, all->sk_a);
 	else
 		all->sk_b->is_pivot = OLD;
+	if (all->sk_b)
 	if (!is_all_end_sup(all->sk_a, all->v_nxtp))
 		print_action("rb", all);
 	bug("send_pivot_b", all->sk_b->is_pivot);
@@ -79,10 +80,22 @@ int is_last_seen(t_elt *e)
 
 int is_all_end_sup(t_elt *e, int max)
 {
+	t_elt *bk;
+
+	bk = e;
+	if (!e)
+		return (0);
 	while (e)
 	{
 		if (val(e) <= max)
 			return (0);
+		e = e->next;
+	}
+	e = bk;
+	while (e)
+	{
+		if (e->is_pivot == BKED)
+			e->is_pivot = 0;
 		e = e->next;
 	}
 	bug("ALL END IS sup than pivot", 1);
@@ -98,16 +111,18 @@ void set_bked_sk(t_elt *e)
 	}
 }
 
-void set_pivot_at_top(t_all *all)
+void set_pivot_at_top_a(t_all *all)
 {
-	if (all->sk_b)
-		bug("LAST of sk_b", val(ft_lstlast_e(all->sk_b)));
-	if ((all->sk_b && val(all->sk_b) == all->v_nxtp) || (all->sk_b && val(all->sk_a) == all->v_nxtp))
+	if (all->sk_a && val(all->sk_a) == all->v_nxtp)
 		return;
-	if (all->sk_a && val(ft_lstlast_e(all->sk_a)) == all->v_nxtp)
-		print_action("rra", all);
-	else if (all->sk_b && val(ft_lstlast_e(all->sk_b)) == all->v_nxtp)
-		print_action("rrb", all);
+	print_action("rra", all);
+}
+
+void set_pivot_at_top_b(t_all *all)
+{
+	if (all->sk_b && val(all->sk_b) == all->v_nxtp)
+		return;
+	print_action("rrb", all);
 }
 
 int less_elt_than(int n, t_elt *e)
@@ -131,4 +146,31 @@ void quick_send_b(t_all *all)
 	all->sk_a->is_pivot = OLD;
 	bug("send less than 1 elt", 1);
 	print_action("pb", all);
+}
+
+void back_up_if_bked_a(t_all *all)
+{
+	t_elt *e;
+
+	e = all->sk_a;
+	while ((ft_lstlast_e(e))->is_pivot == BKED)
+	{
+		print_action("rra", all);
+		all->sk_a->is_pivot = 0;
+		e = all->sk_a;
+	}
+}
+
+void back_up_if_bked_b(t_all *all)
+{
+	t_elt *e;
+
+	e = all->sk_b;
+	while ((ft_lstlast_e(e))->is_pivot == BKED)
+	{
+		print_action("rrb", all);
+		all->sk_b->is_pivot = 0;
+
+		e = all->sk_b;
+	}
 }
