@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:14:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/13 23:58:03 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/14 11:33:09 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ void set_next_pivot(t_all *all, t_elt *e);
 void send_to_b(t_all *all);
 void send_to_a(t_all *all);
 int		is_still_less_than_pvt(t_all *all, t_elt *e);
-int in_packet(t_elt *e);
+int in_packet(t_elt *e, int nxtp);
 
 //Error and debug(ger
 void  bug(char *s, int n);

@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 20:05:41 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/14 11:26:27 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/14 11:45:02 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void send_pivot_b(t_all *all)
 	else
 		all->sk_b->is_pivot = OLD;
 	if (all->sk_b)
-	if (!is_all_end_sup(all->sk_a, all->v_nxtp))
-		print_action("rb", all);
+		if (!is_all_end_sup(all->sk_a, all->v_nxtp))
+			print_action("rb", all);
 	bug("send_pivot_b", all->sk_b->is_pivot);
 
 	// print_situation_b(all);
@@ -88,16 +88,19 @@ int is_all_end_sup(t_elt *e, int max)
 	while (e)
 	{
 		if (val(e) <= max)
+		{
+			bug("not all sup for", val(e));
 			return (0);
+		}
 		e = e->next;
 	}
 	e = bk;
-	while (e)
-	{
-		if (e->is_pivot == BKED)
-			e->is_pivot = 0;
-		e = e->next;
-	}
+	// while (e)
+	// {
+	// 	if (e->is_pivot == BKED)
+	// 		e->is_pivot = 0;
+	// 	e = e->next;
+	// }
 	bug("ALL END IS sup than pivot", 1);
 	return (1);
 }

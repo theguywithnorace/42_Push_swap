@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 20:05:41 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/14 11:24:45 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/14 11:32:44 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,9 @@ void find_pivot(t_elt *elt, int midd, int s)
 	}
 }
 
-int in_packet(t_elt *e)
+int in_packet(t_elt *e, int nxtp)
 {
-	if (!e || e->is_pivot == BKED || e->is_pivot == OLD)
+	if (!e || (e->is_pivot == BKED && !is_all_end_sup(e, nxtp)) || e->is_pivot == OLD)
 	{
 		bug("out of packet", e->is_pivot);
 		bug("for val", val(e));

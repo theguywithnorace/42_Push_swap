@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:37:57 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/14 11:27:38 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/14 11:33:17 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void send_to_b(t_all *all)
 			e = all->sk_a;
 			set_next_pivot(all, e);
 		}
-		while (in_packet(e) && ft_lstsize_e(all->sk_a) > 0)
+		while (in_packet(e, all->v_nxtp) && ft_lstsize_e(all->sk_a) > 0)
 		{
 
 			if (val(e) < all->v_nxtp)

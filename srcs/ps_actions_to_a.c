@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 20:05:41 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/14 11:20:05 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/14 11:45:07 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,9 @@ void send_low_values_a(t_all *all)
 
 int is_all_end_inf(t_elt *e, int max)
 {
+	t_elt *bk;
+
+	bk = e;
 	if (!e)
 		return (0);
 	while (e)
@@ -70,6 +73,13 @@ int is_all_end_inf(t_elt *e, int max)
 			return (0);
 		e = e->next;
 	}
+	e = bk;
+	// while (e)
+	// {
+	// 	if (e->is_pivot == BKED)
+	// 		e->is_pivot = 0;
+	// 	e = e->next;
+	// }
 	bug("all end is inf than pivot, pivot :", max);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 17:38:37 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/14 11:21:06 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/14 11:34:28 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int write_a(t_elt **ea, int a, t_all *all)
 			write(1, " ", 1);
 
 			//
-			write(1, "  ", 2);
+			write(1, "  ", 1);
 			//
 		}
 		write(1, " ", 1);
