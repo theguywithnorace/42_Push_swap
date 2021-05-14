@@ -6,13 +6,15 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:37:57 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/14 23:23:47 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/14 23:33:07 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 int all_rest_old(t_elt *e)
 {
+	if (!e)
+		return (1);
 	while (e)
 	{
 		if (e->is_pivot != -1)
@@ -29,9 +31,9 @@ void send_to_b(t_all *all)
 
 	bug("\n\nBEGIN of send to B", 1);
 	e = all->sk_a;
-	while (!(is_sk_ordered(all->sk_a) && !all->sk_b))
+	while (all->sk_a && !(is_sk_ordered(all->sk_a) && !all->sk_b))
 	{
-		bug(">>> new while send back to a", 0);
+		bug(">>> new while send to b", 0);
 		// set_next_pivot(all, e);
 		while (less_elt_than(3, all->sk_a, all))
 		{
@@ -74,6 +76,7 @@ void send_to_b(t_all *all)
 		if (is_sk_ordered(all->sk_a) && is_all_end_sup(all->sk_a, all->v_nxtp))
 			return (bug("END BY RETURN of send to b. pb", 0));
 		print_situation_a(all);
+		bug(">>>>>>>>>>>>>>>>>>>>", 0);
 		while (is_last_seen(all->sk_a))
 			send_hig_values_b(all);
 		if (all->sk_a)
@@ -103,6 +106,7 @@ void send_to_a(t_all *all)
 			set_next_pivot(all, e);
 		while (all->sk_b)
 		{
+			bug("hello", 1);
 			if (val(e) > all->v_nxtp)
 				send_hig_values_a(all);
 			else if (val(e) == all->v_nxtp)

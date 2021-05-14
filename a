@@ -1,1676 +1,308 @@
 
 Stacks:
 
- 11| 0   
- 24| 0   
- 34| 0   
- 26| 0   
- 44| 0   
- 29| 0   
- 46| 0   
- 47| 0   
- 14| 0   
- 22| 0   
- 23| 0   
- 30| 0   
- 15| 0   
- 37| 0   
- 16| 0   
-  4| 0   
-----   ---
-  A     B
+ 1| 0   
+ 3| 0   
+ 2| 0   
+ 5| 0   
+ 4| 0   
+ 7| 0   
+---   ---
+ A     B
 
 
 BEGIN get_pivots A: 1
-midd: 26
-pivot foud for val: 26
+midd: 3
+pivot foud for val: 3
 END get_pivots: 1
 
 
 BEGIN of send to B: 1
->>> new while send back to a: 0
-less_elt_than: 16
+>>> new while send to b: 0
+less_elt_than: 6
 still in the packet: 1
 send_low_values_b: 0
 
-nxpvt: 26
+nxpvt: 3
 -> Executing pb ->
 
- 24| 0   
- 34| 0   
- 26| 1   
- 44| 0   
- 29| 0   
- 46| 0   
- 47| 0   
- 14| 0   
- 22| 0   
- 23| 0   
- 30| 0   
- 15| 0   
- 37| 0   
- 16| 0   
-  4| 0    11 |0
-----   ----
-  A      B
-
-
-still in the packet: 1
-send_low_values_b: 0
-
-nxpvt: 26
--> Executing pb ->
-
- 34| 0   
- 26| 1   
- 44| 0   
- 29| 0   
- 46| 0   
- 47| 0   
- 14| 0   
- 22| 0   
- 23| 0   
- 30| 0   
- 15| 0   
- 37| 0   
- 16| 0    24 |0
-  4| 0    11 |0
-----   ----
-  A      B
-
-
-still in the packet: 1
-not all sup for: 26
-stock_hig_values_a: 34
-
-nxpvt: 26
--> Executing ra ->
-
- 26| 1   
- 44| 0   
- 29| 0   
- 46| 0   
- 47| 0   
- 14| 0   
- 22| 0   
- 23| 0   
- 30| 0   
- 15| 0   
- 37| 0   
- 16| 0   
-  4| 0    24 |0
- 34| 3    11 |0
-----   ----
-  A      B
+ 3| 1   
+ 2| 0   
+ 5| 0   
+ 4| 0   
+ 7| 0    1 |0
+---   ---
+ A     B
 
 
 still in the packet: 1
 send_pivot_b: 0
 
-nxpvt: 26
+nxpvt: 3
 -> Executing pb ->
 
- 44| 0   
- 29| 0   
- 46| 0   
- 47| 0   
- 14| 0   
- 22| 0   
- 23| 0   
- 30| 0   
- 15| 0   
- 37| 0   
- 16| 0    26 |1
-  4| 0    24 |0
- 34| 3    11 |0
-----   ----
-  A      B
+ 2| 0   
+ 5| 0   
+ 4| 0    3 |1
+ 7| 0    1 |0
+---   ---
+ A     B
 
 
-not all sup for: 14
+not all sup for: 2
 
-nxpvt: 26
+nxpvt: 3
 -> Executing rb ->
 
- 44| 0   
- 29| 0   
- 46| 0   
- 47| 0   
- 14| 0   
- 22| 0   
- 23| 0   
- 30| 0   
- 15| 0   
- 37| 0   
- 16| 0    24 |0
-  4| 0    11 |0
- 34| 3    26 |-1
-----   ----
-  A      B
+ 2| 0   
+ 5| 0   
+ 4| 0    1 |0
+ 7| 0    3 |-1
+---   ---
+ A     B
 
 
 send_pivot_b: 0
 still in the packet: 1
-not all sup for: 14
-stock_hig_values_a: 44
-
-nxpvt: 26
--> Executing ra ->
-
- 29| 0   
- 46| 0   
- 47| 0   
- 14| 0   
- 22| 0   
- 23| 0   
- 30| 0   
- 15| 0   
- 37| 0   
- 16| 0   
-  4| 0    24 |0
- 34| 3    11 |0
- 44| 3    26 |-1
-----   ----
-  A      B
-
-
-still in the packet: 1
-not all sup for: 14
-stock_hig_values_a: 29
-
-nxpvt: 26
--> Executing ra ->
-
- 46| 0   
- 47| 0   
- 14| 0   
- 22| 0   
- 23| 0   
- 30| 0   
- 15| 0   
- 37| 0   
- 16| 0   
-  4| 0   
- 34| 3    24 |0
- 44| 3    11 |0
- 29| 3    26 |-1
-----   ----
-  A      B
-
-
-still in the packet: 1
-not all sup for: 14
-stock_hig_values_a: 46
-
-nxpvt: 26
--> Executing ra ->
-
- 47| 0   
- 14| 0   
- 22| 0   
- 23| 0   
- 30| 0   
- 15| 0   
- 37| 0   
- 16| 0   
-  4| 0   
- 34| 3   
- 44| 3    24 |0
- 29| 3    11 |0
- 46| 3    26 |-1
-----   ----
-  A      B
-
-
-still in the packet: 1
-not all sup for: 14
-stock_hig_values_a: 47
-
-nxpvt: 26
--> Executing ra ->
-
- 14| 0   
- 22| 0   
- 23| 0   
- 30| 0   
- 15| 0   
- 37| 0   
- 16| 0   
-  4| 0   
- 34| 3   
- 44| 3   
- 29| 3    24 |0
- 46| 3    11 |0
- 47| 3    26 |-1
-----   ----
-  A      B
-
-
-still in the packet: 1
 send_low_values_b: 0
 
-nxpvt: 26
+nxpvt: 3
 -> Executing pb ->
 
- 22| 0   
- 23| 0   
- 30| 0   
- 15| 0   
- 37| 0   
- 16| 0   
-  4| 0   
- 34| 3   
- 44| 3    14 |0
- 29| 3    24 |0
- 46| 3    11 |0
- 47| 3    26 |-1
-----   ----
-  A      B
+ 5| 0    2 |0
+ 4| 0    1 |0
+ 7| 0    3 |-1
+---   ---
+ A     B
 
 
-still in the packet: 1
-send_low_values_b: 0
-
-nxpvt: 26
--> Executing pb ->
-
- 23| 0   
- 30| 0   
- 15| 0   
- 37| 0   
- 16| 0   
-  4| 0   
- 34| 3    22 |0
- 44| 3    14 |0
- 29| 3    24 |0
- 46| 3    11 |0
- 47| 3    26 |-1
-----   ----
-  A      B
-
-
-still in the packet: 1
-send_low_values_b: 0
-
-nxpvt: 26
--> Executing pb ->
-
- 30| 0   
- 15| 0   
- 37| 0   
- 16| 0   
-  4| 0    23 |0
- 34| 3    22 |0
- 44| 3    14 |0
- 29| 3    24 |0
- 46| 3    11 |0
- 47| 3    26 |-1
-----   ----
-  A      B
-
-
-still in the packet: 1
-not all sup for: 15
-stock_hig_values_a: 30
-
-nxpvt: 26
--> Executing ra ->
-
- 15| 0   
- 37| 0   
- 16| 0   
-  4| 0   
- 34| 3    23 |0
- 44| 3    22 |0
- 29| 3    14 |0
- 46| 3    24 |0
- 47| 3    11 |0
- 30| 3    26 |-1
-----   ----
-  A      B
-
-
-still in the packet: 1
-send_low_values_b: 0
-
-nxpvt: 26
--> Executing pb ->
-
- 37| 0   
- 16| 0   
-  4| 0    15 |0
- 34| 3    23 |0
- 44| 3    22 |0
- 29| 3    14 |0
- 46| 3    24 |0
- 47| 3    11 |0
- 30| 3    26 |-1
-----   ----
-  A      B
-
-
-still in the packet: 1
-not all sup for: 16
-stock_hig_values_a: 37
-
-nxpvt: 26
--> Executing ra ->
-
- 16| 0   
-  4| 0   
- 34| 3    15 |0
- 44| 3    23 |0
- 29| 3    22 |0
- 46| 3    14 |0
- 47| 3    24 |0
- 30| 3    11 |0
- 37| 3    26 |-1
-----   ----
-  A      B
-
-
-still in the packet: 1
-send_low_values_b: 0
-
-nxpvt: 26
--> Executing pb ->
-
-  4| 0    16 |0
- 34| 3    15 |0
- 44| 3    23 |0
- 29| 3    22 |0
- 46| 3    14 |0
- 47| 3    24 |0
- 30| 3    11 |0
- 37| 3    26 |-1
-----   ----
-  A      B
-
-
-still in the packet: 1
-send_low_values_b: 0
-
-nxpvt: 26
--> Executing pb ->
-
-           4 |0
-          16 |0
- 34| 3    15 |0
- 44| 3    23 |0
- 29| 3    22 |0
- 46| 3    14 |0
- 47| 3    24 |0
- 30| 3    11 |0
- 37| 3    26 |-1
-----   ----
-  A      B
-
-
-ALL END IS sup than pivot: 1
 still in the packet: 1
 ALL END IS sup than pivot: 1
 
-nxpvt: 26
+nxpvt: 3
 -> Executing rrb ->
 
-          26 |-1
-           4 |0
- 34| 0    16 |0
- 44| 0    15 |0
- 29| 0    23 |0
- 46| 0    22 |0
- 47| 0    14 |0
- 30| 0    24 |0
- 37| 0    11 |0
-----   ----
-  A      B
+ 5| 0    3 |-1
+ 4| 0    2 |0
+ 7| 0    1 |0
+---   ---
+ A     B
 
 
-midd: 38
-pivot foud for val: 37
+midd: 5
+pivot foud for val: 5
 END get_pivots: 1
 
 RECURSION: 1
-midd: 38
-pivot foud for val: 37
+midd: 5
+pivot foud for val: 5
 END get_pivots: 1
 
 
 BEGIN of send to B: 1
->>> new while send back to a: 0
-less_elt_than: 7
-still in the packet: 1
-send_low_values_b: 0
+>>> new while send to b: 0
+less_elt_than: 3
+OPTI A: 5
+for: 3
+OPTI A3: 3
+start while: 5
 
-nxpvt: 37
+PRINT SITUATION SK A
+all->v_nxtpvt: 3
+elt no :5 -> is_pivot: 1
+elt no :4 -> is_pivot: 0
+elt no :7 -> is_pivot: 0
+start while: 5
+
+PRINT SITUATION SK A
+all->v_nxtpvt: 3
+elt no :5 -> is_pivot: 1
+elt no :4 -> is_pivot: 11
+elt no :7 -> is_pivot: 0
+start while: 5
+
+PRINT SITUATION SK A
+all->v_nxtpvt: 3
+elt no :5 -> is_pivot: 12
+elt no :4 -> is_pivot: 11
+elt no :7 -> is_pivot: 0
+
+PRINT SITUATION SK A
+all->v_nxtpvt: 3
+elt no :5 -> is_pivot: 12
+elt no :4 -> is_pivot: 11
+elt no :7 -> is_pivot: 13
+
+PRINT SITUATION SK B
+all->v_nxtpvt: 3
+elt no :3 -> is_pivot: -1 
+elt no :2 -> is_pivot: 0 
+elt no :1 -> is_pivot: 0 
+
+
+nxpvt: 3
 -> Executing pb ->
 
-          34 |0
-          26 |-1
-           4 |0
-          16 |0
- 44| 0    15 |0
- 29| 0    23 |0
- 46| 0    22 |0
- 47| 0    14 |0
- 30| 0    24 |0
- 37| 1    11 |0
-----   ----
-  A      B
+        5 |12
+        3 |-1
+ 4| 11    2 |0
+ 7| 13    1 |0
+---   ---
+ A     B
 
 
-still in the packet: 1
-not all sup for: 29
-stock_hig_values_a: 44
 
-nxpvt: 37
--> Executing ra ->
-
-          34 |0
-          26 |-1
-           4 |0
-          16 |0
- 29| 0    15 |0
- 46| 0    23 |0
- 47| 0    22 |0
- 30| 0    14 |0
- 37| 1    24 |0
- 44| 3    11 |0
-----   ----
-  A      B
-
-
-still in the packet: 1
-send_low_values_b: 0
-
-nxpvt: 37
+nxpvt: 3
 -> Executing pb ->
 
-          29 |0
-          34 |0
-          26 |-1
-           4 |0
-          16 |0
-          15 |0
- 46| 0    23 |0
- 47| 0    22 |0
- 30| 0    14 |0
- 37| 1    24 |0
- 44| 3    11 |0
-----   ----
-  A      B
+        4 |11
+        5 |12
+        3 |-1
+        2 |0
+ 7| 13    1 |0
+---   ---
+ A     B
 
 
-still in the packet: 1
-not all sup for: 30
-stock_hig_values_a: 46
 
-nxpvt: 37
--> Executing ra ->
+nxpvt: 3
+-> Executing sb ->
 
-          29 |0
-          34 |0
-          26 |-1
-           4 |0
-          16 |0
-          15 |0
- 47| 0    23 |0
- 30| 0    22 |0
- 37| 1    14 |0
- 44| 3    24 |0
- 46| 3    11 |0
-----   ----
-  A      B
+        5 |12
+        4 |11
+        3 |-1
+        2 |0
+ 7| 13    1 |0
+---   ---
+ A     B
 
 
-still in the packet: 1
-not all sup for: 30
-stock_hig_values_a: 47
 
-nxpvt: 37
--> Executing ra ->
-
-          29 |0
-          34 |0
-          26 |-1
-           4 |0
-          16 |0
-          15 |0
- 30| 0    23 |0
- 37| 1    22 |0
- 44| 3    14 |0
- 46| 3    24 |0
- 47| 3    11 |0
-----   ----
-  A      B
-
-
-still in the packet: 1
-send_low_values_b: 0
-
-nxpvt: 37
+nxpvt: 3
 -> Executing pb ->
 
-          30 |0
-          29 |0
-          34 |0
-          26 |-1
-           4 |0
-          16 |0
-          15 |0
-          23 |0
- 37| 1    22 |0
- 44| 3    14 |0
- 46| 3    24 |0
- 47| 3    11 |0
-----   ----
-  A      B
+        7 |13
+        5 |12
+        4 |11
+        3 |-1
+        2 |0
+        1 |0
+---   ---
+ A     B
 
 
-still in the packet: 1
-send_pivot_b: 0
-
-nxpvt: 37
--> Executing pb ->
-
-          37 |1
-          30 |0
-          29 |0
-          34 |0
-          26 |-1
-           4 |0
-          16 |0
-          15 |0
-          23 |0
-          22 |0
- 44| 3    14 |0
- 46| 3    24 |0
- 47| 3    11 |0
-----   ----
-  A      B
-
-
-SK ORDERED: 1
-ALL END IS sup than pivot: 1
-send_pivot_b: -1
 out of packet: -1
-for val: 44
-all->v_nxtpvt: 37
-SK ORDERED: 1
-SK ORDERED: 1
-ALL END IS sup than pivot: 1
-END BY RETURN of send to b. pb: 0
+for val: 5
+all->v_nxtpvt: 3
+SK EMPTY: 1
+>>>>>>>>>>>>>>>>>>>>: 0
+end of while of send_to_b: 0
+END of send to b. pb: 0
 
 END  OF RECURSION
 : 1
 BEGIN get_pivots B: 1
-midd: 31
-pivot foud for val: 30
-midd: 16
-pivot foud for val: 16
+midd: 1
+pivot foud for val: 1
 END get_pivots: 1
 
 
-BEGIN of send to A: 37
->>> new while send back to a: 37
+BEGIN of send to A: 7
+>>> new while send back to a: 7
 less_elt_than: 0
-OPTI B: 37
+OPTI B: 7
 for: 0
 send less than 1 elt: 1
 
-nxpvt: 37
+nxpvt: 3
 -> Executing pa ->
 
-          30 |1
-          29 |0
-          34 |0
-          26 |-1
-           4 |0
-          16 |1
-          15 |0
-          23 |0
- 37|-1    22 |0
- 44|-1    14 |0
- 46|-1    24 |0
- 47|-1    11 |0
-----   ----
-  A      B
-
-
-less_elt_than: 3
-OPTI B: 30
-for: 3
-OPTI B3: 3
-start while: 30
-
-PRINT SITUATION SK A
-all->v_nxtpvt: 37
-elt no :37 -> is_pivot: -1
-elt no :44 -> is_pivot: -1
-elt no :46 -> is_pivot: -1
-elt no :47 -> is_pivot: -1
-start while: 30
-
-PRINT SITUATION SK A
-all->v_nxtpvt: 37
-elt no :37 -> is_pivot: -1
-elt no :44 -> is_pivot: -1
-elt no :46 -> is_pivot: -1
-elt no :47 -> is_pivot: -1
-start while: 30
-
-PRINT SITUATION SK A
-all->v_nxtpvt: 37
-elt no :37 -> is_pivot: -1
-elt no :44 -> is_pivot: -1
-elt no :46 -> is_pivot: -1
-elt no :47 -> is_pivot: -1
-
-PRINT SITUATION SK A
-all->v_nxtpvt: 37
-elt no :37 -> is_pivot: -1
-elt no :44 -> is_pivot: -1
-elt no :46 -> is_pivot: -1
-elt no :47 -> is_pivot: -1
-
-PRINT SITUATION SK B
-all->v_nxtpvt: 37
-elt no :30 -> is_pivot: 12 
-elt no :29 -> is_pivot: 11 
-elt no :34 -> is_pivot: 13 
-elt no :26 -> is_pivot: -1 
-elt no :4 -> is_pivot: 0 
-elt no :16 -> is_pivot: 1 
-elt no :15 -> is_pivot: 0 
-elt no :23 -> is_pivot: 0 
-elt no :22 -> is_pivot: 0 
-elt no :14 -> is_pivot: 0 
-elt no :24 -> is_pivot: 0 
-elt no :11 -> is_pivot: 0 
-
-
-nxpvt: 37
--> Executing pa ->
-
-          29 |11
-          34 |13
-          26 |-1
-           4 |0
-          16 |1
-          15 |0
- 30| 12    23 |0
- 37|-1    22 |0
- 44|-1    14 |0
- 46|-1    24 |0
- 47|-1    11 |0
-----   ----
-  A      B
-
-
-
-nxpvt: 37
--> Executing sb ->
-
-          34 |13
-          29 |11
-          26 |-1
-           4 |0
-          16 |1
-          15 |0
- 30| 12    23 |0
- 37|-1    22 |0
- 44|-1    14 |0
- 46|-1    24 |0
- 47|-1    11 |0
-----   ----
-  A      B
-
-
-
-nxpvt: 37
--> Executing pa ->
-
-          29 |11
-          26 |-1
-           4 |0
-          16 |1
- 34| 13    15 |0
- 30| 12    23 |0
- 37|-1    22 |0
- 44|-1    14 |0
- 46|-1    24 |0
- 47|-1    11 |0
-----   ----
-  A      B
-
-
-
-nxpvt: 37
--> Executing sa ->
-
-          29 |11
-          26 |-1
-           4 |0
-          16 |1
- 30| 12    15 |0
- 34| 13    23 |0
- 37|-1    22 |0
- 44|-1    14 |0
- 46|-1    24 |0
- 47|-1    11 |0
-----   ----
-  A      B
-
-
-
-nxpvt: 37
--> Executing pa ->
-
-          26 |-1
-           4 |0
- 29| 11    16 |1
- 30| 12    15 |0
- 34| 13    23 |0
- 37|-1    22 |0
- 44|-1    14 |0
- 46|-1    24 |0
- 47|-1    11 |0
-----   ----
-  A      B
+        5 |-1
+        4 |-1
+        3 |-1
+        2 |0
+ 7|-1    1 |1
+---   ---
+ A     B
 
 
 less_elt_than: 0
-OPTI B: 26
+OPTI B: 5
 for: 0
 send less than 1 elt: 1
 
-nxpvt: 37
+nxpvt: 3
 -> Executing pa ->
 
- 26|-1     4 |0
- 29|-1    16 |1
- 30|-1    15 |0
- 34|-1    23 |0
- 37|-1    22 |0
- 44|-1    14 |0
- 46|-1    24 |0
- 47|-1    11 |0
-----   ----
-  A      B
+        4 |-1
+        3 |-1
+ 5|-1    2 |0
+ 7|-1    1 |1
+---   ---
+ A     B
 
 
-less_elt_than: 8
-stock_low_values_b: 4
-
-nxpvt: 16
--> Executing rb ->
-
- 26|-1    16 |1
- 29|-1    15 |0
- 30|-1    23 |0
- 34|-1    22 |0
- 37|-1    14 |0
- 44|-1    24 |0
- 46|-1    11 |0
- 47|-1     4 |3
-----   ----
-  A      B
-
-
-
-nxpvt: 16
--> Executing pa ->
-
- 16| 1   
- 26|-1   
- 29|-1    15 |0
- 30|-1    23 |0
- 34|-1    22 |0
- 37|-1    14 |0
- 44|-1    24 |0
- 46|-1    11 |0
- 47|-1     4 |3
-----   ----
-  A      B
-
-
-
-nxpvt: 16
--> Executing ra ->
-
- 26|-1   
- 29|-1   
- 30|-1    15 |0
- 34|-1    23 |0
- 37|-1    22 |0
- 44|-1    14 |0
- 46|-1    24 |0
- 47|-1    11 |0
- 16|-1     4 |3
-----   ----
-  A      B
-
-
-stock_low_values_b: 15
-
-nxpvt: 16
--> Executing rb ->
-
- 26|-1   
- 29|-1   
- 30|-1    23 |0
- 34|-1    22 |0
- 37|-1    14 |0
- 44|-1    24 |0
- 46|-1    11 |0
- 47|-1     4 |3
- 16|-1    15 |3
-----   ----
-  A      B
-
-
-send_hig_values_a: 0
-
-nxpvt: 16
--> Executing pa ->
-
- 23| 0   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1    22 |0
- 37|-1    14 |0
- 44|-1    24 |0
- 46|-1    11 |0
- 47|-1     4 |3
- 16|-1    15 |3
-----   ----
-  A      B
-
-
-send_hig_values_a: 0
-
-nxpvt: 16
--> Executing pa ->
-
- 22| 0   
- 23| 0   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1   
- 37|-1    14 |0
- 44|-1    24 |0
- 46|-1    11 |0
- 47|-1     4 |3
- 16|-1    15 |3
-----   ----
-  A      B
-
-
-stock_low_values_b: 14
-
-nxpvt: 16
--> Executing rb ->
-
- 22| 0   
- 23| 0   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1   
- 37|-1    24 |0
- 44|-1    11 |0
- 46|-1     4 |3
- 47|-1    15 |3
- 16|-1    14 |3
-----   ----
-  A      B
-
-
-send_hig_values_a: 0
-
-nxpvt: 16
--> Executing pa ->
-
- 24| 0   
- 22| 0   
- 23| 0   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1   
- 37|-1   
- 44|-1    11 |0
- 46|-1     4 |3
- 47|-1    15 |3
- 16|-1    14 |3
-----   ----
-  A      B
-
-
-all end is inf than pivot, pivot :: 16
-LAST ELT: 14
-
-nxpvt: 16
--> Executing rrb ->
-
- 24| 0   
- 22| 0   
- 23| 0   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1   
- 37|-1   
- 44|-1    14 |3
- 46|-1    11 |0
- 47|-1     4 |3
- 16|-1    15 |3
-----   ----
-  A      B
-
-
-
-nxpvt: 16
--> Executing rrb ->
-
- 24| 0   
- 22| 0   
- 23| 0   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1   
- 37|-1   
- 44|-1    15 |3
- 46|-1    14 |0
- 47|-1    11 |0
- 16|-1     4 |3
-----   ----
-  A      B
-
-
-
-nxpvt: 16
--> Executing rrb ->
-
- 24| 0   
- 22| 0   
- 23| 0   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1   
- 37|-1   
- 44|-1     4 |3
- 46|-1    15 |0
- 47|-1    14 |0
- 16|-1    11 |0
-----   ----
-  A      B
-
-
-
-nxpvt: 16
--> Executing rra ->
-
- 16|-1   
- 24| 0   
- 22| 0   
- 23| 0   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1   
- 37|-1     4 |0
- 44|-1    15 |0
- 46|-1    14 |0
- 47|-1    11 |0
-----   ----
-  A      B
-
-
-midd: 11
-pivot foud for val: 11
-END get_pivots: 1
-
-RECURSION: 1
-midd: 11
-pivot foud for val: 11
-END get_pivots: 1
-
-
-BEGIN of send to A: 4
->>> new while send back to a: 4
-less_elt_than: 4
-stock_low_values_b: 4
-
-nxpvt: 11
--> Executing rb ->
-
- 16|-1   
- 24| 0   
- 22| 0   
- 23| 0   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1   
- 37|-1    15 |0
- 44|-1    14 |0
- 46|-1    11 |1
- 47|-1     4 |3
-----   ----
-  A      B
-
-
-send_hig_values_a: 0
-
-nxpvt: 11
--> Executing pa ->
-
- 15| 0   
- 16|-1   
- 24| 0   
- 22| 0   
- 23| 0   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1   
- 37|-1   
- 44|-1    14 |0
- 46|-1    11 |1
- 47|-1     4 |3
-----   ----
-  A      B
-
-
-send_hig_values_a: 0
-
-nxpvt: 11
--> Executing pa ->
-
- 14| 0   
- 15| 0   
- 16|-1   
- 24| 0   
- 22| 0   
- 23| 0   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1   
- 37|-1   
- 44|-1   
- 46|-1    11 |1
- 47|-1     4 |3
-----   ----
-  A      B
-
-
-
-nxpvt: 11
--> Executing pa ->
-
- 11| 1   
- 14| 0   
- 15| 0   
- 16|-1   
- 24| 0   
- 22| 0   
- 23| 0   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1   
- 37|-1   
- 44|-1   
- 46|-1   
- 47|-1    4 |3
-----   ---
-  A     B
-
-
-SK EMPTY: 1
-all end is inf than pivot, pivot :: 11
-SK EMPTY: 1
-all end is inf than pivot, pivot :: 11
-LAST ELT: 4
-END get_pivots: 1
-
-RECURSION: 1
-END get_pivots: 1
-
-
-BEGIN of send to A: 4
->>> new while send back to a: 4
 less_elt_than: 0
 OPTI B: 4
 for: 0
 send less than 1 elt: 1
 
-nxpvt: 11
+nxpvt: 3
 -> Executing pa ->
 
-  4|-1   
- 11|-1   
- 14| 0   
- 15| 0   
- 16|-1   
- 24| 0   
- 22| 0   
- 23| 0   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1   
- 37|-1   
- 44|-1   
- 46|-1   
- 47|-1   
-----   ---
-  A     B
-
-
-end of while of send_to_b: 0
-END of send to A. pb: 0
-
-END  OF RECURSION
-: 1
-
-END  OF RECURSION
-: 1
-BEGIN get_pivots A: 1
-midd: 14
-pivot foud for val: 14
-midd: 23
-pivot foud for val: 23
-END get_pivots: 1
-
-
-BEGIN of send to B: 1
->>> new while send back to a: 0
-less_elt_than: 0
-OPTI A: 4
-for: 0
-send less than 1 elt: 1
-
-nxpvt: 11
--> Executing pb ->
-
- 11|-1   
- 14| 1   
- 15| 0   
- 16|-1   
- 24| 0   
- 22| 0   
- 23| 1   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1   
- 37|-1   
- 44|-1   
- 46|-1   
- 47|-1    4 |-1
-----   ---
-  A     B
+ 4|-1    3 |-1
+ 5|-1    2 |0
+ 7|-1    1 |1
+---   ---
+ A     B
 
 
 less_elt_than: 0
-OPTI A: 11
+OPTI B: 3
 for: 0
 send less than 1 elt: 1
 
-nxpvt: 11
--> Executing pb ->
+nxpvt: 3
+-> Executing pa ->
 
- 14| 1   
- 15| 0   
- 16|-1   
- 24| 0   
- 22| 0   
- 23| 1   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1   
- 37|-1   
- 44|-1   
- 46|-1    11 |-1
- 47|-1     4 |-1
-----   ----
-  A      B
+ 3|-1   
+ 4|-1   
+ 5|-1    2 |0
+ 7|-1    1 |1
+---   ---
+ A     B
 
 
 less_elt_than: 2
-OPTI A: 14
+OPTI B: 2
 for: 2
 send less than 1 elt: 1
 
-nxpvt: 11
--> Executing pb ->
-
- 15| 0   
- 16|-1   
- 24| 0   
- 22| 0   
- 23| 1   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1   
- 37|-1   
- 44|-1    14 |-1
- 46|-1    11 |-1
- 47|-1     4 |-1
-----   ----
-  A      B
-
-
-send less than 1 elt: 1
-
-nxpvt: 11
--> Executing pb ->
-
- 16|-1   
- 24| 0   
- 22| 0   
- 23| 1   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1   
- 37|-1    15 |-1
- 44|-1    14 |-1
- 46|-1    11 |-1
- 47|-1     4 |-1
-----   ----
-  A      B
-
-
-less_elt_than: 0
-OPTI A: 16
-for: 0
-send less than 1 elt: 1
-
-nxpvt: 11
--> Executing pb ->
-
- 24| 0   
- 22| 0   
- 23| 1   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1    16 |-1
- 37|-1    15 |-1
- 44|-1    14 |-1
- 46|-1    11 |-1
- 47|-1     4 |-1
-----   ----
-  A      B
-
-
-less_elt_than: 3
-OPTI A: 24
-for: 3
-OPTI A3: 3
-start while: 24
-
-PRINT SITUATION SK A
-all->v_nxtpvt: 11
-elt no :24 -> is_pivot: 0
-elt no :22 -> is_pivot: 0
-elt no :23 -> is_pivot: 1
-elt no :26 -> is_pivot: -1
-elt no :29 -> is_pivot: -1
-elt no :30 -> is_pivot: -1
-elt no :34 -> is_pivot: -1
-elt no :37 -> is_pivot: -1
-elt no :44 -> is_pivot: -1
-elt no :46 -> is_pivot: -1
-elt no :47 -> is_pivot: -1
-start while: 24
-
-PRINT SITUATION SK A
-all->v_nxtpvt: 11
-elt no :24 -> is_pivot: 0
-elt no :22 -> is_pivot: 11
-elt no :23 -> is_pivot: 1
-elt no :26 -> is_pivot: -1
-elt no :29 -> is_pivot: -1
-elt no :30 -> is_pivot: -1
-elt no :34 -> is_pivot: -1
-elt no :37 -> is_pivot: -1
-elt no :44 -> is_pivot: -1
-elt no :46 -> is_pivot: -1
-elt no :47 -> is_pivot: -1
-start while: 24
-
-PRINT SITUATION SK A
-all->v_nxtpvt: 11
-elt no :24 -> is_pivot: 0
-elt no :22 -> is_pivot: 11
-elt no :23 -> is_pivot: 12
-elt no :26 -> is_pivot: -1
-elt no :29 -> is_pivot: -1
-elt no :30 -> is_pivot: -1
-elt no :34 -> is_pivot: -1
-elt no :37 -> is_pivot: -1
-elt no :44 -> is_pivot: -1
-elt no :46 -> is_pivot: -1
-elt no :47 -> is_pivot: -1
-
-PRINT SITUATION SK A
-all->v_nxtpvt: 11
-elt no :24 -> is_pivot: 13
-elt no :22 -> is_pivot: 11
-elt no :23 -> is_pivot: 12
-elt no :26 -> is_pivot: -1
-elt no :29 -> is_pivot: -1
-elt no :30 -> is_pivot: -1
-elt no :34 -> is_pivot: -1
-elt no :37 -> is_pivot: -1
-elt no :44 -> is_pivot: -1
-elt no :46 -> is_pivot: -1
-elt no :47 -> is_pivot: -1
-
-PRINT SITUATION SK B
-all->v_nxtpvt: 11
-elt no :16 -> is_pivot: -1 
-elt no :15 -> is_pivot: -1 
-elt no :14 -> is_pivot: -1 
-elt no :11 -> is_pivot: -1 
-elt no :4 -> is_pivot: -1 
-
-
-nxpvt: 11
--> Executing pb ->
-
- 22| 11   
- 23| 12   
- 26|-1   
- 29|-1   
- 30|-1    24 |13
- 34|-1    16 |-1
- 37|-1    15 |-1
- 44|-1    14 |-1
- 46|-1    11 |-1
- 47|-1     4 |-1
-----   ----
-  A      B
-
-
-
-nxpvt: 11
--> Executing pb ->
-
- 23| 12   
- 26|-1   
- 29|-1    22 |11
- 30|-1    24 |13
- 34|-1    16 |-1
- 37|-1    15 |-1
- 44|-1    14 |-1
- 46|-1    11 |-1
- 47|-1     4 |-1
-----   ----
-  A      B
-
-
-
-nxpvt: 11
--> Executing sb ->
-
- 23| 12   
- 26|-1   
- 29|-1    24 |13
- 30|-1    22 |11
- 34|-1    16 |-1
- 37|-1    15 |-1
- 44|-1    14 |-1
- 46|-1    11 |-1
- 47|-1     4 |-1
-----   ----
-  A      B
-
-
-
-nxpvt: 11
--> Executing pb ->
-
- 26|-1    23 |12
- 29|-1    24 |13
- 30|-1    22 |11
- 34|-1    16 |-1
- 37|-1    15 |-1
- 44|-1    14 |-1
- 46|-1    11 |-1
- 47|-1     4 |-1
-----   ----
-  A      B
-
-
-
-nxpvt: 11
--> Executing sb ->
-
- 26|-1    24 |13
- 29|-1    23 |12
- 30|-1    22 |11
- 34|-1    16 |-1
- 37|-1    15 |-1
- 44|-1    14 |-1
- 46|-1    11 |-1
- 47|-1     4 |-1
-----   ----
-  A      B
-
-
-less_elt_than: 0
-BEGIN get_pivots B: 1
-END get_pivots: 1
-
-
-BEGIN of send to A: 24
->>> new while send back to a: 24
-less_elt_than: 0
-OPTI B: 24
-for: 0
-send less than 1 elt: 1
-
-nxpvt: 11
+nxpvt: 3
 -> Executing pa ->
 
- 24|-1   
- 26|-1   
- 29|-1    23 |-1
- 30|-1    22 |-1
- 34|-1    16 |-1
- 37|-1    15 |-1
- 44|-1    14 |-1
- 46|-1    11 |-1
- 47|-1     4 |-1
-----   ----
-  A      B
+ 2|-1   
+ 3|-1   
+ 4|-1   
+ 5|-1   
+ 7|-1    1 |1
+---   ---
+ A     B
 
 
-less_elt_than: 0
-OPTI B: 23
-for: 0
 send less than 1 elt: 1
 
-nxpvt: 11
+nxpvt: 3
 -> Executing pa ->
 
- 23|-1   
- 24|-1   
- 26|-1   
- 29|-1   
- 30|-1    22 |-1
- 34|-1    16 |-1
- 37|-1    15 |-1
- 44|-1    14 |-1
- 46|-1    11 |-1
- 47|-1     4 |-1
-----   ----
-  A      B
-
-
-less_elt_than: 0
-OPTI B: 22
-for: 0
-send less than 1 elt: 1
-
-nxpvt: 11
--> Executing pa ->
-
- 22|-1   
- 23|-1   
- 24|-1   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1    16 |-1
- 37|-1    15 |-1
- 44|-1    14 |-1
- 46|-1    11 |-1
- 47|-1     4 |-1
-----   ----
-  A      B
-
-
-less_elt_than: 0
-OPTI B: 16
-for: 0
-send less than 1 elt: 1
-
-nxpvt: 11
--> Executing pa ->
-
- 16|-1   
- 22|-1   
- 23|-1   
- 24|-1   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1   
- 37|-1    15 |-1
- 44|-1    14 |-1
- 46|-1    11 |-1
- 47|-1     4 |-1
-----   ----
-  A      B
-
-
-less_elt_than: 0
-OPTI B: 15
-for: 0
-send less than 1 elt: 1
-
-nxpvt: 11
--> Executing pa ->
-
- 15|-1   
- 16|-1   
- 22|-1   
- 23|-1   
- 24|-1   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1   
- 37|-1   
- 44|-1    14 |-1
- 46|-1    11 |-1
- 47|-1     4 |-1
-----   ----
-  A      B
-
-
-less_elt_than: 0
-OPTI B: 14
-for: 0
-send less than 1 elt: 1
-
-nxpvt: 11
--> Executing pa ->
-
- 14|-1   
- 15|-1   
- 16|-1   
- 22|-1   
- 23|-1   
- 24|-1   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1   
- 37|-1   
- 44|-1   
- 46|-1    11 |-1
- 47|-1     4 |-1
-----   ----
-  A      B
-
-
-less_elt_than: 0
-OPTI B: 11
-for: 0
-send less than 1 elt: 1
-
-nxpvt: 11
--> Executing pa ->
-
- 11|-1   
- 14|-1   
- 15|-1   
- 16|-1   
- 22|-1   
- 23|-1   
- 24|-1   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1   
- 37|-1   
- 44|-1   
- 46|-1   
- 47|-1    4 |-1
-----   ---
-  A     B
-
-
-less_elt_than: 0
-OPTI B: 4
-for: 0
-send less than 1 elt: 1
-
-nxpvt: 11
--> Executing pa ->
-
-  4|-1   
- 11|-1   
- 14|-1   
- 15|-1   
- 16|-1   
- 22|-1   
- 23|-1   
- 24|-1   
- 26|-1   
- 29|-1   
- 30|-1   
- 34|-1   
- 37|-1   
- 44|-1   
- 46|-1   
- 47|-1   
-----   ---
-  A     B
+ 1|-1   
+ 2|-1   
+ 3|-1   
+ 4|-1   
+ 5|-1   
+ 7|-1   
+---   ---
+ A     B
 
 
 end of while of send_to_b: 0
