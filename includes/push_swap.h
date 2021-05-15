@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:14:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/15 13:55:33 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 19:10:10 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include "../libft/libft.h"
+# include "../libft/includes/libft.h"
 
 # define SA 1
 # define SB 2

@@ -1,47 +1,51 @@
-SRC_DIR			= srcs/
+NAME		=	push_swap
 
-SRC				=	execute_instructions.c initialize.c instructions_1.c\
-						instructions_2.c parser_arguments.c parser_instructions.c\
-						ps_move.c ps_check_1.c ps_check_2.c error.c print.c freeing.c\
-						bonus.c ps_send.c ps_pvt.c ps_actions.c ps_actions_to_a.c \
-						ps_opti_1.c ps_opti_2.c print_2.c ps_actions_2.c ps_actions_3.c
+CFLAGS		=	-Wall -Wextra -Werror
 
-OBJ              = ${SRC:.c=.o}
+RM			=	rm -f
 
-SRCS			= ${addprefix ${SRC_DIR}, ${SRC}}
+SRC_DIR 	= srcs/
 
-OBJS			= ${addprefix ${OBJ_DIR}, ${OBJ}}
+SRC			= execute_instructions.c initialize.c instructions_1.c\
+			instructions_2.c parser_arguments.c parser_instructions.c\
+			ps_move.c ps_check_1.c ps_check_2.c error.c print.c freeing.c\
+			bonus.c ps_send.c ps_pvt.c ps_actions.c ps_actions_to_a.c \
+			ps_opti_1.c ps_opti_2.c print_2.c ps_actions_2.c ps_actions_3.c
 
-OBJ_DIR			=	obj/
+SRCS		= ${addprefix ${SRC_DIR}, ${SRC}}
 
-HDR_DIR			= includes/
+OBJ 		= ${SRC:.c=.o}
 
-RM				= rm -f
+OBJ_DIR 	= obj/
 
-CFLAGS		= -Wall -Wextra -Werror
+OBJS		= ${addprefix ${OBJ_DIR}, ${OBJ}}
 
-${OBJ_DIR}%.o	: ${SRC_DIR}%.c
+
+${NAME}: ${OBJS}
+	gcc -o  push_swap srcs/ps.c ${CFLAGS} ${OBJS} -I includes -L. -lft
+
 # mkdir -p obj
 # @make  -s -C libft
-	gcc -c -I ${HDR_DIR} ${CFLAGS} -c -o $@ $<
+${OBJ_DIR}%.o: ${SRC_DIR}%.c
+	gcc -c -I includes ${CFLAGS} -c -o $@ $<
 
-
-all:	${OBJS} 
-	gcc -o  push_swap srcs/ps.c ${CFLAGS} ${OBJS} -I includes -L. -lft
+all: ${NAME}
 
 checker:
 	gcc -o  checker srcs/ck.c ${CFLAGS}  ${OBJS}  -I includes  -L. -lft
 
 clean:
-	${RM} ${OBJS}
-	cd libft && make clean && cd ..
 	${RM} .DS_Store
+	${RM} ${OBJS}
 
-fclean:		clean
-	cd libft && make fclean && cd ..
-	${RM} push_swap
+fclean: clean
+	${RM} ${NAME}
 	${RM} checker
 
-re:		fclean all
 
-.PHONY:	all clean fclean re 
+re: fclean all
+
+.PHONY:	all clean fclean re
+
+
+
