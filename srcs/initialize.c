@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:54:04 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/09 20:06:11 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 13:25:06 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		intitialize_all(t_all *all)
 	return (1);
 }
 
-int val(t_elt *e)
+int		val(t_elt *e)
 {
 	return (ft_atoi(e->content));
 }

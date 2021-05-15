@@ -6,13 +6,13 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:58:23 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/15 13:00:05 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 13:27:04 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int value_already_found(t_all *all, char *s)
+int		value_already_found(t_all *all, char *s)
 {
 	t_elt *elt;
 
@@ -26,27 +26,28 @@ int value_already_found(t_all *all, char *s)
 	return (1);
 }
 
-int check_arg_s_args(char *str)
+int		check_arg_s_args(char *str)
 {
 	int i;
 
 	i = -1;
 	while (++i < ft_strlen_ps(str))
 		if (!((i == 0 && str[i] == '-') ||
-			  (i == 0 && str[i] == '+') || (str[i] >= '0' && str[i] <= '9')))
+					(i == 0 && str[i] == '+') ||
+					(str[i] >= '0' && str[i] <= '9')))
 			return (0);
 	if (!((ft_strlen_ps(str) <= 10 &&
-		   (str[0] != '-' || str[0] != '+')) ||
-		  (ft_strlen_ps(str) <= 11 && (str[0] != '-' || str[0] != '+'))))
+					(str[0] != '-' || str[0] != '+')) ||
+				(ft_strlen_ps(str) <= 11 && (str[0] != '-' || str[0] != '+'))))
 		return (0);
 	return (1);
 }
 
-int is_int(char *str)
+int		is_int(char *str)
 {
-	int i;
-	long out;
-	long sign;
+	int		i;
+	long	out;
+	long	sign;
 
 	i = -1;
 	if (!(check_arg_s_args(str)))
@@ -68,10 +69,10 @@ int is_int(char *str)
 	return (1);
 }
 
-int check_n_get_arguments(int ac, char **av, t_all *all)
+int		check_n_get_arguments(int ac, char **av, t_all *all)
 {
-	int i;
-	t_elt *elt;
+	int		i;
+	t_elt	*elt;
 
 	i = all->bonus;
 	while (++i < ac)
@@ -80,13 +81,15 @@ int check_n_get_arguments(int ac, char **av, t_all *all)
 			return (0);
 		if (!all->sk_a)
 		{
-			if (!(value_already_found(all, av[i])) || !(all->sk_a = ft_lstnew_e(av[i])))
+			if (!(value_already_found(all, av[i]))
+			|| !(all->sk_a = ft_lstnew_e(av[i])))
 				return (0);
 			all->len_a++;
 			elt = all->sk_a;
 			continue;
 		}
-		if (!(value_already_found(all, av[i])) || !(elt->next = ft_lstnew_e(av[i])))
+		if (!(value_already_found(all, av[i]))
+		|| !(elt->next = ft_lstnew_e(av[i])))
 			return (0);
 		all->len_a++;
 		elt = elt->next;

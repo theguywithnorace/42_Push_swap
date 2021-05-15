@@ -6,13 +6,13 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 17:38:37 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/15 13:01:02 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 13:28:25 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void print_init(t_all *all)
+void	print_init(t_all *all)
 {
 	if (all->bonus)
 		write(1, "\nStacks:\n\n", 10);
@@ -20,7 +20,7 @@ void print_init(t_all *all)
 		print_elt(all);
 }
 
-void print_action(char *action, t_all *all)
+void	print_action(char *action, t_all *all)
 {
 	execute(action, all);
 	if (all->bonus)
@@ -37,7 +37,7 @@ void print_action(char *action, t_all *all)
 	}
 }
 
-int write_a(t_elt **ea, int a, t_all *all)
+int		write_a(t_elt **ea, int a, t_all *all)
 {
 	int i;
 
@@ -59,7 +59,7 @@ int write_a(t_elt **ea, int a, t_all *all)
 	return (a);
 }
 
-int write_b(t_elt **eb, int b, t_all *all)
+int		write_b(t_elt **eb, int b, t_all *all)
 {
 	int i;
 
@@ -81,12 +81,12 @@ int write_b(t_elt **eb, int b, t_all *all)
 	return (b);
 }
 
-void print_elt(t_all *all)
+void	print_elt(t_all *all)
 {
-	t_elt *ea;
-	t_elt *eb;
-	int a;
-	int b;
+	t_elt	*ea;
+	t_elt	*eb;
+	int		a;
+	int		b;
 
 	ea = all->sk_a;
 	eb = all->sk_b;

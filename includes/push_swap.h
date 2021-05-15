@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:14:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/15 13:12:03 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 13:55:33 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,9 @@
 # define OLD -1
 # define PIVOT 1
 
-
-
 typedef struct	s_all
 {
-	// int		i_nxtp;
 	int		v_nxtp;
-
 	int		len_a;
 	int		len_t;
 	int		p_low;
@@ -63,75 +59,47 @@ typedef struct	s_all
 	int		check;
 }				t_all;
 
-
-//main
-void execute_algo(t_all *all);
-
-
-//pivot algo
-void get_pivots(t_elt *elt, int s);
-int find_midd(t_elt *elt);
-void	find_pivot(t_elt *e, int midd, int s);
-
-//ps_actions_to_b
-void send_low_values_b(t_all *all);
-void send_pivot_b(t_all *all);
-void stock_hig_values_a(t_all *all);
-void set_pivot_at_top_b(t_all *all);
-void send_hig_values_b(t_all *all);
-int is_last_seen(t_elt *e);
-int is_all_end_sup(t_elt *e, int max);
-void set_bked_sk(t_elt *e);
-int less_elt_than(int n, t_elt *e, t_all *all);
-void quick_send_b(t_all *all);
-void	back_up_if_bked_a(t_all *all);
-
-
-
-//ps_actions to a
-void send_low_values_a(t_all *all);
-void send_pivot_a(t_all *all);
-void stock_low_values_b(t_all *all);
-void set_pivot_at_top_a(t_all *all);
-void send_hig_values_a(t_all *all);
-int is_all_end_inf(t_elt *e, int max);
-void quick_send_a(t_all *all);
-void	back_up_if_bked_b(t_all *all);
-
-
-//opti
-void opti_a(t_all *all, t_elt *e);
-void opti_b(t_all *all, t_elt *e);
-void set_ispvt(t_elt *e, int k, int min);
-void set_order(t_elt *e, t_all *all);
-void algo_3_a(t_all *all, t_elt *e);
-void algo_3_b(t_all *all, t_elt *e);
-
-//algo 5
-void execute_algo5(t_all *all);
-
-
-
-
-int eq(t_elt *elt, int v);
-int val(t_elt *e);
-void set_next_pivot(t_all *all, t_elt *e);
-void send_to_b(t_all *all);
-void send_to_a(t_all *all);
-int		is_still_less_than_pvt(t_all *all, t_elt *e);
-int in_packet(t_elt *e, int nxtp);
-
-//Error and debug(ger
-void  bug(char *s, int n);
-void  print_situation_a(t_all *all);
-void  print_situation_b(t_all *all);
-
-
-
-//Short algo
-void execute_short_algo(t_all *all);
-
-
+void			execute_algo(t_all *all);
+void			get_pivots(t_elt *elt, int s);
+int				find_midd(t_elt *elt);
+void			find_pivot(t_elt *e, int midd, int s);
+void			send_low_values_b(t_all *all);
+void			send_pivot_b(t_all *all);
+void			stock_hig_values_a(t_all *all);
+void			set_pivot_at_top_b(t_all *all);
+void			send_hig_values_b(t_all *all);
+int				is_last_seen(t_elt *e);
+int				is_all_end_sup(t_elt *e, int max);
+void			set_bked_sk(t_elt *e);
+int				less_elt_than(int n, t_elt *e, t_all *all);
+void			quick_send_b(t_all *all);
+void			back_up_if_bked_a(t_all *all);
+void			send_low_values_a(t_all *all);
+void			send_pivot_a(t_all *all);
+void			stock_low_values_b(t_all *all);
+void			set_pivot_at_top_a(t_all *all);
+void			send_hig_values_a(t_all *all);
+int				is_all_end_inf(t_elt *e, int max);
+void			quick_send_a(t_all *all);
+void			back_up_if_bked_b(t_all *all);
+void			opti_a(t_all *all, t_elt *e);
+void			opti_b(t_all *all, t_elt *e);
+void			set_ispvt(t_elt *e, int k, int min);
+void			set_order(t_elt *e, t_all *all);
+void			algo_3_a(t_all *all, t_elt *e);
+void			algo_3_b(t_all *all, t_elt *e);
+void			execute_algo5(t_all *all);
+int				eq(t_elt *elt, int v);
+int				val(t_elt *e);
+void			set_next_pivot(t_all *all, t_elt *e);
+void			send_to_b(t_all *all);
+void			send_to_a(t_all *all);
+int				is_still_less_than_pvt(t_all *all, t_elt *e);
+int				in_packet(t_elt *e, int nxtp);
+void			bug(char *s, int n);
+void			print_situation_a(t_all *all);
+void			print_situation_b(t_all *all);
+void			execute_short_algo(t_all *all);
 void			end_algo(t_all *all);
 int				ft_strlen_ps(const char *s);
 void			find_lowest_values_a(t_all *all);

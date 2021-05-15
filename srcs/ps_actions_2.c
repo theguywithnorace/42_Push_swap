@@ -1,51 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_actions_to_a.c                                  :+:      :+:    :+:   */
+/*   ps_actions_2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 20:05:41 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/15 13:34:18 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 13:33:17 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	send_hig_values_a(t_all *all)
-{
-	print_action("pa", all);
-}
-
-void	send_pivot_a(t_all *all)
-{
-	print_action("pa", all);
-	if (all->sk_a)
-	{
-		if (all->sk_a->is_pivot == OLD)
-			set_next_pivot(all, all->sk_b);
-		else
-			all->sk_a->is_pivot = OLD;
-	}
-	if (!is_all_end_inf(all->sk_b, all->v_nxtp))
-		print_action("ra", all);
-}
-
-void	stock_low_values_b(t_all *all)
-{
-	all->sk_b->is_pivot = BKED;
-	print_action("rb", all);
-}
-
-void	send_low_values_a(t_all *all)
-{
-	if (all->sk_b->is_pivot != BKED)
-		print_action("rrb", all);
-	print_action("pa", all);
-	all->sk_a->is_pivot = 0;
-}
-
-int		is_all_end_inf(t_elt *e, int max)
+int		is_all_end_sup(t_elt *e, int max)
 {
 	t_elt *bk;
 
@@ -54,12 +21,12 @@ int		is_all_end_inf(t_elt *e, int max)
 		return (0);
 	while (e)
 	{
-		if (val(e) >= max)
+		if (val(e) <= max)
 			return (0);
 		e = e->next;
 	}
 	e = bk;
-	if (is_sk_ordered(e, -1))
+	if (is_sk_ordered(e, 1))
 	{
 		while (e)
 		{
@@ -67,5 +34,52 @@ int		is_all_end_inf(t_elt *e, int max)
 			e = e->next;
 		}
 	}
+	return (1);
+}
+
+void	set_bked_sk(t_elt *e)
+{
+	while (e)
+	{
+		e->is_pivot = BKED;
+		e = e->next;
+	}
+}
+
+void	set_pivot_at_top_a(t_all *all)
+{
+	if (!all->sk_a)
+		return ;
+	if (val(all->sk_a) == all->v_nxtp)
+		return ;
+	print_action("rra", all);
+}
+
+void	set_pivot_at_top_b(t_all *all)
+{
+	if (!all->sk_b)
+		return ;
+	if (val(all->sk_b) == all->v_nxtp)
+		return ;
+	print_action("rrb", all);
+}
+
+int		less_elt_than(int n, t_elt *e, t_all *all)
+{
+	int		i;
+	t_elt	*elt;
+
+	i = 0;
+	elt = e;
+	if (!elt)
+		return (0);
+	while (elt && elt->is_pivot != OLD)
+	{
+		i++;
+		elt = elt->next;
+	}
+	if (i > n)
+		return (0);
+	all->p_tomov = i;
 	return (1);
 }

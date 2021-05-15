@@ -6,13 +6,13 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 10:50:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/13 10:50:58 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 13:57:34 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_abs(int a)
+int	ft_abs(int a)
 {
 	if (a >= 0)
 		return (a);

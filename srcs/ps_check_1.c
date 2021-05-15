@@ -6,13 +6,13 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:47:51 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/15 13:04:22 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 13:34:50 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void execute_short_algo(t_all *all)
+void	execute_short_algo(t_all *all)
 {
 	find_lowest_values_a(all);
 	if (!in_order(all))
@@ -28,7 +28,7 @@ void execute_short_algo(t_all *all)
 	freeer(all);
 }
 
-void end_algo(t_all *all)
+void	end_algo(t_all *all)
 {
 	if (!(is_sk_ordered(all->sk_a, 1) && all->sk_b == 0))
 	{
@@ -41,7 +41,6 @@ void end_algo(t_all *all)
 	}
 	freeer(all);
 }
-
 
 int		sk_a_ordered_by_packet(t_all *all)
 {

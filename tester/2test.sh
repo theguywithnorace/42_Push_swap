@@ -5,7 +5,7 @@ do
 	B=$(($A+$1));
 	ARG=`ruby -e "puts ($A..$B).to_a.shuffle.join(' ')"`;
 	echo $ARG
-	output=$(./push_swap  $ARG | ./checker $ARG);
+	output=$(../push_swap  $ARG | ../checker $ARG);
 	echo $output 
 	echo "min:" $A " max:" $B 
 done

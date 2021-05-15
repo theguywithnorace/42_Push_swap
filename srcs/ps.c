@@ -6,13 +6,13 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:37:57 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/15 13:15:09 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 13:29:04 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void execute_algo(t_all *all)
+void	execute_algo(t_all *all)
 {
 	while (!is_sk_ordered(all->sk_a, 1))
 	{
@@ -22,7 +22,7 @@ void execute_algo(t_all *all)
 	freeer(all);
 }
 
-void execute_algo5(t_all *all)
+void	execute_algo5(t_all *all)
 {
 	find_middle_value(all);
 	while (!sk_a_ordered_by_packet(all))
@@ -43,7 +43,7 @@ void execute_algo5(t_all *all)
 	end_algo(all);
 }
 
-int main(int ac, char **av)
+int		main(int ac, char **av)
 {
 	t_all *all;
 

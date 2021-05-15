@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_opti.c                                          :+:      :+:    :+:   */
+/*   ps_opti_1.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 17:47:41 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/15 13:06:34 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 13:36:51 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void set_ispvt(t_elt *e, int k, int min)
+void	set_ispvt(t_elt *e, int k, int min)
 {
 	while (e && e->is_pivot != OLD)
 	{
 		if (val(e) == min)
 		{
 			e->is_pivot = k;
-			return;
+			return ;
 		}
 		e = e->next;
 	}
 }
 
-int value_not_set(t_elt *e)
+int		value_not_set(t_elt *e)
 {
 	while (e && e->is_pivot != OLD)
 	{
@@ -36,11 +36,11 @@ int value_not_set(t_elt *e)
 	return (0);
 }
 
-void set_order(t_elt *e, t_all *all)
+void	set_order(t_elt *e, t_all *all)
 {
-	int k;
-	int min;
-	t_elt *bk;
+	int		k;
+	int		min;
+	t_elt	*bk;
 
 	(void)all;
 	bk = e;
@@ -63,7 +63,7 @@ void set_order(t_elt *e, t_all *all)
 	}
 }
 
-void algo_3_a(t_all *all, t_elt *e)
+void	algo_3_a(t_all *all, t_elt *e)
 {
 	t_elt *elt;
 
@@ -83,10 +83,9 @@ void algo_3_a(t_all *all, t_elt *e)
 		elt->is_pivot = -1;
 		elt = elt->next;
 	}
-	return;
 }
 
-void algo_3_b(t_all *all, t_elt *e)
+void	algo_3_b(t_all *all, t_elt *e)
 {
 	t_elt *elt;
 
@@ -106,5 +105,4 @@ void algo_3_b(t_all *all, t_elt *e)
 		elt->is_pivot = -1;
 		elt = elt->next;
 	}
-	return;
 }
