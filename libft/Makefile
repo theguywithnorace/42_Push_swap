@@ -29,6 +29,7 @@ ${NAME}: ${OBJS}
 		ar rcs ${NAME} ${OBJS}
 
 ${OBJ_DIR}%.o: ${SRC_DIR}%.c
+	mkdir -p obj
 	gcc -c -I includes ${CFLAGS} -c -o $@ $<
 
 all: ${NAME}
