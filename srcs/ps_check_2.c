@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:47:51 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/14 22:47:25 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 09:34:42 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,14 @@ void find_lowest_values_a(t_all *all)
 	return;
 }
 
-int is_sk_ordered(t_elt *e)
+int is_sk_ordered(t_elt *e, int s)
 {
 	int i;
 	t_elt *elt;
 
 	if (!e || !(e->next))
 	{
-		bug("SK EMPTY", 1);
+		// bug("SK EMPTY", 1);
 		return (1);
 	}
 	elt = e;
@@ -67,11 +67,11 @@ int is_sk_ordered(t_elt *e)
 		i = val(elt);
 	while (elt && elt->next)
 	{
-		if (val(elt->next) <= i)
+		if (s * (val(elt->next)) <= s * i)
 			return (0);
 		i = val(elt->next);
 		elt = elt->next;
 	}
-	bug("SK ORDERED", 1);
+	// bug("SK ORDERED", 1);
 	return (1);
 }

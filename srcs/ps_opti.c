@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 17:47:41 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/14 23:13:09 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 09:23:39 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void opti_a(t_all *all, t_elt *e)
 {
-	bug("OPTI A", val(e));
-	bug("for", all->p_tomov);
+	// bug("OPTI A", val(e));
+	// bug("for", all->p_tomov);
 
 	if (all->p_tomov < 2)
 		quick_send_b(all);
@@ -32,8 +32,8 @@ void opti_a(t_all *all, t_elt *e)
 
 void opti_b(t_all *all, t_elt *e)
 {
-	bug("OPTI B", val(e));
-	bug("for", all->p_tomov);
+	// bug("OPTI B", val(e));
+	// bug("for", all->p_tomov);
 
 	if (all->p_tomov < 2)
 		quick_send_a(all);
@@ -41,8 +41,8 @@ void opti_b(t_all *all, t_elt *e)
 	{
 		if (val(all->sk_b) < val(all->sk_b->next))
 		{
-			bug("val(e)", val(all->sk_b));
-			bug("val(e->next)", val(all->sk_b->next));
+			// bug("val(e)", val(all->sk_b));
+			// bug("val(e->next)", val(all->sk_b->next));
 			print_action("sb", all);
 		}
 		quick_send_a(all);
@@ -82,12 +82,13 @@ void set_order(t_elt *e, t_all *all)
 	int min;
 	t_elt *bk;
 
+	(void)all;
 	bk = e;
 	k = 11;
 	while (e && value_not_set(e))
 	{
-		bug("start while", val(e));
-		print_situation_a(all);
+		// bug("start while", val(e));
+		//print_situation_a(all);
 		while (e && e->is_pivot > 10)
 			e = e->next;
 		min = val(e);
@@ -108,15 +109,15 @@ void algo_3_a(t_all *all, t_elt *e)
 {
 	t_elt *elt;
 
-	bug("OPTI A3", 3);
+	// bug("OPTI A3", 3);
 	set_order(e, all);
-	print_situation_a(all);
-	print_situation_b(all);
+	//print_situation_a(all);
+	//print_situation_b(all);
 	print_action("pb", all);
 	if (val(all->sk_a) > val(all->sk_a->next))
 	{
-		bug("val(e)", val(all->sk_a));
-		bug("val(e->next)", val(all->sk_a->next));
+		// bug("val(e)", val(all->sk_a));
+		// bug("val(e->next)", val(all->sk_a->next));
 		print_action("sa", all);
 	}
 	print_action("pb", all);
@@ -138,10 +139,10 @@ void algo_3_b(t_all *all, t_elt *e)
 {
 	t_elt *elt;
 
-	bug("OPTI B3", 3);
+	// bug("OPTI B3", 3);
 	set_order(e, all);
-	print_situation_a(all);
-	print_situation_b(all);
+	//print_situation_a(all);
+	//print_situation_b(all);
 	print_action("pa", all);
 	if (val(all->sk_b) < val(all->sk_b->next))
 		print_action("sb", all);
@@ -151,7 +152,7 @@ void algo_3_b(t_all *all, t_elt *e)
 	print_action("pa", all);
 	if (all->sk_a->is_pivot == 12)
 	{
-		bug("sk_a", val(all->sk_a));
+		// bug("sk_a", val(all->sk_a));
 		print_action("sa", all);
 	}
 	elt = all->sk_a;

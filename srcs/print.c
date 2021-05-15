@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 17:38:37 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/14 11:34:28 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 09:36:41 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void print_action(char *action, t_all *all)
 	if (all->bonus)
 	{
 		//
-		bug("\nnxpvt", all->v_nxtp);
+		// bug("\nnxpvt", all->v_nxtp);
 		//
 		
 		write(1, "-> Executing ", 13);
@@ -54,8 +54,9 @@ int write_a(t_elt **ea, int a, t_all *all)
 			write(1, " ", 1);
 
 			//
-			write(1, "  ", 1);
+			// write(1, "  ", 1);
 			//
+			
 		}
 		write(1, " ", 1);
 		return (a);
@@ -63,14 +64,14 @@ int write_a(t_elt **ea, int a, t_all *all)
 	while (++i <= ((max_lgth(all->sk_a) - ft_strlen_ps((*ea)->content))))
 		write(1, " ", 1);
 	write(1, (*ea)->content, ft_strlen_ps((*ea)->content));
-	// write(1, " ", 1);
+	write(1, " ", 1);
 
 
-	//
-	write(1, "|", 1);
-	if ((*ea)->is_pivot >= 0)
-		write(1, " ", 1);
-	ft_putnbr_fd((*ea)->is_pivot, 1);
+	// //
+	// write(1, "|", 1);
+	// if ((*ea)->is_pivot >= 0)
+	// 	write(1, " ", 1);
+	// ft_putnbr_fd((*ea)->is_pivot, 1);
 	//
 
 	(*ea) = (*ea)->next;
@@ -97,8 +98,8 @@ int write_b(t_elt **eb, int b, t_all *all)
 	write(1, " ", 1);
 
 	//
-	write(1, "|", 1);
-	ft_putnbr_fd((*eb)->is_pivot, 1);
+	// write(1, "|", 1);
+	// ft_putnbr_fd((*eb)->is_pivot, 1);
 	//
 
 	(*eb) = (*eb)->next;

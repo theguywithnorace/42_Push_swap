@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:14:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/15 08:58:30 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 09:33:53 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,7 +135,7 @@ void execute_short_algo(t_all *all);
 void			end_algo(t_all *all);
 int				ft_strlen_ps(const char *s);
 void			find_lowest_values_a(t_all *all);
-int				is_sk_ordered(t_elt *all);
+int				is_sk_ordered(t_elt *all, int s);
 void			send_mid_hig_to_top(t_all *all);
 void			make_final_ordering(t_all *all);
 void			reverse_send_to_top(t_all *all);
