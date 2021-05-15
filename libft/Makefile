@@ -4,6 +4,8 @@ CFLAGS	=	-Wall -Wextra -Werror
 
 RM		=	rm -f
 
+SRC_DIR = srcs/
+
 SRC			= ft_itoa.c ft_putendl_fd.c ft_putstr_fd.c ft_strtrim.c ft_putchar_fd.c ft_putnbr_fd.c \
 				ft_atoi.c ft_isalpha.c ft_memccpy.c ft_memmove.c ft_strlcat.c ft_strnstr.c\
 				ft_bzero.c ft_isascii.c ft_memchr.c ft_memset.c ft_strlcpy.c ft_strrchr.c\
@@ -13,6 +15,8 @@ SRC			= ft_itoa.c ft_putendl_fd.c ft_putstr_fd.c ft_strtrim.c ft_putchar_fd.c ft
 				ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c\
 				ft_lstclear.c ft_lstiter.c ft_lstmap.c get_next_line.c get_next_line_utils.c ft_strcmp.c\
 				ft_max.c ft_min.c ft_strmapi.c ft_abs.c
+
+SRCS			= ${addprefix ${SRC_DIR}, ${SRC}}
 
 OBJ = ${SRC:.c=.o}
 
@@ -24,13 +28,13 @@ OBJS			= ${addprefix ${OBJ_DIR}, ${OBJ}}
 ${NAME}: ${OBJS}
 		ar rcs ${NAME} ${OBJS}
 
-${OBJ_DIR}%.o: %.c
-	gcc -c -I ./includes ${CFLAGS} -c -o $@ $<
+${OBJ_DIR}%.o: ${SRC_DIR}%.c
+	gcc -c -I includes ${CFLAGS} -c -o $@ $<
 
 all: ${NAME}
 
 clean:
-		${RM} ${OBJ}
+		${RM} ${OBJS}
 
 fclean: clean
 		${RM} ${NAME}
