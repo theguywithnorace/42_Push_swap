@@ -1,4 +1,4 @@
-NAME	=	libft.a
+NAME	=	../libft.a
 
 CFLAGS	=	-Wall -Wextra -Werror
 
@@ -26,7 +26,8 @@ OBJS			= ${addprefix ${OBJ_DIR}, ${OBJ}}
 
 
 ${NAME}: ${OBJS}
-		ar rcs ${NAME} ${OBJS}
+		ar rc ${NAME} ${OBJS}
+		ranlib ${NAME}
 
 ${OBJ_DIR}%.o: ${SRC_DIR}%.c
 	mkdir -p obj
