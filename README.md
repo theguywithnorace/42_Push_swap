@@ -1,12 +1,6 @@
 # 42_Push_swap
 
 
-Pivot en dernier element -> comme ca on le transfert une fois qu'on a passé tous les autres elements
-
-A faire :
-- option moins de trois cases jusqu'au pivot
-- toutes les cases qui restent sont supérieures au pivot (pas la peine de les passer derrierre avant de les envoyer)
-
 
 ARG=`ruby -e "puts (0..4).to_a.shuffle.join(' ')"` && ./push_swap  $ARG | ./checker $ARG
 

@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:37:57 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/15 09:35:02 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 12:55:55 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,10 @@ void execute_algo(t_all *all)
 {
 	while (!is_sk_ordered(all->sk_a, 1))
 	{
-		// bug("BEGIN get_pivots A", 1);
-		// //print_situation_a(all);
 		send_to_b(all);
-
-
-		// bug("BEGIN get_pivots B", 1);
-		// //print_situation_b(all);
 		send_to_a(all);
 	}
-	// bug("\n\n>>>>>>>>> ALL FUCKIN  ORDERED\n\n", 1);
+	freeer(all);
 }
 
 int main(int ac, char **av)
@@ -48,7 +42,7 @@ int main(int ac, char **av)
 	print_init(all);
 	if (all->len_t == 3)
 		execute_short_algo(all);
-	else if (all->len_t < 5)
+	else if (all->len_t < 50)
 	//////////////////////////////////
 	///// 5 to be modified in 50 /////////
 	///////////////////////////////////

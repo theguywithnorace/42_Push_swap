@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 00:11:18 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/15 09:23:38 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 12:36:31 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ void  bug(char *s, int n)
 
 int		error_arguments(t_all *all)
 {
-	printf("ARgument");
 	write(1, "Error\n", 6);
 	freeer(all);
 	return (0);
