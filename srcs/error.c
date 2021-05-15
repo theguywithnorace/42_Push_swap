@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 00:11:18 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/15 12:36:31 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 12:59:26 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void  print_situation_a(t_all *all)
 	if (!all->sk_a)
 		return ;
 	e = all->sk_a;
-	// bug("\nPRINT SITUATION SK A\nall->v_nxtpvt", all->v_nxtp);
 	while (e)
 	{
 		ft_putstr_fd("elt no :", 1);
@@ -38,7 +37,6 @@ void  print_situation_b(t_all *all)
 	if (!all->sk_b)
 		return ;
 	e = all->sk_b;
-	// bug("\nPRINT SITUATION SK B\nall->v_nxtpvt", all->v_nxtp);
 	while (e)
 	{
 		ft_putstr_fd("elt no :", 1);

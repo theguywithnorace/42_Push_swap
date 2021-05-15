@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:58:23 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/15 09:23:48 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 13:00:05 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,7 @@ int value_already_found(t_all *all, char *s)
 	while (elt)
 	{
 		if (!(ft_strcmp(elt->content, s)))
-		{
-			// bug("PROBLEM FOR>>", 0);
-			// bug(s, 2);
 			return (0);
-		}
 		elt = elt->next;
 	}
 	return (1);

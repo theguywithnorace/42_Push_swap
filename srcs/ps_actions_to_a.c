@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 20:05:41 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/15 09:34:02 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 13:01:26 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void send_hig_values_a(t_all *all)
 {
-	// bug("send_hig_values_a", 0);
 	print_action("pa", all);
 }
 
@@ -36,24 +35,12 @@ void send_pivot_a(t_all *all)
 
 void stock_low_values_b(t_all *all)
 {
-	// if (all->sk_b)
-		// bug("stock_low_values_b", val(all->sk_b));
 	all->sk_b->is_pivot = BKED;
 	print_action("rb", all);
 }
 
-// void set_pivot_top_a(t_all *all)
-// {
-// 	bug("set_pivot_top_a", 0);
-// 	if (val(ft_lstlast_e(all->sk_a)) == all->v_nxtp)
-// 		print_action("rra", all);
-// 	all->sk_a->is_pivot = OLD;
-// }
-
 void send_low_values_a(t_all *all)
 {
-	// bug("send_low_values_a", val(all->sk_b));
-
 	if (all->sk_b->is_pivot != BKED)
 		print_action("rrb", all);
 	print_action("pa", all);
@@ -82,13 +69,11 @@ int is_all_end_inf(t_elt *e, int max)
 			e = e->next;
 		}
 	}
-	// bug("all end is inf than pivot, pivot :", max);
 	return (1);
 }
 
 void quick_send_a(t_all *all)
 {
 	all->sk_b->is_pivot = OLD;
-	// bug("send less than 1 elt", 1);
 	print_action("pa", all);
 }

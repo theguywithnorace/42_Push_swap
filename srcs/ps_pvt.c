@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 20:05:41 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/15 09:07:43 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 13:06:59 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,11 @@ void get_pivots(t_elt *elt, int s)
 		if (elt)
 		{
 			midd = find_midd(elt);
-			// bug("midd", midd);
 			find_pivot(elt, midd, s);
 		}
 		while (elt && (elt->is_pivot != OLD))
 			elt = elt->next;
 	}
-	// bug("END get_pivots", 1);
 }
 
 int find_midd(t_elt *elt)
@@ -45,7 +43,6 @@ int find_midd(t_elt *elt)
 	while (elt && (elt->is_pivot != OLD))
 	{
 		if (elt->is_pivot == BKED || elt->is_pivot == PIVOT)
-		// if (elt->is_pivot == BKED)
 			elt->is_pivot = 0;
 		sum += (long long)ft_atoi(elt->content);
 		elt = elt->next;
@@ -66,22 +63,15 @@ void find_pivot(t_elt *elt, int midd, int s)
 		v = val(elt);
 	while (elt && (elt->is_pivot != OLD))
 	{
-		// bug("pivot tester", midd - val(elt));
 		if (midd - val(elt) >= 0 && ft_abs(midd - val(elt)) < ft_abs(midd - v))
-		{
-			// bug("setting v", val(elt));
 			v = val(elt);
-		}
 		elt = elt->next;
 	}
 	elt = bk;
 	while (elt && (elt->is_pivot != OLD))
 	{
 		if (val(elt) == v)
-		// {
-			// bug("pivot foud for val", v);
 			elt->is_pivot = PIVOT;
-		// }
 		elt = elt->next;
 	}
 }
@@ -89,12 +79,7 @@ void find_pivot(t_elt *elt, int midd, int s)
 int in_packet(t_elt *e, int nxtp)
 {
 	if (!e || (e->is_pivot == BKED && !is_all_end_sup(e, nxtp)) || e->is_pivot == OLD)
-	// {
-	// 	bug("out of packet", e->is_pivot);
-	// 	bug("for val", val(e));
 		return (0);
-	// }
-	// bug("still in the packet", 1);
 	return (1);
 }
 

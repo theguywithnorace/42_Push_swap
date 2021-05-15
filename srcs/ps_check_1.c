@@ -6,33 +6,11 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:47:51 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/15 09:34:22 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 13:04:22 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-
-void execute_algo5(t_all *all)
-{
-	find_middle_value(all);
-	while (!sk_a_ordered_by_packet(all))
-	{
-		find_close_mid_values(all);
-		find_value_to_move(all);
-		if ((all->p_tomov != 0) && (all->p_tomov <= ((all->len_a) / 2)))
-			send_closest_value_to_top(all);
-		else if ((all->p_tomov > ((all->len_a) / 2)))
-			reverse_send_closest_value_to_top(all);
-		if (!sk_a_ordered_by_packet(all))
-		{
-			print_action("pb", all);
-			if (all->is_tomov_low && (ft_lstsize_e(all->sk_b) > 1))
-				print_action("rb", all);
-		}
-	}
-	end_algo(all);
-}
 
 void execute_short_algo(t_all *all)
 {
@@ -49,6 +27,7 @@ void execute_short_algo(t_all *all)
 	}
 	freeer(all);
 }
+
 void end_algo(t_all *all)
 {
 	if (!(is_sk_ordered(all->sk_a, 1) && all->sk_b == 0))
@@ -143,42 +122,5 @@ void	find_value_to_move(t_all *all)
 	{
 		all->is_tomov_low = 0;
 		all->p_tomov = all->p_hig;
-	}
-}
-
-int		init(t_all *all)
-{
-	all->p_low = 0;
-	all->v_low = all->min;
-	all->p_hig = 0;
-	all->v_hig = all->max;
-	return (0);
-}
-
-void	find_close_mid_values(t_all *all)
-{
-	t_elt	*elt;
-	int		i;
-	int		e;
-
-	i = init(all);
-	elt = all->sk_a;
-	while (elt)
-	{
-		e = ft_atoi(elt->content);
-		if (e == all->min)
-			all->p_min = i;
-		if ((e <= all->midd) && (all->midd - all->v_low >= all->midd - e))
-		{
-			all->v_low = e;
-			all->p_low = i;
-		}
-		else if ((e > all->midd) && (all->v_hig - all->midd >= e - all->midd))
-		{
-			all->v_hig = e;
-			all->p_hig = i;
-		}
-		i++;
-		elt = elt->next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 22:47:51 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/15 09:34:42 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 13:03:37 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,7 @@ int is_sk_ordered(t_elt *e, int s)
 	t_elt *elt;
 
 	if (!e || !(e->next))
-	{
-		// bug("SK EMPTY", 1);
 		return (1);
-	}
 	elt = e;
 	if (elt)
 		i = val(elt);
@@ -72,6 +69,42 @@ int is_sk_ordered(t_elt *e, int s)
 		i = val(elt->next);
 		elt = elt->next;
 	}
-	// bug("SK ORDERED", 1);
 	return (1);
+}
+
+int		init(t_all *all)
+{
+	all->p_low = 0;
+	all->v_low = all->min;
+	all->p_hig = 0;
+	all->v_hig = all->max;
+	return (0);
+}
+
+void	find_close_mid_values(t_all *all)
+{
+	t_elt	*elt;
+	int		i;
+	int		e;
+
+	i = init(all);
+	elt = all->sk_a;
+	while (elt)
+	{
+		e = ft_atoi(elt->content);
+		if (e == all->min)
+			all->p_min = i;
+		if ((e <= all->midd) && (all->midd - all->v_low >= all->midd - e))
+		{
+			all->v_low = e;
+			all->p_low = i;
+		}
+		else if ((e > all->midd) && (all->v_hig - all->midd >= e - all->midd))
+		{
+			all->v_hig = e;
+			all->p_hig = i;
+		}
+		i++;
+		elt = elt->next;
+	}
 }
