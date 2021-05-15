@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:14:21 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/14 22:03:34 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 08:58:30 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,8 @@ void set_order(t_elt *e, t_all *all);
 void algo_3_a(t_all *all, t_elt *e);
 void algo_3_b(t_all *all, t_elt *e);
 
+//algo 5
+void execute_algo5(t_all *all);
 
 
 
