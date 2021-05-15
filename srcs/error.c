@@ -6,7 +6,7 @@
 /*   By: timotheein <timotheein@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 00:11:18 by timotheein        #+#    #+#             */
-/*   Updated: 2021/05/15 13:24:11 by timotheein       ###   ########.fr       */
+/*   Updated: 2021/05/15 19:19:02 by timotheein       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 int		error_arguments(t_all *all)
 {
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	freeer(all);
 	return (0);
 }
 
 int		error_instruction(t_all *all)
 {
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	freeer(all);
 	return (0);
 }
 
 int		error_execution(t_all *all)
 {
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	freeer(all);
 	return (0);
 }

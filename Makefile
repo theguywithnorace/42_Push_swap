@@ -27,6 +27,7 @@ ${NAME}: ${OBJS}
 # mkdir -p obj
 # @make  -s -C libft
 ${OBJ_DIR}%.o: ${SRC_DIR}%.c
+	make -s -C libft
 	gcc -c -I includes ${CFLAGS} -c -o $@ $<
 
 all: ${NAME}
